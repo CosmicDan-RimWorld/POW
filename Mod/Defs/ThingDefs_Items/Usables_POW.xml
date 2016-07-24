@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef ParentName="MealRottable">
+		<defName>POW_MealTurnipSalad</defName>
+		<label>turnip salad</label>
+		<description>Fresh garden veggies chopped up and mixed together - hopefully with a clean knife.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/MealTurnipSalad</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>10</DeteriorationRate>
+			<MarketValue>15</MarketValue>
+			<WorkToMake>500</WorkToMake>
+		</statBases>
+		<ingestible>
+			<preferability>RawTasty</preferability>
+			<tastesRaw>false</tastesRaw>
+			<nutrition>0.75</nutrition>
+			<joy>0.02</joy>
+			<eatEffect>EatVegetarian</eatEffect>
+			<soundEat>Meal_Eat</soundEat>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="MealBase">
+		<defName>POW_MealSmokedMeat</defName>
+		<label>smoked meat</label>
+		<description>A ration of meat that has been preserved by slowly smoking.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/SmokedMealMeat</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>0.5</DeteriorationRate>
+			<MarketValue>25</MarketValue>
+		</statBases>
+		<ingestible>
+			<preferability>MealSimple</preferability>
+			<nutrition>0.80</nutrition>
+			<joy>0.05</joy>
+			<specialThoughtDirect>POW_AteSmokedMeal</specialThoughtDirect>
+			<eatEffect>EatVegetarian</eatEffect>
+			<soundEat>Meal_Eat</soundEat>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<compClass>CompRottable</compClass>
+				<daysToRotStart>20</daysToRotStart>
+				<rotDamagePerDay>10</rotDamagePerDay>
+				<rotDestroys>false</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+
+	<ThingDef ParentName="GrilledBase">
+		<defName>POW_MealGrilledMeat</defName>
+		<label>grilled meal (meat)</label>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/GrilledMealMeat</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="GrilledBase">
+		<defName>POW_MealGrilledVeg</defName>
+		<label>grilled meal (vegetarian)</label>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/GrilledMealVeg</texPath>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="GrilledBase">
+		<defName>POW_MealGrilledFine</defName>
+		<label>grilled meal (fine)</label>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/GrilledMealFine</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>30</MarketValue>
+			<WorkToMake>1250</WorkToMake>
+		</statBases>
+		<ingestible>
+			<preferability>MealFine</preferability>
+			<nutrition>0.85</nutrition>
+			<joy>0.1</joy>
+		</ingestible>
+	</ThingDef>
+
+
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>POW_Turnip</defName>
+		<label>turnip</label>
+		<description>A root vegetable that lasts a long time even without refrigeration.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/Turnip</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>1.2</MarketValue>
+			<SellPriceFactor>0.5</SellPriceFactor>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>30</daysToRotStart>
+			</li>
+		</comps>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<preferability>RawTasty</preferability>
+      <tastesRaw>false</tastesRaw>
+			<nutrition>0.04</nutrition>
+			<specialThoughtDirect>POW_AteRawTurnip</specialThoughtDirect>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>POW_Turnip_Green</defName>
+		<label>turnip greens</label>
+		<description>Edible leaves from the turnip plant. Can be eaten raw.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/Turnip_Green</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.8</MarketValue>
+			<SellPriceFactor>0.2</SellPriceFactor>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<preferability>RawTasty</preferability>
+      <tastesRaw>false</tastesRaw>
+			<nutrition>0.03</nutrition>
+		</ingestible>
+		<thingCategories>
+			<li>FoodRaw</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>7</daysToRotStart>
+			</li>
+		</comps>
+	</ThingDef>
+
+</ThingDefs>

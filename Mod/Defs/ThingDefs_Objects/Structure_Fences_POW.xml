@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef Name="FenceBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<soundImpactDefault>BulletImpactWood</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<repairEffect>Repair</repairEffect>
+		<filthLeaving>BuildingRubble</filthLeaving>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Sandbags</li>
+			</linkFlags>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Cupro/Object/Structure/LogFence/LogFence_Atlas_Blueprint</texPath>
+		</blueprintGraphicData>
+		<statBases>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<costList>
+			<WoodLog>6</WoodLog>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructEffect>ConstructDirt</constructEffect>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<altitudeLayer>Building</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.35</fillPercent>
+		<coversFloor>false</coversFloor>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<holdsRoof>false</holdsRoof>
+		<designationCategory>Structure</designationCategory>
+		<blockLight>false</blockLight>
+		<building>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<damageMultipliers>
+			<li>
+				<damageDef>Bomb</damageDef>
+				<multiplier>2</multiplier>
+			</li>
+			<li>
+				<damageDef>Flame</damageDef>
+				<multiplier>2</multiplier>
+			</li>
+		</damageMultipliers>
+	</ThingDef>
+
+	<ThingDef Name="FenceDoorBase" ParentName="FenceBase" Abstract="True">
+		<thingClass>Building_Door</thingClass>
+		<blueprintClass>Blueprint_Door</blueprintClass>
+		<category>Building</category>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Door/Door_Blueprint</texPath>
+		</blueprintGraphicData>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Structure</designationCategory>
+		<building>
+			<soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+	<!--========================= Fences =============================-->
+
+	<ThingDef ParentName="FenceBase">
+		<defName>POW_LogFence</defName>
+		<label>log fence</label>
+		<description>A somewhat sturdy fence for protecting important areas.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/LogFence/LogFence_Atlas</texPath>
+		</graphicData>
+		<uiIconPath>Cupro/Object/Structure/LogFence/LogFence_MenuIcon</uiIconPath>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToMake>200</WorkToMake>
+		</statBases>
+		<passability>Impassable</passability>
+	</ThingDef>
+
+	<ThingDef ParentName="FenceBase">
+		<defName>POW_GlowFence</defName>
+		<label>glow fence</label>
+		<description>A somewhat sturdy fence for protecting important areas. Also provides light.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/LogFence/GlowFence_Atlas</texPath>
+		</graphicData>
+		<uiIconPath>Cupro/Object/Structure/LogFence/GlowFence_MenuIcon</uiIconPath>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToMake>250</WorkToMake>
+		</statBases>
+		<passability>Impassable</passability>
+		<costList>
+			<Silver>15</Silver>
+			<POW_Glowstone>1</POW_Glowstone>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(165,177,192,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+	<ThingDef ParentName="FenceDoorBase">
+		<defName>POW_LogFenceGate</defName>
+		<label>fence gate</label>
+		<description>A gate that connects to a log fence.
+For best results, only build on a north-south opening. 	
+		</description>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToMake>250</WorkToMake>
+			<DoorOpenSpeed>1.5</DoorOpenSpeed>
+		</statBases>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/LogFence/LogFence_Gate_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Sandbags</li>
+			</linkFlags>
+		</graphicData>
+		<uiIconPath>Cupro/Object/Structure/LogFence/LogFence_Gate</uiIconPath>
+		<blueprintGraphicData>
+			<texPath>Cupro/Object/Structure/LogFence/LogFence_Gate_Blueprint</texPath>
+		</blueprintGraphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<costList>
+			<WoodLog>10</WoodLog>
+		</costList>
+		<constructEffect>ConstructDirt</constructEffect>
+		<holdsRoof>false</holdsRoof>
+		<fillPercent>0.20</fillPercent>
+		<isAutoAttackableWorldObject>true</isAutoAttackableWorldObject>
+	</ThingDef>
+
+</ThingDefs>

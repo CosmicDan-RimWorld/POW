@@ -1,0 +1,198 @@
+<!-- 
+TODO:
+
+
+-->
+
+14.00:
+Removed torches - now in base game
+Removed grilled wood meals
+Reworked charcoal pit - now chars wood unattended
+Increased coldstone battery fuel to last 6 days
+Removed windows - now in CorePanda
+Forge requires research
+Charcoal pit has built-in support for bamboo and rubber wood if their mods are installed
+
+
+<!-- Alpha 13 and lesser versions -->
+
+v2.20:
+Requires corePanda v13.3
+Window can be crafted using glass or fused quartz
+The forge can be upgraded to a crucible forge, allowing smelting recipes
+Added recipe to craft glass at the crucible forge
+Fused quartz recipe now only available at the crucible forge
+Removed Stonecutting research prerequisites, since CorePanda adds ways to make simple stones
+Lowered minimum artistic quality for weapons, since they are hand-crafted
+Tweaked various small stats
+Stuffed grill using metallic and stony stuff
+
+v2.10:
+Requires corePanda v13.2
+Fixed cross-mod naming conflicts
+Turnip_Full is no longer food, since its only use is to be destroyed
+Windows require fused quartz
+Added recipe for making fused quartz using the forge
+Added copper to various recipe costs
+Torches can be deconstructed
+Fences no longer require diggable terrain
+
+v2.04:
+Added new graphics for glowstone/coldstone deposits
+Reduced cost of glowstone constructs
+
+v2.03:
+Removed redundant inspect data
+
+v2.02:
+Rebalanced window lighting to be more realistic looking
+Windows will brightly light 1 tile in front of them when exposed to full sunlight, useful for small greenhouses
+
+v2.01:
+Weapons no longer appear duplicated at smithing tables
+
+v2.00:
+Added CorePanda as a dependency, moved some assets (check corePanda changelog)
+Added Coldstone - a cold stone that can be used to build coldstone batteries
+Added Coldstone battery - cools rooms to below freezing, requires coldstone as fuel
+Added Window - lets light in from outside
+
+v1.60:
+Added solar chimney for keeping rooms cool in the heat
+Solar chimney requires rainwater and sunlight to function
+Fixed oversized smoker icon
+
+v1.56:
+Increased hide bed comfort from 0.5 to 0.6 (only awful quality is worse than the floor)
+Decreased simple door max hit points from 100 to 25 (existing doors will retain old hit points)
+Increased grill fuel capacity from 10 to 15
+Manual crematorium doesn't require wood to build
+Decreased smoker cost from 150 to 100
+Various small tweaks
+
+v1.55:
+Harvested turnips now drop turnips and turnip greens
+
+v1.54:
+Torches now forbiddable, won't be refueled
+
+v1.53:
+replaced missing base references
+reduce torches heatpush
+
+v1.52:
+balanced torches cost/fuel; cost and consume 5 wood per day
+
+v1.51:
+grill, smoker, forge, and manual crematorium are now fueled
+
+v1.50:
+Torches and campfire now list their max heat provided (22/28 respectively)
+Added grilled wood meals
+Increased grill cooking heat from 0.1 to 0.3
+Increased silver cost when building glowstone constructs
+Raised buying price of glowstone
+Added research to make grilled wood meals
+Separated fences, crafters, and torches into different files
+Added forge, forge recipes
+Added bellows, a facility for increasing crafting time at the forge
+Reduced charcoal pit crafting times for charcoal and yakisugi
+Removed survivalists bow and shiv recipes (now in vanilla)
+Bellows connects to char pit
+Removed campfire, torches now last for 2, 4, and 10 days. Refuelable
+
+
+v1.41:
+Balanced cooking priorities:
+  Cooks will now prioritize the standard stove over the grill.
+  Cooks will prioritize the smoker over the grill and stove. This is useful since the smoker gives more meals per job.
+Smoker sound fixed.
+Smoker ingredient order changed so meat appears to be inside the smoker, not wood.
+
+v1.40:
+Fences require diggable terrain (dirt, sand, etc.)
+Fixed charcoal pit graphic - really this time
+Increased hide bed leather cost from 10 to 20
+Increased hide bed wood cost from 8 to 15
+Added Smoker, smoked meal
+Redrew meal textures
+
+v1.31:
+Renamed 'prepared salad' to 'turnip salad', since the previous name already exists
+Renamed 'glowstones' to 'glowstone'
+Halved glowstone commonality
+Reduced glowstone yield from 5 to 2
+Slightly increased glowstone vein size
+Reduced compacted glowstone glow radius from 6 to 5
+Gave compacted glowstone a beauty of 20
+Increased cost of pylons from 15 silver to 50 silver
+Increased glow radius of pylons from 4 to 6
+Glowstone constructs have a whiter glow
+Lamp now costs 20 silver in addition to other ingredients
+Remade lamp texture
+Increased cost of torches to 5 wood per day - still cheaper than the campfires
+
+v1.30:
+PREVIOUS SAVES: If you have Charred Logs present on the map, you must either destroy or sell them before downloading this version to avoid any errors.
+Renamed hide bed to bed, since it lists what it's made of already
+Removed charred logs, torches now require wood
+Torches now balanced at 80% campfire strength
+   Increased glow radius from 6 to 8
+   Increased heat push from 4 to 15
+   Increased max temperature from 20 to 22
+Torches highlight room to indicate they will provide heat
+Torches moved to Temperature tab
+Charcoal pit graphic fixed
+Raiders now shoot over fence instead of always attacking it
+Added glowstones - glowing rocks which can be mined
+Added glowstones pylon
+Added glowstones lamp
+Added fence posts with glowstones
+
+v1.20:
+Torches give 5 beauty
+Keffiyeh now insulates from cold by -4
+Rebalanced turnip rotting
+Added 10-day campfire
+Added Charcoal Pit
+Increased charcoal chunk stack size to 75
+Torches heat push changed from 2 to 4
+Added Yakisugi wood, yakisugi flooring
+Increased cost of wooden vent from 10 to 20
+Stuffed vent - uses Woody materials
+Vent is now flammable, because wood
+Made patch for VG bamboo charcoal
+
+v1.12:
+Fixed fence gate warning
+Hide beds now show designation colors using pillows: green = colonist, blue = medical, etc.
+
+v1.11:
+Rebalanced turnip rotting to prevent an exploit
+Reduced turnip yield
+Reduced commonality of POW tribalwear
+Added keffiyeh
+Added 2 longer lasting torch variants with scaled recipes
+Torches can no longer be deconstructed
+Grilled fine meals require cooking skill of 5
+Fences HP halved and made more flammable to better balance raids
+Added Wood-Burning Crematorium
+
+v1.10:
+Added turnip plant, turnip, turnip greens
+Added simple crafting table
+Added recipes for survivalists bow, shiv, and tribalwear
+Added salad recipe
+Made wood more woody (enhanced bark graphics)
+Added log fence, log fence gate
+Added hide bed
+
+v1.00:
+Added Torch, Everburning Torch
+Added Charred Log, charcoal log chunk
+Added Grilled meals Meat, Veg, and Fine
+Added Grill
+Added wooden vent
+Added Stump chair
+Added Table(Indie)
+Added Simple Door

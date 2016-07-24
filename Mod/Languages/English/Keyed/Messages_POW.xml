@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- Building placement restricters -->
+
+  <POW_MustPlaceTowerWithFreeSpace>The output vent must be exposed for air to pass through.</POW_MustPlaceTowerWithFreeSpace>
+  
+  <!-- Solar Cooling Tower -->
+  
+  <POW_WaterLevel>Water Level</POW_WaterLevel>
+	<POW_NoWater>no water</POW_NoWater>
+  <POW_CoolingStrength>Cooling strength</POW_CoolingStrength>
+  
+  <POW_GentleBreeze>gentle breeze</POW_GentleBreeze>
+  <POW_ModerateBreeze>moderate breeze</POW_ModerateBreeze>
+  <POW_StrongWinds>strong winds</POW_StrongWinds>
+  
+  <POW_ClearSkies>Clear skies</POW_ClearSkies>
+  <POW_Overcast>Overcast</POW_Overcast>
+  <POW_SevereOvercast>Severe overcast</POW_SevereOvercast>
+  
+  <!-- Charcoal Pit -->
+  
+  <POW_Char_L>Make charcoal</POW_Char_L>
+  <POW_Bamb_L>Make bamboo charcoal</POW_Bamb_L>
+  <POW_Rubb_L>Make rubberwood charcoal</POW_Rubb_L>
+  <POW_Yaki_L>Make yakisugi</POW_Yaki_L>
+  
+  <POW_Char_D>Char charcoal here</POW_Char_D> 
+  <POW_Bamb_D>Char charcoal from bamboo here</POW_Bamb_D>
+  <POW_Rubb_D>Char charcoal from rubber wood here</POW_Rubb_D>
+  <POW_Yaki_D>Char yakisugi here</POW_Yaki_D>
+  
+  <POW_PitCancel>Cancel wood burning</POW_PitCancel>
+
+</LanguageData>

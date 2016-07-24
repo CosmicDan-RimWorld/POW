@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResearchProjectDefs>
+	
+	<!--=============================== Tier 1: pre-electricity ===================================-->
+
+	<ResearchProjectDef>
+		<defName>POW_SolarChimney</defName>
+		<label>powerless cooling</label>
+		<description>Build a passive cooling structure using the environment to your advantage.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+		<defName>POW_Forge</defName>
+		<label>forge</label>
+		<description>Allows colonists to build a forge to forge metals into weapons. Can be further upgraded into a crucible with medieval research.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Neolithic</techLevel>
+    <tags>
+      <li>ClassicStart</li>
+    </tags>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>POW_Crucible</defName>
+		<label>forge: crucible upgrade</label>
+		<description>Allows colonists to upgrade the forge into a forge with an attached crucible for melting metals and creating glass.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Medieval</techLevel>
+		<prerequisites>
+			<li>POW_Forge</li>
+		</prerequisites>
+	</ResearchProjectDef>
+	
+	<!--=============================== Tier 2.5 Microelectronics ===================================-->
+
+	<ResearchProjectDef>
+		<defName>POW_EnthalpicCooling</defName>
+		<label>coldstone battery</label>
+		<description>Build an efficient passive cooling unit fueled by coldstones.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Industrial</techLevel>
+    <prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+	</ResearchProjectDef>
+
+</ResearchProjectDefs>

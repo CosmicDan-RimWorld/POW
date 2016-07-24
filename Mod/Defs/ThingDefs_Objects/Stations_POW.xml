@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_Grill</DefName>
+		<label>grill</label>
+		<ThingClass>Building_WorkTable</ThingClass>
+		<Description>A small grill used to cook food. Requires fuel to cook.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/Grill/Grill</texPath>
+			<shaderType>CutoutComplex</shaderType>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+		<stuffCategories>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToMake>1200</WorkToMake>
+			<MaxHitPoints>120</MaxHitPoints>
+			<Beauty>1</Beauty>
+			<Flammability>0</Flammability>
+		</statBases>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>60</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<recipes>
+			<li>POW_GrillMealMeat</li>
+			<li>POW_GrillMealMeatDouble</li>
+			<li>POW_GrillMealVeg</li>
+			<li>POW_GrillMealVegDouble</li>
+			<li>POW_GrillMealFine</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>40.0</fuelConsumptionRate>
+				<fuelCapacity>25.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>POW_Charcoal</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+		</comps>
+		<building>
+			<isMealSource>true</isMealSource>
+			<heatPerTickWhileWorking>0.35</heatPerTickWhileWorking>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_Forge</DefName>
+		<label>forge</label>
+		<ThingClass>Building_WorkTable</ThingClass>
+		<Description>An ancient structure used for heating up metal and working it into useful tools. Can be upgraded to include a crucible with the proper research.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/Forge/Forge</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<fillPercent>0.25</fillPercent>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<costList>
+			<POW_Charcoal>25</POW_Charcoal>
+			<Steel>30</Steel>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<UseHitPoints>true</UseHitPoints>
+		<destroyable>true</destroyable>
+		<rotatable>true</rotatable>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToMake>2000</WorkToMake>
+			<Flammability>0</Flammability>
+			<Cleanliness>-5</Cleanliness>
+		</statBases>
+		<Size>(2,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>60</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>POW_Bellows</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>20.0</fuelConsumptionRate>
+				<fuelCapacity>40.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>POW_Charcoal</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="CorePanda.CompProperties_Upgradeable">
+				<ResearchString>POW_Crucible</ResearchString> 
+				<UpgradeTex>Cupro/UI/Commands/Upgrade</UpgradeTex>
+				<BlueprintThingDef>POW_Crucible</BlueprintThingDef>
+				<UpgradeDescString>Upgrade to crucible</UpgradeDescString>
+				<UpgradeLabelString>Upgrade</UpgradeLabelString>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>1.0</heatPerTickWhileWorking>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>POW_Forge</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_Crucible</DefName>
+		<label>crucible forge</label>
+		<ThingClass>Building_WorkTable</ThingClass>
+		<Description>An structure dating back to chalcolithic times, used for melting metal and working it into useful tools. More fuel efficient than the forge.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/Crucible/Crucible</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<fillPercent>0.5</fillPercent>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>4</costStuffCount>
+		<costList>
+			<CP_Clay>50</CP_Clay>
+			<CP_Sand>20</CP_Sand>
+			<CP_Quartz>15</CP_Quartz>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<UseHitPoints>true</UseHitPoints>
+		<destroyable>true</destroyable>
+		<rotatable>true</rotatable>
+		<statBases>
+			<MaxHitPoints>2500</MaxHitPoints>
+			<WorkToMake>750</WorkToMake>
+			<Flammability>0</Flammability>
+			<Cleanliness>-8</Cleanliness>
+		</statBases>
+		<Size>(2,1)</Size>
+		<DesignationCategory>Unplaceable</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>90</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>POW_Bellows</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>15.0</fuelConsumptionRate>
+				<fuelCapacity>35.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>POW_Charcoal</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+		</comps>
+		<recipes>
+			<li>ExtractMetalFromSlag</li>
+			<li>SmeltWeapon</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>1.5</heatPerTickWhileWorking>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+
+
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_CharcoalPit</DefName>
+		<label>charcoal pit</label>
+		<ThingClass>Powerless.Building_CharcoalPit</ThingClass>
+		<Description>A pit for burning a large amount of wood in the absence of oxygen.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/CharcoalPit/CharcoalPit</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<constructEffect>ConstructDirt</constructEffect>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<fillPercent>0</fillPercent>
+		<statBases>
+			<WorkToMake>500</WorkToMake>
+			<Flammability>0</Flammability>
+		</statBases>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>60</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Normal</tickerType>
+		<building>
+			<isInert>true</isInert>
+		</building>
+		<terrainAffordanceNeeded>Diggable</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_Smoker</DefName>
+		<label>smoker</label>
+		<ThingClass>Building_WorkTable</ThingClass>
+		<Description>A large stone smoker built for cooking and preserving a large amount of meat. Takes a long time to cook.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/Smoker/Smoker</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconPath>Cupro/Object/Station/Smoker/Smoker_MenuIcon</uiIconPath>
+		<fillPercent>0.9</fillPercent>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>100</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<UseHitPoints>true</UseHitPoints>
+		<rotatable>true</rotatable>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToMake>2000</WorkToMake>
+			<Flammability>0</Flammability>
+			<Beauty>10</Beauty>
+			<Cleanliness>-5</Cleanliness>
+		</statBases>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>80</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<recipes>
+			<li>POW_SmokePreserveMeatLarge</li>
+			<li>POW_SmokePreserveMeatSmall</li>
+			<li>POW_SmokePreserveMeatSingle</li>
+		</recipes>
+		<comps>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>20.0</fuelConsumptionRate>
+				<fuelCapacity>20.0</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+	</ThingDef>
+
+</ThingDefs>

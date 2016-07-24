@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TerrainDefs>
+
+	<TerrainDef Name="FloorBase" Abstract="True">
+		<layerable>true</layerable>
+		<affordances>
+			<li>Light</li>
+			<li>Heavy</li>
+			<li>SmoothHard</li>
+		</affordances>
+		<statBases>
+			<WorkToMake>135</WorkToMake>
+		</statBases>
+		<designationCategory>Floors</designationCategory>
+		<Fertility>0</Fertility>
+		<constructEffect>ConstructWood</constructEffect>
+		<AcceptTerrainSourceFilth>True</AcceptTerrainSourceFilth>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+	</TerrainDef>
+
+
+	<TerrainDef  ParentName="FloorBase">
+		<DefName>POW_YakisugiFloor</DefName>
+		<label>yakisugi floor</label>
+		<RenderPrecedence>250</RenderPrecedence>
+		<Description>Charred wood flooring. Looks nice, but spreads ash around.</Description>
+		<texturePath>Cupro/Terrain/YakiFloor</texturePath>
+		<statBases>
+			<Beauty>4</Beauty>
+			<Cleanliness>-0.2</Cleanliness>
+		</statBases>
+		<CostList>
+			<POW_Yakisugi>3</POW_Yakisugi>
+		</CostList>
+	</TerrainDef>
+
+
+
+
+</TerrainDefs>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefinitions>
+
+	<ThingDef>
+		<defName>POW_Turnip_Spawner</defName>
+		<thingClass>Powerless.Turnip_Spawner</thingClass>
+		<label>whole turnip</label>
+		<description>A turnip with greens still attached.</description>
+		<category>Item</category>
+		<altitudeLayer>Item</altitudeLayer>
+		<tradeability>Never</tradeability>
+		<drawerType>RealtimeOnly</drawerType>
+		<graphicData>
+			<texPath>Cupro/Item/Material/Turnip_Full</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingDef>
+
+</ThingDefinitions>

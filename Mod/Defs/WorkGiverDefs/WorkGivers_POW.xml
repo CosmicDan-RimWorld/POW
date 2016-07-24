@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkGivers>
+
+
+	<WorkGiverDef>
+		<defName>POW_DoBillsGrill</defName>
+		<label>cook meals at grill</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Cooking</workType>
+		<priorityInType>96</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_Grill</li>
+		</fixedBillGiverDefs>
+		<verb>grill at</verb>
+		<gerund>grilling at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>POW_DoBillsSmoker</defName>
+		<label>cook meals at smoker</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Cooking</workType>
+		<priorityInType>125</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_Smoker</li>
+		</fixedBillGiverDefs>
+		<verb>smoke at</verb>
+		<gerund>smoking at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>POW_DoBillsForge</defName>
+		<label>forge raw materials at forge</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>86</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_Forge</li>
+		</fixedBillGiverDefs>
+		<verb>forge at</verb>
+		<gerund>forging at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>POW_DoBillsCrucible</defName>
+		<label>forge raw materials at crucible</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>96</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_Crucible</li>
+		</fixedBillGiverDefs>
+		<verb>forge at</verb>
+		<gerund>forging at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>	
+
+
+</WorkGivers>

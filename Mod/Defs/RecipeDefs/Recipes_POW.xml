@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+	<RecipeDef ParentName="SmokedBase">
+		<defName>POW_SmokePreserveMeatLarge</defName>
+		<label>smoke meat (6)</label>
+		<description>Preserve a large amount of meat by slowly smoking it. Very efficient.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealSmokedMeat>6</POW_MealSmokedMeat>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SmokedBase">
+		<defName>POW_SmokePreserveMeatSmall</defName>
+		<label>smoke meat (3)</label>
+		<description>Preserve meat by slowly smoking it. Not very efficient.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>1.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealSmokedMeat>3</POW_MealSmokedMeat>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="SmokedBase">
+		<defName>POW_SmokePreserveMeatSingle</defName>
+		<label>smoke meat (1)</label>
+		<description>Preserve enough meat for a single meal by slowly smoking it. Very inefficient.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealSmokedMeat>1</POW_MealSmokedMeat>
+		</products>
+	</RecipeDef>
+
+
+
+	<RecipeDef Name="GrilledMealBase" Abstract="True">
+		<jobString>Grilling.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredientValueGetterClass>IngredientValueGetter_Nutrition</ingredientValueGetterClass>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>	
+
+
+	<RecipeDef Name="POW_GrillMealMeat" ParentName="GrilledMealBase">
+		<defName>POW_GrillMealMeat</defName>
+		<label>grill meat (1)</label>
+		<description>Prepares a grilled meal consisting of meat. Takes a while, but adds a good flavor.</description>
+		<workAmount>1500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+						<li>AnimalProductRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealGrilledMeat>1</POW_MealGrilledMeat>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+			<exceptedThingDefs>
+				<li>Human_Meat</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="POW_GrillMealMeat">
+		<defName>POW_GrillMealMeatDouble</defName>
+		<label>grill meat (2)</label>
+		<description>Prepares two grilled meals consisting of meat. Takes a while, but adds a good flavor.</description>
+		<workAmount>2250</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+						<li>AnimalProductRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealGrilledMeat>2</POW_MealGrilledMeat>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef Name="POW_GrillMealVeg" ParentName="GrilledMealBase">
+		<defName>POW_GrillMealVeg</defName>
+		<label>grill vegetarian (1)</label>
+		<description>Prepares a grilled meal consisting of vegetables. Takes a while, but adds a good flavor.</description>
+		<workAmount>1500</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealGrilledVeg>1</POW_MealGrilledVeg>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<disallowedSpecialFilters>
+				<li>AllowPlantFood</li>
+			</disallowedSpecialFilters>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<exceptedCategories>
+				<li>EggsUnfertilized</li>
+				<li>EggsFertilized</li>
+			</exceptedCategories>
+			<exceptedThingDefs>
+				<li>Hay</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+	</RecipeDef>
+	<RecipeDef ParentName="POW_GrillMealVeg">
+		<defName>POW_GrillMealVegDouble</defName>
+		<label>grill vegetarian (2)</label>
+		<description>Prepares two grilled meals consisting of vegetables. Takes a while, but adds a good flavor.</description>
+		<workAmount>2250</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>0.5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealGrilledVeg>2</POW_MealGrilledVeg>
+		</products>
+	</RecipeDef>
+
+	<RecipeDef ParentName="GrilledMealBase">
+		<defName>POW_GrillMealFine</defName>
+		<label>grill fine meal</label>
+		<description>Prepares a fine grilled meal. Takes a while, but adds a good flavor.</description>
+		<workAmount>1750</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+						<li>AnimalProductRaw</li>
+					</categories>
+				</filter>
+				<count>0.25</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>0.25</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealGrilledFine>1</POW_MealGrilledFine>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+			<disallowedSpecialFilters>
+				<li>AllowPlantFood</li>
+			</disallowedSpecialFilters>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+			<exceptedCategories>
+				<li>EggsUnfertilized</li>
+				<li>EggsFertilized</li>
+			</exceptedCategories>
+			<exceptedThingDefs>
+				<li>Human_Meat</li>
+				<li>Hay</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+		<skillRequirements>
+			<li>
+				<skill>Cooking</skill>
+				<minLevel>5</minLevel>
+			</li>
+		</skillRequirements>
+	</RecipeDef>
+
+
+	<RecipeDef>
+		<defName>POW_CharCharcoal</defName>
+		<label>char charcoal</label>
+		<description>Char five logs to be used as fuel.</description>
+		<jobString>Charring.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_CookMeal</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_Charcoal>15</POW_Charcoal>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+		<recipeUsers>
+			<li>CP_Furnace</li>
+		</recipeUsers>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+
+
+	<RecipeDef>
+		<defName>POW_PrepSalad</defName>
+		<label>prepare salad</label>
+		<description>Prepare a salad using turnip greens and vegetables.</description>
+		<jobString>Chopping.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_Turnip_Green</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealTurnipSalad>1</POW_MealTurnipSalad>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<disallowedSpecialFilters>
+				<li>AllowPlantFood</li>
+			</disallowedSpecialFilters>
+			<thingDefs>
+				<li>POW_Turnip_Green</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<thingDefs>
+				<li>POW_Turnip_Green</li>
+			</thingDefs>
+			<exceptedCategories>
+				<li>EggsUnfertilized</li>
+				<li>EggsFertilized</li>
+			</exceptedCategories>
+			<exceptedThingDefs>
+				<li>Hay</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
+		<recipeUsers>
+			<li>CP_TableSimpleCrafting</li>
+			<li>FueledStove</li>
+			<li>ElectricStove</li>
+		</recipeUsers>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+
+
+
+	<RecipeDef>
+		<defName>POW_CremateCorpseWood</defName>
+		<label>cremate corpse</label>
+		<description>Cremate a corpse to completely destroy it.</description>
+		<jobString>Cremating.</jobString>
+		<workAmount>1500</workAmount>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Corpses</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Corpses</li>
+			</categories>
+			<exceptedCategories>
+				<li>CorpsesMechanoid</li>
+			</exceptedCategories>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>Human_Corpse</li>
+			</thingDefs>
+			<specialFiltersToAllow>
+				<li>AllowCorpsesColonist</li>
+				<li>AllowCorpsesStranger</li>
+			</specialFiltersToAllow>
+			<specialFiltersToDisallow>
+				<li>AllowNonSmeltableWeapons</li>
+			</specialFiltersToDisallow>
+		</defaultIngredientFilter>
+		<recipeUsers>
+			<li>CP_Furnace</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>POW_BurnApparelWood</defName>
+		<label>burn apparel</label>
+		<description>Burn apparel to completely destroy it.</description>
+		<jobString>Burning apparel.</jobString>
+		<workAmount>800</workAmount>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Apparel</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Apparel</li>
+			</categories>
+			<specialFiltersToDisallow>
+				<li>AllowNonSmeltableWeapons</li>
+			</specialFiltersToDisallow>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>CP_Furnace</li>
+		</recipeUsers>
+	</RecipeDef>
+
+
+	<RecipeDef>
+		<defName>POW_MakeGlass</defName>
+		<label>make glass</label>
+		<description>Use intense heat to forge sand into stable glass sheets. Makes 4 sheets.</description>
+		<jobString>Making glass.</jobString>
+		<workAmount>1700</workAmount>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CP_Sand</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<CP_Glass>4</CP_Glass>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>CP_Sand</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>POW_Crucible</li>
+		</recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>POW_FuseQuartz</defName>
+		<label>fuse quartz</label>
+		<description>Use intense heat to forge quartz into stable glass sheets. Makes 4 sheets.</description>
+		<jobString>Fusing quartz.</jobString>
+		<workAmount>2600</workAmount>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CP_Quartz</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<products>
+			<CP_FusedQuartz>4</CP_FusedQuartz>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>CP_Quartz</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>POW_Crucible</li>
+		</recipeUsers>
+	</RecipeDef>
+
+
+
+</RecipeDefs>

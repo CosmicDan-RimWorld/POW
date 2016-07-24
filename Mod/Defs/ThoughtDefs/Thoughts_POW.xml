@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThoughtDefs>
+
+
+	<ThoughtDef>
+		<defName>POW_AteSmokedMeal</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>ate smoked meal</label>
+				<description>I ate a flavorful smoked meal.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>POW_AteGrilledWood</defName>
+		<durationDays>2</durationDays>
+		<stackLimit>6</stackLimit>
+		<stackedEffectMultiplier>2</stackedEffectMultiplier>
+		<stages>
+			<li>
+				<label>ate grilled wood</label>
+				<description>I had to eat wood. It's better than I expected, but I want some real food.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>POW_AteGrilledMeal</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>ate grilled meal</label>
+				<description>I ate a smoky grilled meal.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>POW_AteGrilledMealFine</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>ate grilled meal</label>
+				<description>I ate a wonderful grilled meal. Yum!</description>
+				<baseMoodEffect>4</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>POW_AteRawTurnip</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>ate raw turnip</label>
+				<description>I had to eat raw turnips. They weren't too bad, but I'd prefer them cooked.</description>
+				<baseMoodEffect>-2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+
+</ThoughtDefs>

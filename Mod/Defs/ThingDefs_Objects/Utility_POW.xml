@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_SolarChimney</defName>
+		<label>solar cooling tower</label>
+		<description>A tower which uses sunlight and evaporating rainwater to cool incoming air down to a comfortable level.</description>
+		<thingClass>Powerless.Building_SolarChimney</thingClass>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/SolarChimney/SolarChimney</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,5)</drawSize>
+		</graphicData>
+		<uiIconPath>Cupro/Object/Utility/SolarChimney/SolarChimney_MenuIcon</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>PawnUnused</altitudeLayer>
+		<passability>Impassable</passability>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<statBases>
+			<Flammability>0</Flammability>
+			<WorkToMake>1200</WorkToMake>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>250</costStuffCount>
+		<costList>
+			<Steel>40</Steel>
+			<CP_Copper>25</CP_Copper>
+			<Component>1</Component>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li>
+				<compClass>CorePanda.CompRainTank</compClass>
+			</li>
+			<li>
+				<compClass>CorePanda.CompSunlight</compClass>
+			</li>
+			<li Class="CorePanda.CompProperties_ColdPusher">
+				<coldPerSecond>-21</coldPerSecond>
+				<coldPushMinTemperature>24</coldPushMinTemperature>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<placeWorkers>
+			<li>Powerless.PlaceWorker_SolarChimney</li>
+			<li>CorePanda.PlaceWorker_NotUnderThickRoof</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>POW_SolarChimney</li>
+		</researchPrerequisites>
+		<designationCategory>Temperature</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_ColdstoneBattery</defName>
+		<label>coldstone battery</label>
+		<description>A tank built to cool a medium-sized room to below freezing. Requires coldstone as fuel. Able to support a roof.</description>
+		<thingClass>Powerless.Building_ColdstoneBattery</thingClass>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/ColdstoneBattery</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,2.5)</drawSize>
+		</graphicData>
+		<size>(1,1)</size>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>80</pathCost>
+		<holdsRoof>true</holdsRoof>
+		<fillPercent>0.8</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>false</blockLight>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<statBases>
+			<Flammability>0</Flammability>
+			<WorkToMake>2200</WorkToMake>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<costList>
+			<Steel>50</Steel>
+			<CP_Copper>75</CP_Copper>
+			<Uranium>30</Uranium>
+			<Component>6</Component>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<tickerType>Normal</tickerType>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.166</fuelConsumptionRate>
+				<fuelCapacity>10.0</fuelCapacity>
+				<autoRefuelPercent>0.1</autoRefuelPercent>
+				<fuelFilter>
+					<thingDefs>
+						<li>POW_Coldstone</li>
+					</thingDefs>
+				</fuelFilter>
+				<destroyOnNoFuel>false</destroyOnNoFuel>
+			</li>
+			<li Class="CorePanda.CompProperties_ColdPusher">
+				<coldPerSecond>-30</coldPerSecond>
+				<coldPushMinTemperature>-4</coldPushMinTemperature>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<placeWorkers>
+			<li>Powerless.PlaceWorker_ColdstoneBattery</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>POW_EnthalpicCooling</li>
+		</researchPrerequisites>
+		<designationCategory>Temperature</designationCategory>
+	</ThingDef>
+
+
+	<ThingDef Name="PitBase" ParentName="BuildingBase" Abstract="True">
+		<Description>A mound of burning wood covered with dirt to block oxygen.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/DirtMound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<color>(133,97,67)</color>
+		</graphicData>
+		<blockLight>false</blockLight>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<statBases>
+			<WorkToMake>250</WorkToMake>
+		</statBases>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Unplaceable</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<tickerType>Rare</tickerType>
+		<building>
+			<soundAmbient>FireBurning</soundAmbient>
+			<isEdifice>false</isEdifice>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="PitBase">
+		<defName>POW_CharPit</defName>
+		<label>mound of charcoal</label>
+		<thingClass>Powerless.Building_CharPit</thingClass>
+	</ThingDef>
+
+	<ThingDef ParentName="PitBase">
+		<defName>POW_YakiPit</defName>
+		<label>mound of yakisugi</label>
+		<thingClass>Powerless.Building_YakiPit</thingClass>
+	</ThingDef>
+
+
+	<!-- ======================== Facilities ======================= -->
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_Bellows</defName>
+		<thingClass>Building</thingClass>
+		<label>bellows</label>
+		<description>Increases forging speed. Needs to be placed adjacent to a forge or a crucible forge. One forge can be linked to only one bellows.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/Bellows/Bellows</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>60</pathCost>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToMake>800</WorkToMake>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(1,1)</size>
+		<costList>
+			<WoodLog>20</WoodLog>
+		</costList>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>5</costStuffCount>
+		<designationCategory>Misc</designationCategory>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<WorkTableWorkSpeedFactor>0.2</WorkTableWorkSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+				<mustBePlacedAdjacent>true</mustBePlacedAdjacent>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+</ThingDefs>
