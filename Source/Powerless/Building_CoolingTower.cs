@@ -8,7 +8,7 @@ using Verse;
 
 namespace Powerless {
   [StaticConstructorOnStartup]
-  public class Building_SolarChimney : Building {
+  public class Building_CoolingTower : Building {
 
     // Comps and weather
     private CompSunlight sunlightComp;
@@ -21,9 +21,9 @@ namespace Powerless {
     private string windSpeed;           // Used for inspect data, how windy it is outside
     
     // Graphic data
-    private static readonly Vector2 BarSize = new Vector2(0.5f, 0.14f);
-    private static readonly Material BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
-    private static readonly Material BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
+    private static readonly Vector2  S_BarSize = new Vector2(0.5f, 0.14f);
+    private static readonly Material S_BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
+    private static readonly Material S_BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
     private Texture2D tex {
       get {
         if (ventOpen) {
@@ -36,12 +36,16 @@ namespace Powerless {
     }
 
     // Water variables
-    private const float MaxWaterConst = 500f;
-    private const float WaterUsageConst = 0.002f;
+    private const float C_MaxWater = 500f;
+    private const float C_WaterUsage = 0.002f;
     private float waterUsage {
       get {
-        return WaterUsageConst * sunlightComp.SimpleFactoredSunlight;
+        return C_WaterUsage * sunlightComp.SimpleFactoredSunlight;
       }
+    }
+
+    public bool CanAcceptBuckets {
+      get { return (raintankComp.WaterLevel + 12f) <= C_MaxWater; }
     }
 
 
@@ -63,7 +67,7 @@ namespace Powerless {
 
       sunlightComp.GetSunlight();
       roomLoc = base.Position + IntVec3.South.RotatedBy(base.Rotation);
-      raintankComp.WaterLevelMax = MaxWaterConst;
+      raintankComp.WaterLevelMax = C_MaxWater;
     }
 
 
@@ -87,15 +91,20 @@ namespace Powerless {
     }
 
 
+    public void Notify_FilledWithBucket() {
+      raintankComp.AddWaterDirect(12f);
+    }
+
+
     // Handle the water meter graphic
     public override void Draw() {
       base.Draw();
       GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
       r.center = this.DrawPos + Vector3.up + (Vector3.forward * 0.5f);
-      r.size = BarSize;
+      r.size = S_BarSize;
       r.fillPercent = raintankComp.WaterLevel / raintankComp.WaterLevelMax;
-      r.filledMat = BarFilledMat;
-      r.unfilledMat = BarUnfilledMat;
+      r.filledMat = S_BarFilledMat;
+      r.unfilledMat = S_BarUnfilledMat;
       r.margin = 0.15f;
       r.rotation = Rot4.East;
       GenDraw.DrawFillableBar(r);
