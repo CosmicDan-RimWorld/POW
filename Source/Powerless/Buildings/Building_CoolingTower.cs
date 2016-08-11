@@ -18,13 +18,14 @@ namespace Powerless {
 
     private IntVec3 roomLoc;            // Location of the tile in front of the tower
     private bool ventOpen = true;       // Is the vent open?
+    private bool canFill = true;        // Does the player allow this tower to be filled with buckets?
     private string windSpeed;           // Used for inspect data, how windy it is outside
     
     // Graphic data
     private static readonly Vector2  S_BarSize = new Vector2(0.5f, 0.14f);
     private static readonly Material S_BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
     private static readonly Material S_BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
-    private Texture2D tex {
+    private Texture2D ventTex {
       get {
         if (ventOpen) {
           return ContentFinder<Texture2D>.Get("Cupro/UI/Designators/VentOpen", false);
@@ -34,26 +35,28 @@ namespace Powerless {
         }
       }
     }
+    private Texture2D fillTex {
+      get { return ContentFinder<Texture2D>.Get("Cupro/Item/Material/WaterBucket", false); }
+    }
 
     // Water variables
     private const float C_MaxWater = 2500f;
     private const float C_WaterUsage = 0.004f;
     private readonly float R_BucketAmount = 120f;
     private float waterUsage {
-      get {
-        return C_WaterUsage * sunlightComp.SimpleFactoredSunlight;
-      }
+      get { return C_WaterUsage * sunlightComp.SimpleFactoredSunlight; }
     }
 
     public bool CanAcceptBuckets {
-      get { return (raintankComp.WaterLevel + R_BucketAmount) <= C_MaxWater; }
+      get { return canFill && ((raintankComp.WaterLevel + R_BucketAmount) <= C_MaxWater); }
     }
 
 
     // Handle loading data
     public override void ExposeData() {
       base.ExposeData();
-      Scribe_Values.LookValue(ref ventOpen, "ventOpen", true);
+      Scribe_Values.LookValue(ref ventOpen, "POW_CoolingTower_ventOpen", true);
+      Scribe_Values.LookValue(ref canFill, "POW_CoolingTower_canFill", true);
     }
 
 
@@ -67,7 +70,7 @@ namespace Powerless {
       breakdownableComp = GetComp<CompBreakdownable>();
 
       sunlightComp.GetSunlight();
-      roomLoc = base.Position + IntVec3.South.RotatedBy(base.Rotation);
+      roomLoc = Position + IntVec3.South.RotatedBy(Rotation);
       raintankComp.WaterLevelMax = C_MaxWater;
     }
 
@@ -93,7 +96,7 @@ namespace Powerless {
 
 
     public void Notify_FilledWithBucket() {
-      raintankComp.AddWaterDirect(12f);
+      raintankComp.AddWaterDirect(R_BucketAmount);
     }
 
 
@@ -101,7 +104,7 @@ namespace Powerless {
     public override void Draw() {
       base.Draw();
       GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
-      r.center = this.DrawPos + Vector3.up + (Vector3.forward * 0.5f);
+      r.center = DrawPos + Vector3.up + (Vector3.forward * 0.5f);
       r.size = S_BarSize;
       r.fillPercent = raintankComp.WaterLevel / raintankComp.WaterLevelMax;
       r.filledMat = S_BarFilledMat;
@@ -112,11 +115,11 @@ namespace Powerless {
     }
 
 
-    // Add a button for opening and closing the vent
+    // Add buttons for toggling vent or filling
     public override IEnumerable<Gizmo> GetGizmos() {
       Command_Toggle ventStatus = new Command_Toggle() {
 
-        icon = tex,
+        icon = ventTex,
         defaultDesc = "CP_ToggleVent".Translate(),
         hotKey = KeyBindingDefOf.CommandTogglePower,
         activateSound = SoundDef.Named("Click"),
@@ -124,6 +127,17 @@ namespace Powerless {
         toggleAction = () => { ventOpen = !ventOpen; },
       };
       yield return ventStatus;
+
+      Command_Toggle togFilling = new Command_Toggle() {
+
+        icon = fillTex,
+        defaultDesc = "POW_ToggleFill".Translate(),
+        activateSound = SoundDef.Named("Click"),
+        isActive = () => canFill,
+        toggleAction = () => { canFill = !canFill; },
+      };
+      yield return togFilling;
+
       if (base.GetGizmos() != null) {
         foreach (Command c in base.GetGizmos()) {
           yield return c;
