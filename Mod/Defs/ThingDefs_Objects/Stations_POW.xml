@@ -299,11 +299,11 @@
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>20.0</fuelConsumptionRate>
-				<fuelCapacity>20.0</fuelCapacity>
+				<fuelConsumptionRate>60.0</fuelConsumptionRate>
+				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
-						<li>WoodLog</li>
+						<li>POW_Charcoal</li>
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -313,6 +313,7 @@
 			<li>ITab_Bills</li>
 		</inspectorTabs>
 		<building>
+			<isMealSource>true</isMealSource>
 			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
 		</building>
 		<placeWorkers>

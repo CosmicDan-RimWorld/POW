@@ -36,8 +36,9 @@ namespace Powerless {
     }
 
     // Water variables
-    private const float C_MaxWater = 500f;
-    private const float C_WaterUsage = 0.002f;
+    private const float C_MaxWater = 2500f;
+    private const float C_WaterUsage = 0.004f;
+    private readonly float R_BucketAmount = 120f;
     private float waterUsage {
       get {
         return C_WaterUsage * sunlightComp.SimpleFactoredSunlight;
@@ -45,7 +46,7 @@ namespace Powerless {
     }
 
     public bool CanAcceptBuckets {
-      get { return (raintankComp.WaterLevel + 12f) <= C_MaxWater; }
+      get { return (raintankComp.WaterLevel + R_BucketAmount) <= C_MaxWater; }
     }
 
 
