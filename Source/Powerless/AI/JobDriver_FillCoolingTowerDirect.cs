@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using RimWorld;
 using Verse.AI;
-using Verse;
-using UnityEngine;
 
 namespace Powerless {
 
@@ -25,15 +22,14 @@ namespace Powerless {
 
       //Reserve tower
       yield return Toils_Reserve.Reserve(TowerIndex);
-      yield return Toils_Reserve.ReserveQueue(TowerIndex);
 
       Toil getToMaterialTarget = Toils_Goto.GotoThing(BucketIndex, PathEndMode.ClosestTouch)
         .FailOnSomeonePhysicallyInteracting(BucketIndex);
       yield return getToMaterialTarget;
 
-      yield return Toils_Haul.StartCarryThing(BucketIndex);
-
       yield return Toils_Haul.JumpIfAlsoCollectingNextTargetInQueue(getToMaterialTarget, BucketIndex);
+
+      yield return Toils_Haul.StartCarryThing(BucketIndex);
 
       Toil carryToCell = Toils_Haul.CarryHauledThingToCell(TowerIndex);
       yield return carryToCell;
@@ -44,8 +40,8 @@ namespace Powerless {
       // Use water
       Toil fill = new Toil();
       fill.initAction = () => {
+        Tower.Notify_FilledWithBucket(fill.actor.carrier.CarriedThing.stackCount);
         fill.actor.carrier.CarriedThing.Destroy();
-        Tower.Notify_FilledWithBucket();
         pawn.jobs.EndCurrentJob(JobCondition.Succeeded);
       };
       fill.defaultCompleteMode = ToilCompleteMode.Instant;

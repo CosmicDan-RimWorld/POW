@@ -3,6 +3,20 @@
 
 
 	<WorkGiverDef>
+		<defName>POW_FillCoolingTower</defName>
+		<label>fill cooling tower with water</label>
+		<giverClass>Powerless.WorkGiver_FillCoolingTowerDirect</giverClass>
+		<workType>Hauling</workType>
+		<priorityInType>99</priorityInType>
+		<verb>fill</verb>
+		<gerund>filling at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
+	<WorkGiverDef>
 		<defName>POW_DoBillsGrill</defName>
 		<label>cook meals at grill</label>
 		<giverClass>WorkGiver_DoBill</giverClass>
@@ -40,7 +54,7 @@
 		<defName>POW_DoBillsForge</defName>
 		<label>forge raw materials at forge</label>
 		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Crafting</workType>
+		<workType>Smithing</workType>
 		<priorityInType>86</priorityInType>
 		<fixedBillGiverDefs>
 			<li>POW_Forge</li>
@@ -57,7 +71,7 @@
 		<defName>POW_DoBillsCrucible</defName>
 		<label>forge raw materials at crucible</label>
 		<giverClass>WorkGiver_DoBill</giverClass>
-		<workType>Crafting</workType>
+		<workType>Smithing</workType>
 		<priorityInType>96</priorityInType>
 		<fixedBillGiverDefs>
 			<li>POW_Crucible</li>
