@@ -31,11 +31,11 @@
 		<stuffCategories>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>250</costStuffCount>
+		<costStuffCount>200</costStuffCount>
 		<costList>
 			<Steel>40</Steel>
-			<CP_Copper>25</CP_Copper>
-			<Component>1</Component>
+			<Cloth>20</Cloth>
+			<CP_Rubber>5</CP_Rubber>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<tickerType>Normal</tickerType>
