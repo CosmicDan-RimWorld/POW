@@ -2,10 +2,10 @@
 <ThingDefs>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>POW_SolarChimney</defName>
+		<defName>POW_CoolingTower</defName>
 		<label>solar cooling tower</label>
 		<description>A tower which uses sunlight and evaporating rainwater to cool incoming air down to a comfortable level.</description>
-		<thingClass>Powerless.Building_SolarChimney</thingClass>
+		<thingClass>Powerless.Building_CoolingTower</thingClass>
 		<graphicData>
 			<texPath>Cupro/Object/Utility/SolarChimney/SolarChimney</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -31,11 +31,11 @@
 		<stuffCategories>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>250</costStuffCount>
+		<costStuffCount>200</costStuffCount>
 		<costList>
 			<Steel>40</Steel>
-			<CP_Copper>25</CP_Copper>
-			<Component>1</Component>
+			<Cloth>20</Cloth>
+			<CP_Rubber>5</CP_Rubber>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<tickerType>Normal</tickerType>
@@ -56,12 +56,12 @@
 			<canPlaceOverWall>true</canPlaceOverWall>
 		</building>
 		<placeWorkers>
-			<li>Powerless.PlaceWorker_SolarChimney</li>
+			<li>Powerless.PlaceWorker_CoolingTower</li>
 			<li>CorePanda.PlaceWorker_NotUnderThickRoof</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
-			<li>POW_SolarChimney</li>
+			<li>POW_CoolingTower</li>
 		</researchPrerequisites>
 		<designationCategory>Temperature</designationCategory>
 	</ThingDef>

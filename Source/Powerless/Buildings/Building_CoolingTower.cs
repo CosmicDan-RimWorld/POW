@@ -8,7 +8,7 @@ using Verse;
 
 namespace Powerless {
   [StaticConstructorOnStartup]
-  public class Building_SolarChimney : Building {
+  public class Building_CoolingTower : Building {
 
     // Comps and weather
     private CompSunlight sunlightComp;
@@ -18,13 +18,16 @@ namespace Powerless {
 
     private IntVec3 roomLoc;            // Location of the tile in front of the tower
     private bool ventOpen = true;       // Is the vent open?
+    private bool canFill = false;       // Does the player allow this tower to be filled with buckets?
+    private bool transparent = false;   // Is the tower currently transparent?
     private string windSpeed;           // Used for inspect data, how windy it is outside
     
     // Graphic data
-    private static readonly Vector2 BarSize = new Vector2(0.5f, 0.14f);
-    private static readonly Material BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
-    private static readonly Material BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
-    private Texture2D tex {
+    private readonly Color R_TransColor = new Color(1f, 1f, 1f, 0.75f);
+    private static readonly Vector2  S_BarSize = new Vector2(0.5f, 0.14f);
+    private static readonly Material S_BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
+    private static readonly Material S_BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
+    private Texture2D ventTex {
       get {
         if (ventOpen) {
           return ContentFinder<Texture2D>.Get("Cupro/UI/Designators/VentOpen", false);
@@ -34,21 +37,43 @@ namespace Powerless {
         }
       }
     }
+    private Texture2D fillTex {
+      get { return ContentFinder<Texture2D>.Get("Cupro/Item/Material/WaterBucket", false); }
+    }
 
     // Water variables
-    private const float MaxWaterConst = 500f;
-    private const float WaterUsageConst = 0.002f;
+    private const float C_MaxWater = 25000f;
+    private const float C_WaterUsage = 0.04f;
+    private readonly float R_BucketAmount = 1200f;
     private float waterUsage {
+      get { return C_WaterUsage * sunlightComp.SimpleFactoredSunlight; }
+    }
+
+    public bool CanAcceptBuckets {
+      get { return canFill && ((raintankComp.WaterLevel + R_BucketAmount) <= C_MaxWater); }
+    }
+
+    public int EmptySpace {
+      get { return Mathf.FloorToInt((C_MaxWater - raintankComp.WaterLevel) / R_BucketAmount); }
+    }
+
+    // Set colors for transparent mode
+    public override Color DrawColor {
       get {
-        return WaterUsageConst * sunlightComp.SimpleFactoredSunlight;
+        if (transparent) {
+          return base.DrawColor * R_TransColor;
+        }
+        return base.DrawColor;
       }
+      set { base.DrawColor = value; }
     }
 
 
     // Handle loading data
     public override void ExposeData() {
       base.ExposeData();
-      Scribe_Values.LookValue(ref ventOpen, "ventOpen", true);
+      Scribe_Values.LookValue(ref ventOpen, "POW_CoolingTower_ventOpen", true);
+      Scribe_Values.LookValue(ref canFill, "POW_CoolingTower_canFill", true);
     }
 
 
@@ -62,8 +87,8 @@ namespace Powerless {
       breakdownableComp = GetComp<CompBreakdownable>();
 
       sunlightComp.GetSunlight();
-      roomLoc = base.Position + IntVec3.South.RotatedBy(base.Rotation);
-      raintankComp.WaterLevelMax = MaxWaterConst;
+      roomLoc = Position + IntVec3.South.RotatedBy(Rotation);
+      raintankComp.WaterLevelMax = C_MaxWater;
     }
 
 
@@ -84,6 +109,18 @@ namespace Powerless {
         coldpusherComp.Push(roomLoc, strength);
         raintankComp.UseWater(waterUsage);
       }
+
+      // Reset the transparency
+      if (Find.TickManager.TicksGame % 5000 == 0 && transparent) {
+        transparent = false;
+        Notify_ColorChanged();
+        Find.MapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+      }
+    }
+
+
+    public void Notify_FilledWithBucket(int numBuckets = 1) {
+      raintankComp.AddWaterDirect(R_BucketAmount * numBuckets);
     }
 
 
@@ -91,22 +128,21 @@ namespace Powerless {
     public override void Draw() {
       base.Draw();
       GenDraw.FillableBarRequest r = default(GenDraw.FillableBarRequest);
-      r.center = this.DrawPos + Vector3.up + (Vector3.forward * 0.5f);
-      r.size = BarSize;
+      r.center = DrawPos + Vector3.up + (Vector3.forward * 0.5f);
+      r.size = S_BarSize;
       r.fillPercent = raintankComp.WaterLevel / raintankComp.WaterLevelMax;
-      r.filledMat = BarFilledMat;
-      r.unfilledMat = BarUnfilledMat;
+      r.filledMat = S_BarFilledMat;
+      r.unfilledMat = S_BarUnfilledMat;
       r.margin = 0.15f;
       r.rotation = Rot4.East;
       GenDraw.DrawFillableBar(r);
     }
 
 
-    // Add a button for opening and closing the vent
+    // Add buttons for toggling vent or filling
     public override IEnumerable<Gizmo> GetGizmos() {
       Command_Toggle ventStatus = new Command_Toggle() {
-
-        icon = tex,
+        icon = ventTex,
         defaultDesc = "CP_ToggleVent".Translate(),
         hotKey = KeyBindingDefOf.CommandTogglePower,
         activateSound = SoundDef.Named("Click"),
@@ -114,6 +150,31 @@ namespace Powerless {
         toggleAction = () => { ventOpen = !ventOpen; },
       };
       yield return ventStatus;
+
+      Command_Toggle togFilling = new Command_Toggle() {
+        icon = fillTex,
+        defaultLabel = "POW_ToggleFill".Translate(),
+        defaultDesc = "POW_ToggleFillDesc".Translate(),
+        activateSound = SoundDef.Named("Click"),
+        isActive = () => canFill,
+        toggleAction = () => { canFill = !canFill; },
+      };
+      yield return togFilling;
+
+      Command_Toggle togTrans = new Command_Toggle() {
+        icon = ContentFinder<Texture2D>.Get("UI/Overlays/TargetHighlight_Square", false),
+        defaultLabel = "POW_ToggleTrans".Translate(),
+        defaultDesc = "POW_ToggleTransDesc".Translate(),
+        activateSound = SoundDef.Named("Click"),
+        isActive = () => transparent,
+        toggleAction = () => {
+          transparent = !transparent;
+          Notify_ColorChanged();
+          Find.MapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+        },
+      };
+      yield return togTrans;
+
       if (base.GetGizmos() != null) {
         foreach (Command c in base.GetGizmos()) {
           yield return c;
@@ -129,7 +190,7 @@ namespace Powerless {
       stringBuilder.Append(base.GetInspectString());
 
       // Display the amount of water inside the tank
-      stringBuilder.AppendLine("POW_WaterLevel".Translate() + ": " + raintankComp.WaterLevel.ToString("###0") + " / " + raintankComp.WaterLevelMax.ToString("###0"));
+      stringBuilder.AppendLine("POW_WaterLevel".Translate() + ": " + raintankComp.WaterLevel.ToString("N0") + " / " + raintankComp.WaterLevelMax.ToString("N0"));
 
       // Determine how strong the wind is
       if (WindManager.WindSpeed < 0.4f) {

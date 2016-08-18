@@ -4,10 +4,10 @@
 	<!--=============================== Tier 1: pre-electricity ===================================-->
 
 	<ResearchProjectDef>
-		<defName>POW_SolarChimney</defName>
-		<label>powerless cooling</label>
-		<description>Build a passive cooling structure using the environment to your advantage.</description>
-		<baseCost>1000</baseCost>
+		<defName>POW_CoolingTower</defName>
+		<label>powerless cooling towers</label>
+		<description>Build a passive cooling tower using the environment to your advantage.</description>
+		<baseCost>500</baseCost>
 		<techLevel>Medieval</techLevel>
 	</ResearchProjectDef>
 	
@@ -25,7 +25,7 @@
 	<ResearchProjectDef>
 		<defName>POW_Crucible</defName>
 		<label>forge: crucible upgrade</label>
-		<description>Allows colonists to upgrade the forge into a forge with an attached crucible for melting metals and creating glass.</description>
+		<description>Allows colonists to upgrade the forge by adding an attached crucible for melting metals and creating glass.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Medieval</techLevel>
 		<prerequisites>

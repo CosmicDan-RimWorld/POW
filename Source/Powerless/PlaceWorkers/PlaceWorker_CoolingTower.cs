@@ -6,7 +6,7 @@ using Verse;
 
 namespace Powerless {
 
-  public class PlaceWorker_SolarChimney : PlaceWorker {
+  public class PlaceWorker_CoolingTower : PlaceWorker {
     public override void DrawGhost(ThingDef def, IntVec3 center, Rot4 rot) {
       IntVec3 intVec = center + IntVec3.South.RotatedBy(rot);
       GenDraw.DrawFieldEdges(new List<IntVec3>

@@ -18,6 +18,11 @@
   <POW_ClearSkies>Clear skies</POW_ClearSkies>
   <POW_Overcast>Overcast</POW_Overcast>
   <POW_SevereOvercast>Severe overcast</POW_SevereOvercast>
+	
+	<POW_ToggleFill>Toggle filling</POW_ToggleFill>
+	<POW_ToggleFillDesc>Toggle filling the tower with buckets of water</POW_ToggleFillDesc>
+	<POW_ToggleTrans>Toggle transparency</POW_ToggleTrans>
+	<POW_ToggleTransDesc>Toggle transparency to see through the tower</POW_ToggleTransDesc>
   
   <!-- Charcoal Pit -->
   
