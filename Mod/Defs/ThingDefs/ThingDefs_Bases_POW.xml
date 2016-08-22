@@ -233,8 +233,8 @@
       <preferability>RawBad</preferability>
       <tastesRaw>true</tastesRaw>
       <nutrition>0.05</nutrition>
-      <eatEffect>EatVegetarian</eatEffect>
-      <soundEat>RawVegetable_Eat</soundEat>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
     </ingestible>
     <thingCategories>
       <li>PlantFoodRaw</li>
@@ -272,8 +272,8 @@
 			<nutrition>0.80</nutrition>
 			<joy>0.05</joy>
 			<specialThoughtDirect>POW_AteGrilledMeal</specialThoughtDirect>
-			<eatEffect>EatVegetarian</eatEffect>
-			<soundEat>Meal_Eat</soundEat>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
 	</ThingDef>
 	

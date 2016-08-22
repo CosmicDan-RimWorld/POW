@@ -13,12 +13,12 @@ namespace Powerless {
     Building_YakiPit yakiPit;
 
     // Using getters to allow for translations
-    private string charName {
+    private string CharName {
       get {
         return ThingDef.Named("POW_Charcoal").LabelCap;
       }
     }
-    private string yakiName {
+    private string YakiName {
       get {
         return ThingDef.Named("POW_Yakisugi").LabelCap;
       }
@@ -111,10 +111,10 @@ namespace Powerless {
 
       // Display the burning progress
       if (charPit != null) {
-        stringBuilder.AppendLine(charName + " " + "CP_Progress".Translate().ToLower() + ": (" + (100f - (charPit.BurnTicks / 0.8f)).ToString("#0.00") + "%)");
+        stringBuilder.AppendLine(CharName + " " + "CP_Progress".Translate().ToLower() + ": (" + (100f - (charPit.BurnTicks / 0.8f)).ToString("#0.00") + "%)");
       }
       if (yakiPit != null) {
-        stringBuilder.AppendLine(yakiName + " " + "CP_Progress".Translate().ToLower() + ": (" + (100f - (yakiPit.BurnTicks / 0.3f)).ToString("#0.00") + "%)"); 
+        stringBuilder.AppendLine(YakiName + " " + "CP_Progress".Translate().ToLower() + ": (" + (100f - (yakiPit.BurnTicks / 0.3f)).ToString("#0.00") + "%)"); 
       }
 
       return stringBuilder.ToString();
