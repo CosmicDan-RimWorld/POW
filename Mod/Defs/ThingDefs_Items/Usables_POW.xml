@@ -19,8 +19,8 @@
 			<tastesRaw>false</tastesRaw>
 			<nutrition>0.75</nutrition>
 			<joy>0.02</joy>
-			<eatEffect>EatVegetarian</eatEffect>
-			<soundEat>Meal_Eat</soundEat>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
 	</ThingDef>
 
@@ -41,8 +41,8 @@
 			<nutrition>0.80</nutrition>
 			<joy>0.05</joy>
 			<specialThoughtDirect>POW_AteSmokedMeal</specialThoughtDirect>
-			<eatEffect>EatVegetarian</eatEffect>
-			<soundEat>Meal_Eat</soundEat>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
 		<comps>
 			<li Class="CompProperties_Rottable">

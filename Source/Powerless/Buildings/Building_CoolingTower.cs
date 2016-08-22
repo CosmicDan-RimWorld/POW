@@ -27,7 +27,7 @@ namespace Powerless {
     private static readonly Vector2  S_BarSize = new Vector2(0.5f, 0.14f);
     private static readonly Material S_BarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.325f, 0.65f, 1f));
     private static readonly Material S_BarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.15f, 0.15f, 0.15f));
-    private Texture2D ventTex {
+    private Texture2D VentTex {
       get {
         if (ventOpen) {
           return ContentFinder<Texture2D>.Get("Cupro/UI/Designators/VentOpen", false);
@@ -37,7 +37,7 @@ namespace Powerless {
         }
       }
     }
-    private Texture2D fillTex {
+    private Texture2D FillTex {
       get { return ContentFinder<Texture2D>.Get("Cupro/Item/Material/WaterBucket", false); }
     }
 
@@ -45,7 +45,7 @@ namespace Powerless {
     private const float C_MaxWater = 25000f;
     private const float C_WaterUsage = 0.04f;
     private readonly float R_BucketAmount = 1200f;
-    private float waterUsage {
+    private float WaterUsage {
       get { return C_WaterUsage * sunlightComp.SimpleFactoredSunlight; }
     }
 
@@ -103,11 +103,11 @@ namespace Powerless {
       }
 
       // if the tower isn't broken down, and the room is hotter than it should be, and the vent is open, and there is enough water to evaporate,
-      if ((breakdownableComp != null && !this.IsBrokenDown()) && roomLoc.GetTemperature() > coldpusherComp.Props.ColdPushMinTemperature && ventOpen && raintankComp.WaterLevel >= waterUsage) {
+      if ((breakdownableComp != null && !this.IsBrokenDown()) && roomLoc.GetTemperature() > coldpusherComp.Props.coldPushMinTemperature && ventOpen && raintankComp.WaterLevel >= WaterUsage) {
         // factor the strength of cold air, push it, and use water
-        float strength = coldpusherComp.Props.ColdPerSecond * sunlightComp.SimpleFactoredSunlight * Mathf.Max(0.25f, WindManager.WindSpeed);
+        float strength = coldpusherComp.Props.coldPerSecond * sunlightComp.SimpleFactoredSunlight * Mathf.Max(0.25f, WindManager.WindSpeed);
         coldpusherComp.Push(roomLoc, strength);
-        raintankComp.UseWater(waterUsage);
+        raintankComp.UseWater(WaterUsage);
       }
 
       // Reset the transparency
@@ -142,7 +142,7 @@ namespace Powerless {
     // Add buttons for toggling vent or filling
     public override IEnumerable<Gizmo> GetGizmos() {
       Command_Toggle ventStatus = new Command_Toggle() {
-        icon = ventTex,
+        icon = VentTex,
         defaultDesc = "CP_ToggleVent".Translate(),
         hotKey = KeyBindingDefOf.CommandTogglePower,
         activateSound = SoundDef.Named("Click"),
@@ -152,7 +152,7 @@ namespace Powerless {
       yield return ventStatus;
 
       Command_Toggle togFilling = new Command_Toggle() {
-        icon = fillTex,
+        icon = FillTex,
         defaultLabel = "POW_ToggleFill".Translate(),
         defaultDesc = "POW_ToggleFillDesc".Translate(),
         activateSound = SoundDef.Named("Click"),

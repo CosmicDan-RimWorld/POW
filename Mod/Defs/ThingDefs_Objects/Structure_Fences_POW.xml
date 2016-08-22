@@ -35,7 +35,6 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<tickerType>Never</tickerType>
 		<rotatable>false</rotatable>
-		<selectable>true</selectable>
 		<neverMultiSelect>true</neverMultiSelect>
 		<holdsRoof>false</holdsRoof>
 		<designationCategory>Structure</designationCategory>
@@ -70,7 +69,6 @@
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<selectable>true</selectable>
 		<tickerType>Normal</tickerType>
 		<rotatable>false</rotatable>
 		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>

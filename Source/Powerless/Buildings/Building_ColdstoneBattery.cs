@@ -29,7 +29,7 @@ namespace Powerless {
 
     public override void Tick() {
       // If the battery isn't turned off, and the room is hotter than it should be, and it has fuel, set CompColdPusher to be active this tick
-      if ((flickableComp != null && flickableComp.SwitchIsOn) && Position.GetTemperature() > coldpusherComp.Props.ColdPushMinTemperature && refuelableComp.HasFuel) {
+      if ((flickableComp != null && flickableComp.SwitchIsOn) && Position.GetTemperature() > coldpusherComp.Props.coldPushMinTemperature && refuelableComp.HasFuel) {
         coldpusherComp.SimplePush();
         refuelableComp.CompTick();
         return;
