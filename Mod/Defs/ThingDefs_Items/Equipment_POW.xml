@@ -2,11 +2,11 @@
 <ThingDefs>
 
 	<ThingDef ParentName="HatMakeableBase">
-		<defName>POW_Apparel_Keffiyeh</defName>
-		<label>keffiyeh</label>
+		<defName>POW_Apparel_Shemagh</defName>
+		<label>shemagh</label>
 		<description>A large cloth wrapped around the head which can cover the face when needed. Helps insulate the wearer against both hot and cold weather.</description>
 		<graphicData>
-			<texPath>Cupro/Item/Equipment/Keffiyeh/Keffiyeh_Icon</texPath>
+			<texPath>Cupro/Item/Equipment/Shemagh/Shemagh_Icon</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<costStuffCount>20</costStuffCount>
@@ -26,7 +26,7 @@
 			<bodyPartGroups>
 				<li>FullHead</li>
 			</bodyPartGroups>
-			<worngraphicPath>Cupro/Item/Equipment/Keffiyeh/Keffiyeh</worngraphicPath>
+			<worngraphicPath>Cupro/Item/Equipment/Shemagh/Shemagh</worngraphicPath>
 			<layers>
 				<li>Overhead</li>
 			</layers>

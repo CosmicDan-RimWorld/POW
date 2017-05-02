@@ -2,14 +2,6 @@
 <ResearchProjectDefs>
 	
 	<!--=============================== Tier 1: pre-electricity ===================================-->
-
-	<ResearchProjectDef>
-		<defName>POW_CoolingTower</defName>
-		<label>powerless cooling towers</label>
-		<description>Build a passive cooling tower using the environment to your advantage.</description>
-		<baseCost>500</baseCost>
-		<techLevel>Medieval</techLevel>
-	</ResearchProjectDef>
 	
 	<ResearchProjectDef>
 		<defName>POW_Forge</defName>
@@ -30,19 +22,6 @@
 		<techLevel>Medieval</techLevel>
 		<prerequisites>
 			<li>POW_Forge</li>
-		</prerequisites>
-	</ResearchProjectDef>
-	
-	<!--=============================== Tier 2.5 Microelectronics ===================================-->
-
-	<ResearchProjectDef>
-		<defName>POW_EnthalpicCooling</defName>
-		<label>coldstone battery</label>
-		<description>Build an efficient passive cooling unit fueled by coldstones.</description>
-		<baseCost>2000</baseCost>
-		<techLevel>Industrial</techLevel>
-    <prerequisites>
-			<li>MicroelectronicsBasics</li>
 		</prerequisites>
 	</ResearchProjectDef>
 

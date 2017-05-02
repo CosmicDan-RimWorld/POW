@@ -75,38 +75,6 @@
 		</Comps>
 	</ThingDef>
 
-	<ThingDef ParentName="RockBase">
-		<defName>POW_MineableColdstone</defName>
-		<label>coldstone deposit</label>
-		<graphicData>
-			<texPath>Cupro/Object/Structure/RockGlittering/RockGlittering_Atlas</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-			<colorTwo>(224,228,240)</colorTwo>
-		</graphicData>
-		<statBases>
-			<Beauty>2</Beauty>
-			<MaxHitPoints>1200</MaxHitPoints>
-		</statBases>
-		<description>Rock containing bits of a strangely cold gem.</description>
-		<building>
-			<isResourceRock>true</isResourceRock>
-			<mineableThing>POW_Coldstone</mineableThing>
-			<mineableYield>2</mineableYield>
-			<mineableScatterCommonality>0.15</mineableScatterCommonality>
-			<mineableScatterLumpSizeRange>
-				<min>4</min>
-				<max>6</max>
-			</mineableScatterLumpSizeRange>
-		</building>
-		<comps>
-			<li Class="CorePanda.CompProperties_ColdPusher">
-				<constantPush>true</constantPush>
-				<coldPerSecond>-10</coldPerSecond>
-				<coldPushMinTemperature>16</coldPushMinTemperature>
-			</li>
-		</comps>
-	</ThingDef>
 
 
 </Resources>

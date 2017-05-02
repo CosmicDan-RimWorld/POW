@@ -18,7 +18,6 @@
 			<preferability>RawTasty</preferability>
 			<tastesRaw>false</tastesRaw>
 			<nutrition>0.75</nutrition>
-			<joy>0.02</joy>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
@@ -40,6 +39,7 @@
 			<preferability>MealSimple</preferability>
 			<nutrition>0.80</nutrition>
 			<joy>0.05</joy>
+			<joyKind>Gluttonous</joyKind>
 			<specialThoughtDirect>POW_AteSmokedMeal</specialThoughtDirect>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
@@ -109,7 +109,7 @@
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>RawTasty</preferability>
-      <tastesRaw>false</tastesRaw>
+			<tastesRaw>false</tastesRaw>
 			<nutrition>0.04</nutrition>
 			<specialThoughtDirect>POW_AteRawTurnip</specialThoughtDirect>
 		</ingestible>
@@ -129,7 +129,7 @@
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>RawTasty</preferability>
-      <tastesRaw>false</tastesRaw>
+			<tastesRaw>false</tastesRaw>
 			<nutrition>0.03</nutrition>
 		</ingestible>
 		<thingCategories>

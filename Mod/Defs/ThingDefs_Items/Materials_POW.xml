@@ -21,66 +21,6 @@
 		</thingCategories>
 	</ThingDef>
 
-	<ThingDef ParentName="ResourceVerbBase">
-		<defName>POW_Yakisugi</defName>
-		<label>Yakisugi</label>
-		<description>Wood that has been carefully charred to both preserve it and make it more fire-resistant.</description>
-		<graphicData>
-			<texPath>Cupro/Item/Material/Yakisugi</texPath>
-			<graphicClass>Graphic_StackCount</graphicClass>
-		</graphicData>
-		<equippedAngleOffset>-20</equippedAngleOffset>
-		<soundInteract>Wood_Drop</soundInteract>
-		<soundDrop>Wood_Drop</soundDrop>
-		<statBases>
-			<MarketValue>2</MarketValue>
-			<MaxHitPoints>175</MaxHitPoints>
-			<Flammability>0.3</Flammability>
-			<DeteriorationRate>0.3</DeteriorationRate>
-			<MeleeWeapon_DamageAmount>9</MeleeWeapon_DamageAmount>
-			<MeleeWeapon_Cooldown>2.2</MeleeWeapon_Cooldown>
-			<SharpDamageMultiplier>0.3</SharpDamageMultiplier>
-			<BluntDamageMultiplier>0.8</BluntDamageMultiplier>
-		</statBases>
-		<stuffProps>
-			<stuffAdjective>charred wood</stuffAdjective>
-			<categories>
-				<li>Woody</li>
-			</categories>
-			<color>(30,26,20)</color>
-			<constructEffect>ConstructWood</constructEffect>
-			<appearance>Planks</appearance>
-			<soundImpactStuff>BulletImpactWood</soundImpactStuff>
-			<soundMeleeHitSharp>MeleeHit_Wood</soundMeleeHitSharp>
-			<soundMeleeHitBlunt>MeleeHit_Wood</soundMeleeHitBlunt>
-			<statOffsets>
-				<Beauty>3</Beauty>
-			</statOffsets>
-			<statFactors>
-				<MaxHitPoints>0.6</MaxHitPoints>
-				<Beauty>1.5</Beauty>
-				<Flammability>0.3</Flammability>
-				<WorkToMake>0.8</WorkToMake>
-				<DoorOpenSpeed>1.2</DoorOpenSpeed>
-				<MeleeWeapon_Cooldown>0.9</MeleeWeapon_Cooldown>
-			</statFactors>
-		</stuffProps>
-		<isBodyPartOrImplant>true</isBodyPartOrImplant>
-		<thingCategories>
-			<li>ResourcesRaw</li>
-		</thingCategories>
-		<techHediffsTags>
-			<li>Poor</li>
-		</techHediffsTags>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-			</li>
-		</verbs>
-	</ThingDef>
-
 	<ThingDef ParentName="ResourceBase">
 		<defName>POW_Glowstone</defName>
 		<label>glowstone</label>
@@ -110,38 +50,5 @@
 			<li>Exotic</li>
 		</tradeTags>
 	</ThingDef>
-
-	<ThingDef ParentName="ResourceBase">
-		<defName>POW_Coldstone</defName>
-		<label>coldstone</label>
-		<description>A creamy white stone that seems to radiate coldness. It stays cold for a very long time.</description>
-		<graphicData>
-			<texPath>Cupro/Item/Material/Coldstone</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
-		<useHitPoints>false</useHitPoints>
-		<statBases>
-			<MarketValue>150</MarketValue>
-			<SellPriceFactor>0.25</SellPriceFactor>
-		</statBases>
-		<thingCategories>
-			<li>ResourcesRaw</li>
-		</thingCategories>
-		<comps>
-			<li Class="CorePanda.CompProperties_ColdPusher">
-				<constantPush>true</constantPush>
-				<coldPerSecond>-5</coldPerSecond>
-				<coldPushMinTemperature>20</coldPushMinTemperature>
-			</li>
-		</comps>
-		<tradeability>Sellable</tradeability>
-		<tradeTags>
-			<li>Exotic</li>
-		</tradeTags>
-	</ThingDef>
-
-
 
 </ThingDefs>

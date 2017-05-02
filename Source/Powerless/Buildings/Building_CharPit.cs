@@ -6,7 +6,7 @@ namespace Powerless {
 
     private int burnTicks = 80;      // Burning Ticks left. Starts at 80 (8 hours, TickRare)
     public int BurnTicks { get { return burnTicks; } }
-    Building_CharcoalPit charcoalPit;
+    Thing charcoalPit;
 
 
     public override void ExposeData() {
@@ -18,16 +18,21 @@ namespace Powerless {
     public override void TickRare() {
       base.TickRare();
 
-      charcoalPit = Position.GetThingList().Find(pit => pit is Building_CharcoalPit) as Building_CharcoalPit;
+      // Make sure there is still a pit in this location
+      charcoalPit = Position.GetFirstThing(Map, ThingDef.Named("POW_CharcoalPit"));
+      //charcoalPit = Position.GetThingList(Map).Find(pit => pit is Building_CharcoalPit) as Building_CharcoalPit;
 
+      // Deconstruct the charcoal, the pit has been removed
       if (Spawned && charcoalPit == null) {
         Destroy(DestroyMode.Deconstruct);
       }
 
+      // decrease burnTick counter
       if (Spawned && burnTicks > 0) {
         burnTicks--;
       }
 
+      // Spawn charcoal
       if (Spawned && burnTicks <= 0) {
         PlaceProduct();
       }
@@ -38,7 +43,7 @@ namespace Powerless {
       Thing placedProduct = ThingMaker.MakeThing(ThingDef.Named("POW_Charcoal"));
       placedProduct.stackCount = 75;
       Destroy();
-      GenPlace.TryPlaceThing(placedProduct, Position, ThingPlaceMode.Direct);
+      GenPlace.TryPlaceThing(placedProduct, Position, Map, ThingPlaceMode.Direct);
     }
   }
 }

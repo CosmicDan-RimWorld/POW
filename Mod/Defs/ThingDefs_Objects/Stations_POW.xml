@@ -160,12 +160,7 @@
 		<stuffCategories>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>4</costStuffCount>
-		<costList>
-			<CP_Clay>50</CP_Clay>
-			<CP_Sand>20</CP_Sand>
-			<CP_Quartz>15</CP_Quartz>
-		</costList>
+		<costStuffCount>40</costStuffCount>
 		<altitudeLayer>Building</altitudeLayer>
 		<UseHitPoints>true</UseHitPoints>
 		<destroyable>true</destroyable>

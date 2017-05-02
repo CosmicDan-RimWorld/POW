@@ -1,20 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WorkGivers>
-
-
-	<WorkGiverDef>
-		<defName>POW_FillCoolingTower</defName>
-		<label>fill cooling tower with water</label>
-		<giverClass>Powerless.WorkGiver_FillCoolingTowerDirect</giverClass>
-		<workType>Hauling</workType>
-		<priorityInType>99</priorityInType>
-		<verb>fill</verb>
-		<gerund>filling at</gerund>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		<prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
 	
 	<WorkGiverDef>
 		<defName>POW_DoBillsGrill</defName>
