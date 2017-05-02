@@ -2,8 +2,8 @@
 <ThingDefs>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>POW_SimpleDoor</defName>
-		<label>simple door</label>
+		<defName>POW_ShelterDoor</defName>
+		<label>shelter door</label>
 		<description>Simple door to separate rooms. Quick to pass through, but quick to destroy.</description>
 		<thingClass>Building_Door</thingClass>
 		<blueprintClass>Blueprint_Door</blueprintClass>
@@ -21,10 +21,10 @@
 			<Flammability>1.0</Flammability>
 		</statBases>
 		<graphicData>
-			<texPath>Cupro/Object/Structure/DoorSimple_Mover</texPath>
+			<texPath>Cupro/Object/Structure/DoorShelter_Mover</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<uiIconPath>Cupro/Object/Structure/DoorSimple_MenuIcon</uiIconPath>
+		<uiIconPath>Cupro/Object/Structure/DoorShelter_MenuIcon</uiIconPath>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<blockLight>false</blockLight>
 		<!-- to simulate light leaking in from the cracks -->

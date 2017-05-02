@@ -84,5 +84,36 @@
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
 	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_VinegarBarrel</defName>
+		<thingClass>Powerless.Building_VinegarBarrel</thingClass>
+		<label>barrel of vinegar</label>
+		<Description>A barrel of fermenting vinegar.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/Barrel_Sealed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<blockLight>false</blockLight>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>250</WorkToMake>
+		</statBases>
+		<constructEffect>ConstructWood</constructEffect>
+		<CostList>
+			<WoodLog>25</WoodLog>
+			<RawBerries>50</RawBerries>
+		</CostList>
+		<useHitPoints>true</useHitPoints>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Misc</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<tickerType>Rare</tickerType>
+		<researchPrerequisites>
+			<li>Brewing</li>
+		</researchPrerequisites>
+	</ThingDef>
 
 </ThingDefs>
