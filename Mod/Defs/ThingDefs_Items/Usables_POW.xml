@@ -141,5 +141,22 @@
 			</li>
 		</comps>
 	</ThingDef>
+	
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>POW_Cabbage</defName>
+		<label>cabbage</label>
+		<description>Raw cabbage.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/Cabbage</texPath>
+		</graphicData>
+		<statBases>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>25</daysToRotStart>
+			</li>
+		</comps>
+	</ThingDef>
 
 </ThingDefs>
