@@ -84,7 +84,7 @@
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>POW_VinegarBarrel</defName>
 		<thingClass>Powerless.Building_VinegarBarrel</thingClass>
@@ -114,6 +114,76 @@
 		<researchPrerequisites>
 			<li>Brewing</li>
 		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_ShelterHeater</defName>
+		<label>shelter heater</label>
+		<thingClass>Building</thingClass>
+		<description>Burning logs used to produce heat. Burns out after a day. As with all heat sources, it must be placed indoors so it has a closed space to heat. Refuelable.</description>    
+		<category>Building</category>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/ShelterHeater</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+			<damageData>
+				<rect>(0.2,0,0.6,0.1)</rect>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<constructEffect>ConstructDirt</constructEffect>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<fillPercent>0.25</fillPercent>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<WoodLog>5</WoodLog> <!-- just the intial wood -->
+		</costList>
+		<soundImpactDefault>BulletImpactGround</soundImpactDefault>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>5.0</fuelConsumptionRate>
+				<fuelCapacity>5.0</fuelCapacity>
+				<fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<destroyOnNoFuel>true</destroyOnNoFuel>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(252,187,113,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<heatPerSecond>18</heatPerSecond>
+				<heatPushMaxTemperature>26</heatPushMaxTemperature>
+			</li>
+			<li Class="Powerless.CompProperties_Smoker">
+				<smokeStyle>Triple</smokeStyle>
+				<frequency>15</frequency>
+				<size>0.25</size>
+			</li>
+			<li>
+				<compClass>CompGatherSpot</compClass>
+			</li>
+		</comps>
+		<designationCategory>Temperature</designationCategory>
 	</ThingDef>
 
 </ThingDefs>

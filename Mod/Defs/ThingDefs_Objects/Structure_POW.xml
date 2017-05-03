@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>POW_ShelterDoor</defName>
 		<label>shelter door</label>
-		<description>Simple door to separate rooms. Quick to pass through, but quick to destroy.</description>
+		<description>A simple shelter door to separate rooms. Quick to pass through, but quick to destroy.</description>
 		<thingClass>Building_Door</thingClass>
 		<blueprintClass>Blueprint_Door</blueprintClass>
 		<category>Building</category>
@@ -13,10 +13,9 @@
 		</blueprintGraphicData>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
-		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MaxHitPoints>25</MaxHitPoints>
-			<WorkToMake>150</WorkToMake>
+			<WorkToMake>75</WorkToMake>
 			<DoorOpenSpeed>2</DoorOpenSpeed>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -26,8 +25,7 @@
 		</graphicData>
 		<uiIconPath>Cupro/Object/Structure/DoorShelter_MenuIcon</uiIconPath>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
-		<blockLight>false</blockLight>
-		<!-- to simulate light leaking in from the cracks -->
+		<blockLight>false</blockLight> <!-- to simulate light leaking in from the cracks -->
 		<stuffCategories>
 			<li>Woody</li>
 		</stuffCategories>
@@ -49,6 +47,72 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable"/>
 		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_WallShelter</defName>
+		<label>shelter wall</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<description>A simple shelter wall made from wood. Capable of holding up a roof, but is easily destroyed.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/WallShelter_Atlas</texPath>
+			<graphicClass>Graphic_Appearances</graphicClass>
+			<linkType>CornerFiller</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+		</blueprintGraphicData>
+		<uiIconPath>Cupro/Object/Structure/WallShelter_MenuIcon</uiIconPath>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<WorkToBuild>100</WorkToBuild>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<costList>
+			<WoodLog>2</WoodLog>
+		</costList>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<designationCategory>Structure</designationCategory>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<building>
+			<isInert>true</isInert>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+		</building>
+		<damageMultipliers>
+			<li>
+				<damageDef>Bomb</damageDef>
+				<multiplier>2</multiplier>
+			</li>
+		</damageMultipliers>
 	</ThingDef>
 
 </ThingDefs>
