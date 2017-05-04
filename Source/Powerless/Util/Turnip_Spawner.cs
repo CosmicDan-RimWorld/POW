@@ -1,15 +1,22 @@
-﻿using CorePanda;
-using Verse;
+﻿using Verse;
 
 namespace Powerless {
   
-  public class Turnip_Spawner : ItemSpawner {
+  internal class Turnip_Spawner : ThingWithComps {
 
     public override void SpawnSetup(Map map) {
       base.SpawnSetup(map);
-      SpawnRandomQuantity(ThingDef.Named("POW_Turnip"), 1, 2);
-      SpawnRandomQuantity(ThingDef.Named("POW_Turnip_Green"), 1, 4);
+      SpawnRandomQuantity(ThingDef.Named("POW_Turnip"), 1, 2, map);
+      SpawnRandomQuantity(ThingDef.Named("POW_Turnip_Green"), 1, 4, map);
       Destroy();
+    }
+
+
+    private void SpawnRandomQuantity(ThingDef tDef, int minToSpawn, int maxToSpawn, Map map) {
+      int stack = Rand.RangeInclusive(minToSpawn, maxToSpawn);
+      Thing placedProduct = ThingMaker.MakeThing(tDef);
+      placedProduct.stackCount = stack;
+      GenPlace.TryPlaceThing(placedProduct, Position, map, ThingPlaceMode.Near);
     }
   }
 }
