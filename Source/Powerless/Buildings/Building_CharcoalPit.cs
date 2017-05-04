@@ -4,7 +4,7 @@ using Verse;
 
 namespace Powerless {
 
-  public class Building_CharcoalPit : Building {
+  internal class Building_CharcoalPit : Building {
 
     // Burning Ticks left. Starts at 80 (8 hours, TickRare)
     private int burnTicks = 80;
@@ -26,16 +26,16 @@ namespace Powerless {
 
       // Spawn charcoal
       if (burnTicks <= 0) {
-        PlaceProduct();
+        PlaceProduct(Map);
       }
     }
 
 
-    private void PlaceProduct() {
+    private void PlaceProduct(Map map) {
       Thing placedProduct = ThingMaker.MakeThing(ThingDef.Named("POW_Charcoal"));
       placedProduct.stackCount = 75;
       Destroy();
-      GenPlace.TryPlaceThing(placedProduct, Position, Map, ThingPlaceMode.Direct);
+      GenPlace.TryPlaceThing(placedProduct, Position, map, ThingPlaceMode.Direct);
     }
 
 
