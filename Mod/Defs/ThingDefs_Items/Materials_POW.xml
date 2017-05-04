@@ -56,8 +56,7 @@
 		<label>vinegar</label>
 		<description>A mildly acidic liquid used for pickling vegetables.</description>
 		<graphicData>
-			<texPath>Cupro/Item/Material/Vinegar
-			</texPath>
+			<texPath>Cupro/Item/Material/Vinegar</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<useHitPoints>false</useHitPoints>

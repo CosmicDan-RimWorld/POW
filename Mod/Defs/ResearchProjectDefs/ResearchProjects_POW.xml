@@ -14,15 +14,4 @@
     </tags>
 	</ResearchProjectDef>
 
-	<ResearchProjectDef>
-		<defName>POW_Crucible</defName>
-		<label>forge: crucible upgrade</label>
-		<description>Allows colonists to upgrade the forge by adding an attached crucible for melting metals and creating glass.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Medieval</techLevel>
-		<prerequisites>
-			<li>POW_Forge</li>
-		</prerequisites>
-	</ResearchProjectDef>
-
 </ResearchProjectDefs>

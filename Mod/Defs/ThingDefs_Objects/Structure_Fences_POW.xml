@@ -158,7 +158,7 @@ For best results, only build on a north-south opening.
 		<constructEffect>ConstructDirt</constructEffect>
 		<holdsRoof>false</holdsRoof>
 		<fillPercent>0.20</fillPercent>
-		<isAutoAttackableWorldObject>true</isAutoAttackableWorldObject>
+		<isAutoAttackableMapObject>true</isAutoAttackableMapObject>
 	</ThingDef>
 
 </ThingDefs>

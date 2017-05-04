@@ -69,7 +69,7 @@
 		<DefName>POW_Forge</DefName>
 		<label>forge</label>
 		<ThingClass>Building_WorkTable</ThingClass>
-		<Description>An ancient structure used for heating up metal and working it into useful tools. Can be upgraded to include a crucible with the proper research.</Description>
+		<Description>An ancient structure used for heating up metal and working it into useful tools.</Description>
 		<graphicData>
 			<texPath>Cupro/Object/Station/Forge/Forge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -122,13 +122,6 @@
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 			</li>
-			<li Class="CorePanda.CompProperties_Upgradeable">
-				<ResearchString>POW_Crucible</ResearchString> 
-				<UpgradeTex>Cupro/UI/Commands/Upgrade</UpgradeTex>
-				<BlueprintThingDef>POW_Crucible</BlueprintThingDef>
-				<UpgradeDescString>Upgrade to crucible</UpgradeDescString>
-				<UpgradeLabelString>Upgrade</UpgradeLabelString>
-			</li>
 		</comps>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
@@ -145,104 +138,41 @@
 		</researchPrerequisites>
 	</ThingDef>
 
-	<ThingDef ParentName="BuildingBase">
-		<DefName>POW_Crucible</DefName>
-		<label>crucible forge</label>
-		<ThingClass>Building_WorkTable</ThingClass>
-		<Description>An structure dating back to chalcolithic times, used for melting metal and working it into useful tools. More fuel efficient than the forge.</Description>
-		<graphicData>
-			<texPath>Cupro/Object/Station/Crucible/Crucible</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
-		</graphicData>
-		<fillPercent>0.5</fillPercent>
-		<stuffCategories>
-			<li>Stony</li>
-		</stuffCategories>
-		<costStuffCount>40</costStuffCount>
-		<altitudeLayer>Building</altitudeLayer>
-		<UseHitPoints>true</UseHitPoints>
-		<destroyable>true</destroyable>
-		<rotatable>true</rotatable>
-		<statBases>
-			<MaxHitPoints>2500</MaxHitPoints>
-			<WorkToMake>750</WorkToMake>
-			<Flammability>0</Flammability>
-			<Cleanliness>-8</Cleanliness>
-		</statBases>
-		<Size>(2,1)</Size>
-		<DesignationCategory>Unplaceable</DesignationCategory>
-		<Passability>PassThroughOnly</Passability>
-		<pathCost>90</pathCost>
-		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
-		<surfaceType>Item</surfaceType>
-		<comps>
-			<li>
-				<compClass>CompQuality</compClass>
-			</li>
-			<li Class="CompProperties_AffectedByFacilities">
-				<linkableFacilities>
-					<li>POW_Bellows</li>
-				</linkableFacilities>
-			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>15.0</fuelConsumptionRate>
-				<fuelCapacity>35.0</fuelCapacity>
-				<fuelFilter>
-					<thingDefs>
-						<li>POW_Charcoal</li>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-			</li>
-		</comps>
-		<recipes>
-			<li>ExtractMetalFromSlag</li>
-			<li>SmeltWeapon</li>
-		</recipes>
-		<inspectorTabs>
-			<li>ITab_Bills</li>
-		</inspectorTabs>
-		<building>
-			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-			<heatPerTickWhileWorking>1.5</heatPerTickWhileWorking>
-		</building>
-		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
-		</placeWorkers>
-	</ThingDef>
-
-
-
 
 	<ThingDef ParentName="BuildingBase">
 		<DefName>POW_CharcoalPit</DefName>
 		<label>charcoal pit</label>
 		<ThingClass>Powerless.Building_CharcoalPit</ThingClass>
-		<Description>A pit for burning a large amount of wood in the absence of oxygen.</Description>
+		<Description>A mound of burning wood covered with dirt to block oxygen.</Description>
 		<graphicData>
-			<texPath>Cupro/Object/Station/CharcoalPit/CharcoalPit</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
+			<texPath>Cupro/Object/Utility/DirtMound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
+			<color>(133,97,67)</color>
 		</graphicData>
+		<blockLight>false</blockLight>
 		<constructEffect>ConstructDirt</constructEffect>
-		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
 		<useHitPoints>false</useHitPoints>
 		<fillPercent>0</fillPercent>
 		<statBases>
 			<WorkToMake>500</WorkToMake>
 			<Flammability>0</Flammability>
 		</statBases>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
 		<Size>(1,1)</Size>
 		<DesignationCategory>Production</DesignationCategory>
 		<Passability>PassThroughOnly</Passability>
 		<pathCost>60</pathCost>
 		<surfaceType>Item</surfaceType>
-		<tickerType>Normal</tickerType>
+		<tickerType>Rare</tickerType>
 		<building>
-			<isInert>true</isInert>
+			<soundAmbient>FireBurning</soundAmbient>
+			<isEdifice>false</isEdifice>
 		</building>
 		<terrainAffordanceNeeded>Diggable</terrainAffordanceNeeded>
 		<placeWorkers>
@@ -302,6 +232,12 @@
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="Powerless.CompProperties_Smoker">
+				<smokeStyle>Single</smokeStyle>
+				<frequencyMin>60</frequencyMin>
+				<frequencyMax>240</frequencyMax>
+				<size>0.25</size>
 			</li>
 		</comps>
 		<inspectorTabs>

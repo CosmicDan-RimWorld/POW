@@ -15,8 +15,7 @@
 			<WorkToMake>500</WorkToMake>
 		</statBases>
 		<ingestible>
-			<preferability>RawTasty</preferability>
-			<tastesRaw>false</tastesRaw>
+			<preferability>MealSimple</preferability>
 			<nutrition>0.75</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
@@ -109,12 +108,11 @@
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>RawTasty</preferability>
-			<tastesRaw>false</tastesRaw>
 			<nutrition>0.04</nutrition>
 			<specialThoughtDirect>POW_AteRawTurnip</specialThoughtDirect>
 		</ingestible>
 	</ThingDef>
-
+	
 	<ThingDef ParentName="OrganicProductBase">
 		<defName>POW_Turnip_Green</defName>
 		<label>turnip greens</label>
@@ -129,7 +127,6 @@
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>RawTasty</preferability>
-			<tastesRaw>false</tastesRaw>
 			<nutrition>0.03</nutrition>
 		</ingestible>
 		<thingCategories>
@@ -139,6 +136,7 @@
 			<li Class="CompProperties_Rottable">
 				<daysToRotStart>7</daysToRotStart>
 			</li>
+			<li Class="CompProperties_FoodPoisoningChance" />
 		</comps>
 	</ThingDef>
 	
@@ -152,11 +150,14 @@
 		<statBases>
 			<MarketValue>2</MarketValue>
 		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
 		<comps>
-			<li Class="CompProperties_Rottable">
-				<daysToRotStart>25</daysToRotStart>
+		<li Class="CompProperties_Rottable">
+				<daysToRotStart>40</daysToRotStart>
 			</li>
-		</comps>
+			</comps>
 	</ThingDef>
 
 </ThingDefs>

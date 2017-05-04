@@ -1,41 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ThingDefs>
 
-	<ThingDef Name="PitBase" ParentName="BuildingBase" Abstract="True">
-		<Description>A mound of burning wood covered with dirt to block oxygen.</Description>
-		<graphicData>
-			<texPath>Cupro/Object/Utility/DirtMound</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(3,3)</drawSize>
-			<color>(133,97,67)</color>
-		</graphicData>
-		<blockLight>false</blockLight>
-		<altitudeLayer>Building</altitudeLayer>
-		<rotatable>false</rotatable>
-		<selectable>false</selectable>
-		<statBases>
-			<WorkToMake>250</WorkToMake>
-		</statBases>
-		<stuffCategories>
-			<li>Woody</li>
-		</stuffCategories>
-		<costStuffCount>25</costStuffCount>
-		<Size>(1,1)</Size>
-		<DesignationCategory>Unplaceable</DesignationCategory>
-		<Passability>PassThroughOnly</Passability>
-		<tickerType>Rare</tickerType>
-		<building>
-			<soundAmbient>FireBurning</soundAmbient>
-			<isEdifice>false</isEdifice>
-		</building>
-	</ThingDef>
-
-	<ThingDef ParentName="PitBase">
-		<defName>POW_CharPit</defName>
-		<label>mound of charcoal</label>
-		<thingClass>Powerless.Building_CharPit</thingClass>
-	</ThingDef>
-
 
 	<!-- ======================== Facilities ======================= -->
 

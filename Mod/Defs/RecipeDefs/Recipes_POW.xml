@@ -177,7 +177,7 @@
 					</categories>
 				</filter>
 				<count>0.5</count>
-			</li>
+				</li>
 		</ingredients>
 		<products>
 			<POW_MealGrilledVeg>2</POW_MealGrilledVeg>
@@ -242,44 +242,6 @@
 
 
 	<RecipeDef>
-		<defName>POW_CharCharcoal</defName>
-		<label>char charcoal</label>
-		<description>Char five logs to be used as fuel.</description>
-		<jobString>Charring.</jobString>
-		<workSpeedStat>CookSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Recipe_CookMeal</soundWorking>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>WoodLog</li>
-					</thingDefs>
-				</filter>
-				<count>5</count>
-			</li>
-		</ingredients>
-		<products>
-			<POW_Charcoal>15</POW_Charcoal>
-		</products>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>WoodLog</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<defaultIngredientFilter>
-			<thingDefs>
-				<li>WoodLog</li>
-			</thingDefs>
-		</defaultIngredientFilter>
-		<recipeUsers>
-			<li>CP_Furnace</li>
-		</recipeUsers>
-		<workSkill>Cooking</workSkill>
-	</RecipeDef>
-
-
-	<RecipeDef>
 		<defName>POW_PrepSalad</defName>
 		<label>prepare salad</label>
 		<description>Prepare a salad using turnip greens and vegetables.</description>
@@ -336,87 +298,10 @@
 			</exceptedThingDefs>
 		</defaultIngredientFilter>
 		<recipeUsers>
-			<li>CP_TableSimpleCrafting</li>
 			<li>FueledStove</li>
 			<li>ElectricStove</li>
 		</recipeUsers>
 		<workSkill>Cooking</workSkill>
-	</RecipeDef>
-
-
-
-	<RecipeDef>
-		<defName>POW_CremateCorpseWood</defName>
-		<label>cremate corpse</label>
-		<description>Cremate a corpse to completely destroy it.</description>
-		<jobString>Cremating.</jobString>
-		<workAmount>1500</workAmount>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>
-		<ingredients>
-			<li>
-				<filter>
-					<categories>
-						<li>Corpses</li>
-					</categories>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Corpses</li>
-			</categories>
-			<exceptedCategories>
-				<li>CorpsesMechanoid</li>
-			</exceptedCategories>
-		</fixedIngredientFilter>
-		<defaultIngredientFilter>
-			<thingDefs>
-				<li>Human_Corpse</li>
-			</thingDefs>
-			<specialFiltersToAllow>
-				<li>AllowCorpsesColonist</li>
-				<li>AllowCorpsesStranger</li>
-			</specialFiltersToAllow>
-			<specialFiltersToDisallow>
-				<li>AllowNonSmeltableWeapons</li>
-			</specialFiltersToDisallow>
-		</defaultIngredientFilter>
-		<recipeUsers>
-			<li>CP_Furnace</li>
-		</recipeUsers>
-	</RecipeDef>
-
-	<RecipeDef>
-		<defName>POW_BurnApparelWood</defName>
-		<label>burn apparel</label>
-		<description>Burn apparel to completely destroy it.</description>
-		<jobString>Burning apparel.</jobString>
-		<workAmount>800</workAmount>
-		<effectWorking>Cremate</effectWorking>
-		<soundWorking>Recipe_Cremate</soundWorking>
-		<ingredients>
-			<li>
-				<filter>
-					<categories>
-						<li>Apparel</li>
-					</categories>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<categories>
-				<li>Apparel</li>
-			</categories>
-			<specialFiltersToDisallow>
-				<li>AllowNonSmeltableWeapons</li>
-			</specialFiltersToDisallow>
-		</fixedIngredientFilter>
-		<recipeUsers>
-			<li>CP_Furnace</li>
-		</recipeUsers>
 	</RecipeDef>
 
 </RecipeDefs>

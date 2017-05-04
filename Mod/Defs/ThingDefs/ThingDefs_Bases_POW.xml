@@ -101,7 +101,6 @@
       <soundWorking>Recipe_Smith</soundWorking>
       <recipeUsers>
         <li>POW_Forge</li>
-				<li>POW_Crucible</li>
       </recipeUsers>
       <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
     </recipeMaker>
@@ -174,7 +173,7 @@
       <effectWorking>Tailor</effectWorking>
       <soundWorking>Recipe_Tailor</soundWorking>
       <recipeUsers>
-        <li>CP_TableSimpleCrafting</li>
+        <li>CraftingSpot</li>
       </recipeUsers>
       <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
     </recipeMaker>
@@ -231,7 +230,6 @@
   <ThingDef Name="PlantFoodRawBase" ParentName="OrganicProductBase" Abstract="True">
     <ingestible>
       <preferability>RawBad</preferability>
-      <tastesRaw>true</tastesRaw>
       <nutrition>0.05</nutrition>
       <ingestEffect>EatVegetarian</ingestEffect>
       <ingestSound>RawVegetable_Eat</ingestSound>

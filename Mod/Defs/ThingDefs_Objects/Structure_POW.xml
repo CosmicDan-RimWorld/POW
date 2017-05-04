@@ -57,7 +57,7 @@
 		<description>A simple shelter wall made from wood. Capable of holding up a roof, but is easily destroyed.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Structure/WallShelter_Atlas</texPath>
-			<graphicClass>Graphic_Appearances</graphicClass>
+			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>

@@ -41,7 +41,7 @@
 		</costList>
 		<building>
 			<Bed_ShowSleeperBody>True</Bed_ShowSleeperBody>
-			<Bed_HealTickInterval>2100</Bed_HealTickInterval>
+			<bed_healPerDay>7</bed_healPerDay>
 		</building>
 		<comps>
 			<li Class="CompProperties_AffectedByFacilities">
@@ -49,8 +49,8 @@
 					<li>VitalsMonitor</li>
 				</linkableFacilities>
 			</li>
-			<li>
-				<compClass>CompQuality</compClass>
+			<li Class="CompProperties_RoomIdentifier">
+				<roomStat>Impressiveness</roomStat>
 			</li>
 		</comps>
 		<fillPercent>0.2</fillPercent>
