@@ -14,7 +14,7 @@ namespace Powerless {
     private Vector2 pSize;
     private Vector3 pPos;
     private Map pMap;
-    private MoteThrown smokeMote;
+    private float offset;
 
     public CompProperties_Smoker Props {
       get { return (CompProperties_Smoker)props; }
@@ -24,12 +24,14 @@ namespace Powerless {
     public override void PostSpawnSetup() {
       base.PostSpawnSetup();
 
-      smokeMote = ThingMaker.MakeThing(ThingDefOf.Mote_Smoke) as MoteThrown;
-
       // Cache parent info instead of constantly looking it up
       pSize = parent.def.size.ToVector2();
       pPos = parent.Position.ToVector3() + Props.offset;
       pMap = parent.Map;
+
+      // Offset the smoke to balance triple smokes based on parent size
+      // This likely won't look right for objects larger than a single tile
+      offset = pSize.x / 3;
     }
 
 
@@ -38,13 +40,13 @@ namespace Powerless {
 
       if (Find.TickManager.TicksGame % Props.frequency == 0) {
 
-        // Only throw motes if the map is rendered
-        if (!pPos.ShouldSpawnMotesAt(parent.Map)) {
+        // Only throw motes if the location is rendered and valid
+        if (!pPos.ShouldSpawnMotesAt(pMap) || pMap.moteCounter.SaturatedLowPriority) {
           return;
         }
 
         if (Props.smokeStyle == SmokeStyle.Single) {
-          ThrowSmokeSingle(pPos);
+          ThrowSmokeSingle();
         }
         if (Props.smokeStyle == SmokeStyle.Triple) {
           ThrowSmokeTriple();
@@ -53,31 +55,15 @@ namespace Powerless {
     }
 
 
-    private void ThrowSmokeSingle(Vector3 pos) {
-
-      // Randomize the scale of the smoke around the desired size
-      smokeMote.Scale = Rand.Range(0.8f, 1.3f) * Props.size;
-      smokeMote.exactPosition = pos;
-      smokeMote.rotationRate = Rand.Range(-20f, 20f);
-      smokeMote.SetVelocity(Rand.Range(-20, 20), Rand.Range(0.3f, 0.5f));
-
-      // Randomize the color a bit
-      int randColor = Rand.RangeInclusive(10, 50);
-      smokeMote.instanceColor = Color.black + new Color(randColor, randColor, randColor);
-
-      GenSpawn.Spawn(smokeMote, pos.ToIntVec3(), pMap);
+    private void ThrowSmokeSingle() {
+      MoteMaker.ThrowSmoke(pPos, pMap, Props.size);
     }
 
 
     private void ThrowSmokeTriple() {
-
-      // Offset the smoke to balance based on size
-      // This likely won't look right for objects larger than a single tile
-      float offset = pSize.x / 4;
-
-      ThrowSmokeSingle(pPos + new Vector3(-offset, 0, 0));
-      ThrowSmokeSingle(pPos);
-      ThrowSmokeSingle(pPos + new Vector3(offset, 0, 0));
+      MoteMaker.ThrowSmoke(pPos + new Vector3(-offset, 0, 0), pMap, Props.size);
+      MoteMaker.ThrowSmoke(pPos,                              pMap, Props.size);
+      MoteMaker.ThrowSmoke(pPos + new Vector3(offset, 0, 0),  pMap, Props.size);
     }
   }
 }
