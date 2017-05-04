@@ -15,6 +15,7 @@ namespace Powerless {
     private Vector3 pPos;
     private Map pMap;
     private float offset;
+    private int frequency;
 
     public CompProperties_Smoker Props {
       get { return (CompProperties_Smoker)props; }
@@ -32,18 +33,23 @@ namespace Powerless {
       // Offset the smoke to balance triple smokes based on parent size
       // This likely won't look right for objects larger than a single tile
       offset = pSize.x / 3;
+
+      frequency = Rand.RangeInclusive(Props.frequencyMin, Props.frequencyMax);
     }
 
 
     public override void CompTick() {
       base.CompTick();
 
-      if (Find.TickManager.TicksGame % Props.frequency == 0) {
+      if (Find.TickManager.TicksGame % frequency == 0) {
 
         // Only throw motes if the location is rendered and valid
         if (!pPos.ShouldSpawnMotesAt(pMap) || pMap.moteCounter.SaturatedLowPriority) {
           return;
         }
+
+        // Assign a new random frequency
+        frequency = Rand.RangeInclusive(Props.frequencyMin, Props.frequencyMax);
 
         if (Props.smokeStyle == SmokeStyle.Single) {
           ThrowSmokeSingle();

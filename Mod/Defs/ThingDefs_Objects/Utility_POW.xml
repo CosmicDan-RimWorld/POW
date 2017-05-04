@@ -131,6 +131,7 @@
 				<rect>(0.2,0,0.6,0.1)</rect>
 			</damageData>
 		</graphicData>
+		<uiIconPath>Cupro/Object/Utility/ShelterHeater_MenuIcon</uiIconPath>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -176,6 +177,8 @@
 			</li>
 			<li Class="Powerless.CompProperties_Smoker">
 				<smokeStyle>Triple</smokeStyle>
+				<frequencyMin>60</frequencyMin>
+				<frequencyMax>120</frequencyMax>
 				<size>0.25</size>
 			</li>
 			<li>
