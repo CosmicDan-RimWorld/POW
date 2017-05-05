@@ -241,15 +241,24 @@
 	</RecipeDef>
 
 
-	<RecipeDef>
-		<defName>POW_PrepSalad</defName>
-		<label>prepare salad</label>
-		<description>Prepare a salad using turnip greens and vegetables.</description>
+	<RecipeDef Name="SaladBase" Abstract="True">
 		<jobString>Chopping.</jobString>
 		<workSpeedStat>CookSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_ButcherCorpseFlesh</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
+		<recipeUsers>
+			<li>POW_TableCamp</li>
+			<li>FueledStove</li>
+			<li>ElectricStove</li>
+		</recipeUsers>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SaladBase">
+		<defName>POW_PrepSalad</defName>
+		<label>prepare turnip salad</label>
+		<description>Prepare a salad using turnip greens and vegetables.</description>
 		<ingredients>
 			<li>
 				<filter>
@@ -297,11 +306,59 @@
 				<li>Hay</li>
 			</exceptedThingDefs>
 		</defaultIngredientFilter>
-		<recipeUsers>
-			<li>FueledStove</li>
-			<li>ElectricStove</li>
-		</recipeUsers>
-		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SaladBase">
+		<defName>POW_PrepSaladCabbage</defName>
+		<label>prepare cabbage salad</label>
+		<description>Prepare a salad using shredded cabbage and vegetables.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_Cabbage</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<categories>
+						<li>PlantFoodRaw</li>
+					</categories>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_MealCabbageSalad>1</POW_MealCabbageSalad>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<disallowedSpecialFilters>
+				<li>AllowPlantFood</li>
+			</disallowedSpecialFilters>
+			<thingDefs>
+				<li>POW_Cabbage</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<categories>
+				<li>PlantFoodRaw</li>
+			</categories>
+			<thingDefs>
+				<li>POW_Cabbage</li>
+			</thingDefs>
+			<exceptedCategories>
+				<li>EggsUnfertilized</li>
+				<li>EggsFertilized</li>
+			</exceptedCategories>
+			<exceptedThingDefs>
+				<li>Hay</li>
+			</exceptedThingDefs>
+		</defaultIngredientFilter>
 	</RecipeDef>
 
 </RecipeDefs>

@@ -173,7 +173,7 @@
       <effectWorking>Tailor</effectWorking>
       <soundWorking>Recipe_Tailor</soundWorking>
       <recipeUsers>
-        <li>CraftingSpot</li>
+        <li>POW_TableCamp</li>
       </recipeUsers>
       <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
     </recipeMaker>

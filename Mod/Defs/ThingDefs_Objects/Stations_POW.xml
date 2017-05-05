@@ -269,4 +269,79 @@
 		</placeWorkers>
 	</ThingDef>
 
+	<ThingDef Name="CampTableBase" ParentName="BuildingBase" Abstract="True">
+		<ThingClass>Building_WorkTable</ThingClass>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,1)</drawSize>
+		</graphicData>
+		<CostList>
+			<WoodLog>15</WoodLog>
+		</CostList>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<constructEffect>ConstructWood</constructEffect>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToMake>700</WorkToMake>
+			<MaxHitPoints>90</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<Size>(2,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<pathCost>60</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="CampTableBase">
+		<defName>POW_TableCamp</defName>
+		<label>camp crafting table</label>
+		<Description>A lightweight collapsible table for doing simple tasks while traveling.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/CraftingTable/CraftingTable</texPath>
+		</graphicData>
+		<statBases>
+			<Beauty>2</Beauty>
+		</statBases>
+		<recipes>
+			<li>MakeKibble</li>
+		</recipes>
+	</ThingDef>
+
+	<ThingDef ParentName="CampTableBase">
+		<defName>POW_TableButcherCamp</defName>
+		<label>camp butcher table</label>
+		<Description>A lightweight collapsible table for butchering animals while traveling.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Station/ButcheringTable/ButcheringTable</texPath>
+		</graphicData>
+		<statBases>
+			<Beauty>-2</Beauty>
+			<Cleanliness>-18</Cleanliness>
+		</statBases>
+		<recipes>
+			<li>ButcherCorpseFlesh</li>
+		</recipes>
+	</ThingDef>
+
 </ThingDefs>

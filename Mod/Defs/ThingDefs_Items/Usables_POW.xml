@@ -21,6 +21,27 @@
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
 	</ThingDef>
+	
+	<ThingDef ParentName="MealRottable">
+		<defName>POW_MealCabbageSalad</defName>
+		<label>cabbage salad</label>
+		<description>Fresh garden veggies chopped up and mixed together - hopefully with a clean knife.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/MealCabbageSalad</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>10</DeteriorationRate>
+			<MarketValue>14</MarketValue>
+			<WorkToMake>500</WorkToMake>
+		</statBases>
+		<ingestible>
+			<preferability>MealSimple</preferability>
+			<nutrition>0.7</nutrition>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+		</ingestible>
+	</ThingDef>
 
 	<ThingDef ParentName="MealBase">
 		<defName>POW_MealSmokedMeat</defName>
@@ -140,7 +161,7 @@
 		</comps>
 	</ThingDef>
 	
-	<ThingDef ParentName="PlantFoodRawBase">
+	<ThingDef ParentName="OrganicProductBase">
 		<defName>POW_Cabbage</defName>
 		<label>cabbage</label>
 		<description>Raw cabbage.</description>
@@ -152,7 +173,12 @@
 		</statBases>
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
+			<preferability>RawTasty</preferability>
+			<nutrition>0.02</nutrition>
 		</ingestible>
+		<thingCategories>
+			<li>FoodRaw</li>
+		</thingCategories>
 		<comps>
 		<li Class="CompProperties_Rottable">
 				<daysToRotStart>40</daysToRotStart>

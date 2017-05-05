@@ -1,6 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WorkGivers>
-	
+
+	<WorkGiverDef>
+		<defName>POW_DoSimpleBills</defName>
+		<label>do simple crafting jobs</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>99</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_TableCamp</li>
+		</fixedBillGiverDefs>
+		<verb>craft at</verb>
+		<gerund>crafting at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>POW_DoSimpleButcherBills</defName>
+		<label>butcher creatures</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Cooking</workType>
+		<priorityInType>91</priorityInType>
+		<fixedBillGiverDefs>
+			<li>POW_TableButcherCamp</li>
+		</fixedBillGiverDefs>
+		<verb>butcher</verb>
+		<gerund>butchering at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
 	<WorkGiverDef>
 		<defName>POW_DoBillsGrill</defName>
 		<label>cook meals at grill</label>
