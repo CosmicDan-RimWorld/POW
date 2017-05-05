@@ -360,5 +360,76 @@
 			</exceptedThingDefs>
 		</defaultIngredientFilter>
 	</RecipeDef>
+	
+	<RecipeDef Name="PickleBase" Abstract="True">
+		<jobString>Pickling.</jobString>
+		<workSpeedStat>CookSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Brewing</soundWorking>
+		<recipeUsers>
+			<li>POW_TableCamp</li>
+			<li>FueledStove</li>
+			<li>ElectricStove</li>
+		</recipeUsers>
+		<workSkill>Cooking</workSkill>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="PickleBase">
+		<defName>POW_PickleTurnip</defName>
+		<label>pickle turnip</label>
+		<description>Preserve turnips in vinegar. Can be eaten by itself, or used in meals.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_Turnip</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_PickledTurnip>1</POW_PickledTurnip>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>POW_Turnip</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>POW_Turnip</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="PickleBase">
+		<defName>POW_PickleCabbage</defName>
+		<label>pickle cabbage</label>
+		<description>Preserve cabbage in vinegar. Can be eaten by itself, or used in meals.</description>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_Cabbage</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<products>
+			<POW_PickledCabbage>1</POW_PickledCabbage>
+		</products>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>POW_Cabbage</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<defaultIngredientFilter>
+			<thingDefs>
+				<li>POW_Cabbage</li>
+			</thingDefs>
+		</defaultIngredientFilter>
+	</RecipeDef>
 
 </RecipeDefs>

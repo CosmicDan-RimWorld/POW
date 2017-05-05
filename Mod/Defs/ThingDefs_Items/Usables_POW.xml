@@ -185,5 +185,53 @@
 			</li>
 			</comps>
 	</ThingDef>
+	
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>POW_PickledTurnip</defName>
+		<label>pickled turnips</label>
+		<description>Turnips preserved in vinegar to prevent rotting. Can be eaten by themselves, or used in meals.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/PickledTurnip</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MarketValue>15</MarketValue>
+			<WorkToMake>500</WorkToMake>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<preferability>MealSimple</preferability>
+			<nutrition>0.5</nutrition>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>
+			<specialThoughtAsIngredient>POW_FoodMadeWithPickledIngredient</specialThoughtAsIngredient>
+		</ingestible>
+	</ThingDef>
+	
+	<ThingDef ParentName="PlantFoodRawBase">
+		<defName>POW_PickledCabbage</defName>
+		<label>pickled cabbage</label>
+		<description>Cabbage preserved in vinegar to prevent rotting. Can be eaten by itself, or used in meals.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Usable/PickledCabbage</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>0</DeteriorationRate>
+			<MarketValue>15</MarketValue>
+			<WorkToMake>500</WorkToMake>
+		</statBases>
+		<ingestible>
+			<foodType>VegetableOrFruit</foodType>
+			<preferability>MealSimple</preferability>
+			<nutrition>0.5</nutrition>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>
+			<specialThoughtAsIngredient>POW_FoodMadeWithPickledIngredient</specialThoughtAsIngredient>
+		</ingestible>
+	</ThingDef>
 
 </ThingDefs>
