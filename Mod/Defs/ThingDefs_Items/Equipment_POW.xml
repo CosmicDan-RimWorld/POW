@@ -15,6 +15,7 @@
 		</stuffCategories>
 		<statBases>
 			<WorkToMake>1000</WorkToMake>
+			<Mass>0.1</Mass>
 			<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.01</ArmorRating_Sharp>
 			<ArmorRating_Heat>0.05</ArmorRating_Heat>
@@ -65,6 +66,7 @@
 		<costStuffCount>50</costStuffCount>
 		<statBases>
 			<WorkToMake>20000</WorkToMake>
+			<Mass>0.85</Mass>
 			<MeleeWeapon_DamageAmount>12</MeleeWeapon_DamageAmount>
 			<MeleeWeapon_Cooldown>1.95</MeleeWeapon_Cooldown>
 		</statBases>
@@ -94,6 +96,7 @@
 		<costStuffCount>120</costStuffCount>
 		<statBases>
 			<WorkToMake>40000</WorkToMake>
+			<Mass>1.6</Mass>
 			<MeleeWeapon_DamageAmount>17</MeleeWeapon_DamageAmount>
 			<MeleeWeapon_Cooldown>2.5</MeleeWeapon_Cooldown>
 		</statBases>
@@ -123,6 +126,7 @@
 		<costStuffCount>40</costStuffCount>
 		<statBases>
 			<WorkToMake>6000</WorkToMake>
+			<Mass>0.5</Mass>
 			<MeleeWeapon_DamageAmount>9</MeleeWeapon_DamageAmount>
 			<MeleeWeapon_Cooldown>1.66</MeleeWeapon_Cooldown>
 		</statBases>
@@ -154,6 +158,7 @@
 		<costStuffCount>90</costStuffCount>
 		<statBases>
 			<WorkToMake>25000</WorkToMake>
+			<Mass>2</Mass>
 			<MeleeWeapon_DamageAmount>15</MeleeWeapon_DamageAmount>
 			<MeleeWeapon_Cooldown>2.3</MeleeWeapon_Cooldown>
 		</statBases>
@@ -185,6 +190,7 @@
 		<costStuffCount>75</costStuffCount>
 		<statBases>
 			<WorkToMake>15000</WorkToMake>
+			<Mass>1.25</Mass>
 			<MeleeWeapon_DamageAmount>10</MeleeWeapon_DamageAmount>
 			<MeleeWeapon_Cooldown>2.1</MeleeWeapon_Cooldown>
 		</statBases>

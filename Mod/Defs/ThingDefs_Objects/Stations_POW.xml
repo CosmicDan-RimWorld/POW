@@ -25,6 +25,7 @@
 			<MaxHitPoints>120</MaxHitPoints>
 			<Beauty>1</Beauty>
 			<Flammability>0</Flammability>
+			<Mass>12</Mass>
 		</statBases>
 		<Size>(1,1)</Size>
 		<DesignationCategory>Production</DesignationCategory>
@@ -102,6 +103,7 @@
 			<WorkToMake>2000</WorkToMake>
 			<Flammability>0</Flammability>
 			<Cleanliness>-5</Cleanliness>
+			<Mass>50</Mass>
 		</statBases>
 		<Size>(2,1)</Size>
 		<DesignationCategory>Production</DesignationCategory>
@@ -220,6 +222,7 @@
 			<Flammability>0</Flammability>
 			<Beauty>10</Beauty>
 			<Cleanliness>-5</Cleanliness>
+			<Mass>185</Mass>
 		</statBases>
 		<Size>(1,1)</Size>
 		<DesignationCategory>Production</DesignationCategory>
@@ -287,6 +290,7 @@
 			<WorkToMake>700</WorkToMake>
 			<MaxHitPoints>90</MaxHitPoints>
 			<Flammability>1.0</Flammability>
+			<Mass>4.5</Mass>
 		</statBases>
 		<Size>(2,1)</Size>
 		<DesignationCategory>Production</DesignationCategory>

@@ -12,6 +12,7 @@
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
 			<MarketValue>15</MarketValue>
+			<Mass>0.3</Mass>
 			<WorkToMake>500</WorkToMake>
 		</statBases>
 		<ingestible>
@@ -33,6 +34,7 @@
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
 			<MarketValue>14</MarketValue>
+			<Mass>0.3</Mass>
 			<WorkToMake>500</WorkToMake>
 		</statBases>
 		<ingestible>
@@ -54,6 +56,7 @@
 		<statBases>
 			<DeteriorationRate>0.5</DeteriorationRate>
 			<MarketValue>25</MarketValue>
+			<Mass>0.45</Mass>
 		</statBases>
 		<ingestible>
 			<preferability>MealSimple</preferability>
@@ -82,6 +85,9 @@
 		<graphicData>
 			<texPath>Cupro/Item/Usable/GrilledMealMeat</texPath>
 		</graphicData>
+		<statBases>
+			<Mass>0.45</Mass>
+		</statBases>
 	</ThingDef>
 
 	<ThingDef ParentName="GrilledBase">
@@ -90,6 +96,9 @@
 		<graphicData>
 			<texPath>Cupro/Item/Usable/GrilledMealVeg</texPath>
 		</graphicData>
+		<statBases>
+			<Mass>0.35</Mass>
+		</statBases>
 	</ThingDef>
 
 	<ThingDef ParentName="GrilledBase">
@@ -100,6 +109,7 @@
 		</graphicData>
 		<statBases>
 			<MarketValue>30</MarketValue>
+			<Mass>0.4</Mass>
 			<WorkToMake>1250</WorkToMake>
 		</statBases>
 		<ingestible>
@@ -144,6 +154,7 @@
 		<statBases>
 			<MarketValue>0.8</MarketValue>
 			<SellPriceFactor>0.2</SellPriceFactor>
+			<Mass>0.02</Mass>
 		</statBases>
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
@@ -170,6 +181,7 @@
 		</graphicData>
 		<statBases>
 			<MarketValue>2</MarketValue>
+			<Mass>0.03</Mass>
 		</statBases>
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
@@ -197,6 +209,7 @@
 		<statBases>
 			<DeteriorationRate>0</DeteriorationRate>
 			<MarketValue>15</MarketValue>
+			<Mass>0.15</Mass>
 			<WorkToMake>500</WorkToMake>
 		</statBases>
 		<ingestible>
@@ -221,6 +234,7 @@
 		<statBases>
 			<DeteriorationRate>0</DeteriorationRate>
 			<MarketValue>15</MarketValue>
+			<Mass>0.15</Mass>
 			<WorkToMake>500</WorkToMake>
 		</statBases>
 		<ingestible>

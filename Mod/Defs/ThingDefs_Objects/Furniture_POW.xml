@@ -107,6 +107,9 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
+		<statBases>
+			<Mass>20</Mass>
+		</statBases>
 	</ThingDef>
 
 
@@ -123,6 +126,7 @@
 			<Beauty>8</Beauty>
 			<WorkToMake>120</WorkToMake>
 			<Flammability>0.1</Flammability>
+			<Mass>2.5</Mass>
 		</statBases>
 		<costList>
 			<Silver>50</Silver>
@@ -161,6 +165,7 @@
 			<Beauty>25</Beauty>
 			<WorkToMake>200</WorkToMake>
 			<Flammability>0.1</Flammability>
+			<Mass>3.5</Mass>
 		</statBases>
 		<Comps>
 			<li Class="CompProperties_Glower">
