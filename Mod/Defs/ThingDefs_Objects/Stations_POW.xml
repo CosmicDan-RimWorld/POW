@@ -43,6 +43,7 @@
 		<inspectorTabs>
 			<li>ITab_Bills</li>
 		</inspectorTabs>
+		<tickerType>Normal</tickerType>
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
@@ -56,6 +57,13 @@
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="Powerless.CompProperties_Smoker">
+				<smokeStyle>Single</smokeStyle>
+				<frequencyMin>240</frequencyMin>
+				<frequencyMax>640</frequencyMax>
+				<produceSmokeOnlyWhenUsed>true</produceSmokeOnlyWhenUsed>
+				<size>0.25</size>
 			</li>
 		</comps>
 		<building>
@@ -102,7 +110,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
-		<tickerType>Rare</tickerType>
+		<tickerType>Normal</tickerType>
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
@@ -121,6 +129,13 @@
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="Powerless.CompProperties_Smoker">
+				<smokeStyle>Single</smokeStyle>
+				<frequencyMin>1200</frequencyMin>
+				<frequencyMax>1600</frequencyMax>
+				<produceSmokeOnlyWhenUsed>true</produceSmokeOnlyWhenUsed>
+				<size>0.5</size>
 			</li>
 		</comps>
 		<inspectorTabs>
@@ -218,6 +233,7 @@
 			<li>POW_SmokePreserveMeatSmall</li>
 			<li>POW_SmokePreserveMeatSingle</li>
 		</recipes>
+		<tickerType>Normal</tickerType>
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
@@ -234,9 +250,11 @@
 			</li>
 			<li Class="Powerless.CompProperties_Smoker">
 				<smokeStyle>Single</smokeStyle>
-				<frequencyMin>60</frequencyMin>
-				<frequencyMax>240</frequencyMax>
-				<size>0.25</size>
+				<frequencyMin>120</frequencyMin>
+				<frequencyMax>360</frequencyMax>
+				<offset>(0.5,0,1)</offset>
+				<produceSmokeOnlyWhenUsed>true</produceSmokeOnlyWhenUsed>
+				<size>0.75</size>
 			</li>
 		</comps>
 		<inspectorTabs>

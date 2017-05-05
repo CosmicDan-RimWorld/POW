@@ -18,6 +18,7 @@ namespace Powerless {
     public int frequencyMax = 60;
     public float size = 1f;
     public Vector3 offset = new Vector3(0.5f, 0, 0.5f);
+    public bool produceSmokeOnlyWhenUsed = false;
 
 
     public CompProperties_Smoker() {

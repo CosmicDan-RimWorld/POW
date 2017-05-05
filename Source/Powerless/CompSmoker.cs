@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace Powerless {
 
@@ -16,6 +17,7 @@ namespace Powerless {
     private Map pMap;
     private float offset;
     private int frequency;
+    private List<Thing> pawnsInCell;
 
     public CompProperties_Smoker Props {
       get { return (CompProperties_Smoker)props; }
@@ -48,6 +50,13 @@ namespace Powerless {
           return;
         }
 
+        // only throw motes when in use, if requested
+        if (Props.produceSmokeOnlyWhenUsed) {
+          if (!parent.def.hasInteractionCell || !IsBeingUsed()) {
+            return;
+          }
+        }
+
         // Assign a new random frequency
         frequency = Rand.RangeInclusive(Props.frequencyMin, Props.frequencyMax);
 
@@ -58,6 +67,21 @@ namespace Powerless {
           ThrowSmokeTriple();
         }
       }
+    }
+
+
+    private bool IsBeingUsed() {
+      pawnsInCell = parent.InteractionCell.GetThingList(pMap).Where(p => p is Pawn).ToList();
+
+      for (int p = 0; p < pawnsInCell.Count; p++) {
+        if (pawnsInCell[p] is Pawn) {
+          Pawn pawn = pawnsInCell[p] as Pawn;
+          if (pawn.CurJob != null && (pawn.CurJob.targetA != null && pawn.CurJob.targetA.Thing == parent) || (pawn.CurJob.targetB != null && pawn.CurJob.targetB.Thing == parent)) {
+            return true;
+          }
+        }
+      }
+      return false;
     }
 
 
