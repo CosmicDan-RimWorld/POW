@@ -17,7 +17,6 @@
 			<shaderType>CutoutPlant</shaderType>
 		</graphicData>
 		<plant>
-			<harvestDestroys>true</harvestDestroys>
 			<soundHarvesting>Harvest_Standard</soundHarvesting>
 			<soundHarvestFinish>Harvest_Standard_Finish</soundHarvestFinish>
 			<sowWork>150</sowWork>
@@ -51,7 +50,6 @@
 			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>POW_Turnip_Spawner</harvestedThingDef>
 			<harvestYield>2</harvestYield>
-			<harvestDestroys>true</harvestDestroys>
 			<sowTags>
 				<li>Ground</li>
 			</sowTags>
@@ -84,7 +82,6 @@
 			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>POW_Cabbage</harvestedThingDef>
 			<harvestYield>12</harvestYield>
-			<harvestDestroys>true</harvestDestroys>
 			<sowTags>
 				<li>Ground</li>
 			</sowTags>
