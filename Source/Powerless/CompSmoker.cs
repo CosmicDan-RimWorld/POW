@@ -21,8 +21,8 @@ namespace Powerless {
     }
 
 
-    public override void PostSpawnSetup() {
-      base.PostSpawnSetup();
+    public override void PostSpawnSetup(bool respawningAfterLoad) {
+      base.PostSpawnSetup(respawningAfterLoad);
 
       // Cache parent info instead of constantly looking it up
       pSize = parent.def.size.ToVector2();

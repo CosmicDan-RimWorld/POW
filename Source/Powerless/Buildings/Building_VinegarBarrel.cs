@@ -17,7 +17,7 @@ namespace Powerless {
 
     public override void ExposeData() {
       base.ExposeData();
-      Scribe_Values.LookValue(ref fermentTicks, "POW_fermentTicks", 0);
+      Scribe_Values.Look(ref fermentTicks, "POW_fermentTicks", 0);
     }
 
 
