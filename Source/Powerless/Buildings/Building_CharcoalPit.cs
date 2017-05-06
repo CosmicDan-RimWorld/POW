@@ -12,7 +12,7 @@ namespace Powerless {
 
     public override void ExposeData() {
       base.ExposeData();
-      Scribe_Values.LookValue(ref burnTicks, "POW_burnTicks", 80);
+      Scribe_Values.Look(ref burnTicks, "POW_burnTicks", 80);
     }
 
 

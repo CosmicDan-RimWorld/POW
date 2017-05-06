@@ -4,8 +4,9 @@ namespace Powerless {
   
   internal class Turnip_Spawner : ThingWithComps {
 
-    public override void SpawnSetup(Map map) {
-      base.SpawnSetup(map);
+
+    public override void SpawnSetup(Map map, bool respawningAfterLoad) {
+      base.SpawnSetup(map, respawningAfterLoad);
       SpawnRandomQuantity(ThingDef.Named("POW_Turnip"), 1, 2, map);
       SpawnRandomQuantity(ThingDef.Named("POW_Turnip_Green"), 1, 4, map);
       Destroy();
