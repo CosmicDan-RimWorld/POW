@@ -45,7 +45,7 @@ namespace Powerless {
       // Display the burning progress
       stringBuilder.AppendLine(ThingDef.Named("POW_Charcoal").LabelCap + " " + "POW_Progress".Translate().ToLower() + ": (" + (100f - (burnTicks / 0.8f)).ToString("#0.00") + "%)");
 
-      return stringBuilder.ToString();
+      return stringBuilder.ToString().TrimEndNewlines();
     }
   }
 }

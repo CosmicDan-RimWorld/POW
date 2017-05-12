@@ -14,6 +14,9 @@ namespace Powerless {
     // 2400 == 10 days of rare ticks
     private int targetTicks = 2400;
 
+    // Map ref to use after the barrel is destroyed
+    private Map thisMap;
+
 
     public override void ExposeData() {
       base.ExposeData();
@@ -37,6 +40,7 @@ namespace Powerless {
 
 
     private void PlaceProduct() {
+      thisMap = Map;
       Destroy();
 
       // Create 20 bottles of vinegar
@@ -47,8 +51,8 @@ namespace Powerless {
       Thing wood = ThingMaker.MakeThing(ThingDefOf.WoodLog);
       wood.stackCount = 25;
 
-      GenPlace.TryPlaceThing(vinegar, Position, Map, ThingPlaceMode.Near);
-      GenPlace.TryPlaceThing(wood, Position, Map, ThingPlaceMode.Near);
+      GenPlace.TryPlaceThing(vinegar, Position, thisMap, ThingPlaceMode.Near);
+      GenPlace.TryPlaceThing(wood, Position, thisMap, ThingPlaceMode.Near);
     }
 
 
@@ -60,7 +64,7 @@ namespace Powerless {
       // Display the fermenting progress
       stringBuilder.AppendLine("POW_Progress".Translate() + ": (" + (((float)fermentTicks / targetTicks) * 100).ToString("#0.00") + "%)");
 
-      return stringBuilder.ToString();
+      return stringBuilder.ToString().TrimEndNewlines();
     }
   }
 }
