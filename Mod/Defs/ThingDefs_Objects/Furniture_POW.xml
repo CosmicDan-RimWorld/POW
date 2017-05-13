@@ -26,7 +26,7 @@
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 			<Beauty>4</Beauty>
-			<WorkToMake>800</WorkToMake>
+			<WorkToBuild>800</WorkToBuild>
 			<BedRestEffectiveness>0.8</BedRestEffectiveness>
 			<Comfort>0.6</Comfort>
 			<ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
@@ -124,7 +124,7 @@
 		<pathCost>10</pathCost>
 		<statBases>
 			<Beauty>8</Beauty>
-			<WorkToMake>120</WorkToMake>
+			<WorkToBuild>120</WorkToBuild>
 			<Flammability>0.1</Flammability>
 			<Mass>2.5</Mass>
 		</statBases>
@@ -163,7 +163,7 @@
 		</costList>
 		<statBases>
 			<Beauty>25</Beauty>
-			<WorkToMake>200</WorkToMake>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.1</Flammability>
 			<Mass>3.5</Mass>
 		</statBases>

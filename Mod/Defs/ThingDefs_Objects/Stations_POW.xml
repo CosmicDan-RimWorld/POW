@@ -21,7 +21,7 @@
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<WorkToMake>1200</WorkToMake>
+			<WorkToBuild>1200</WorkToBuild>
 			<MaxHitPoints>120</MaxHitPoints>
 			<Beauty>1</Beauty>
 			<Flammability>0</Flammability>
@@ -100,7 +100,7 @@
 		<rotatable>true</rotatable>
 		<statBases>
 			<MaxHitPoints>2000</MaxHitPoints>
-			<WorkToMake>2000</WorkToMake>
+			<WorkToBuild>2000</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Cleanliness>-5</Cleanliness>
 			<Mass>50</Mass>
@@ -173,7 +173,7 @@
 		<useHitPoints>false</useHitPoints>
 		<fillPercent>0</fillPercent>
 		<statBases>
-			<WorkToMake>500</WorkToMake>
+			<WorkToBuild>500</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<stuffCategories>
@@ -218,7 +218,7 @@
 		<rotatable>true</rotatable>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
-			<WorkToMake>2000</WorkToMake>
+			<WorkToBuild>2000</WorkToBuild>
 			<Flammability>0</Flammability>
 			<Beauty>10</Beauty>
 			<Cleanliness>-5</Cleanliness>
@@ -287,7 +287,7 @@
 		<fillPercent>0.5</fillPercent>
 		<useHitPoints>True</useHitPoints>
 		<statBases>
-			<WorkToMake>700</WorkToMake>
+			<WorkToBuild>700</WorkToBuild>
 			<MaxHitPoints>90</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 			<Mass>4.5</Mass>
