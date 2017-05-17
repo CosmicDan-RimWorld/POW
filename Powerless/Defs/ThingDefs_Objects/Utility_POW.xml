@@ -18,6 +18,7 @@
 		<rotatable>true</rotatable>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
 		<pathCost>60</pathCost>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.5</fillPercent>
@@ -77,6 +78,7 @@
 		<Size>(1,1)</Size>
 		<DesignationCategory>Misc</DesignationCategory>
 		<Passability>PassThroughOnly</Passability>
+		<canOverlapZones>false</canOverlapZones>
 		<tickerType>Rare</tickerType>
 		<researchPrerequisites>
 			<li>Brewing</li>
@@ -101,6 +103,7 @@
 		<uiIconPath>Cupro/Object/Utility/ShelterHeater_MenuIcon</uiIconPath>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
 		<pathCost>50</pathCost>
 		<constructEffect>ConstructDirt</constructEffect>
 		<tickerType>Normal</tickerType>

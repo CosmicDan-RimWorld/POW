@@ -13,6 +13,7 @@
 		</blueprintGraphicData>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>25</MaxHitPoints>
 			<WorkToMake>75</WorkToMake>
@@ -54,7 +55,7 @@
 		<label>shelter wall</label>
 		<thingClass>Building</thingClass>
 		<category>Building</category>
-		<description>A simple shelter wall made from wood. Capable of holding up a roof, but is easily destroyed.</description>
+		<description>A simple shelter wall made from wood. Capable of holding up a roof, but is easily destroyed. Needs to be manually deconstructed when building in its place.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Structure/WallShelter_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -103,6 +104,7 @@
 		<designationCategory>Structure</designationCategory>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
 		<building>
 			<isInert>true</isInert>
 			<ignoreNeedsPower>true</ignoreNeedsPower>
