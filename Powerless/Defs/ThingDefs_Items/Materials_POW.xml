@@ -4,16 +4,20 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>POW_Charcoal</defName>
 		<label>charcoal</label>
-		<description>A chunk of wood that has been charred until only carbon remains. Used as cooking fuel.</description>
+		<description>A chunk of wood that has been charred until only carbon remains. Used as fuel for grills and smokers.</description>
 		<graphicData>
 			<texPath>Cupro/Item/Material/Charcoal</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>45</onGroundRandomRotateAngle>
 		</graphicData>
 		<resourceReadoutPriority>First</resourceReadoutPriority>
-		<useHitPoints>false</useHitPoints>
+		<useHitPoints>true</useHitPoints>
 		<statBases>
-			<MarketValue>3</MarketValue>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.6</MarketValue>
 			<Mass>0.1</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>5</DeteriorationRate>
 			<WorkToMake>1200</WorkToMake>
 		</statBases>
 		<stackLimit>75</stackLimit>

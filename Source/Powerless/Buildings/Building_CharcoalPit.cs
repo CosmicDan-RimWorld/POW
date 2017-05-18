@@ -1,32 +1,63 @@
 ﻿using System.Text;
 
+using UnityEngine;
+using RimWorld;
 using Verse;
 
 namespace Powerless {
 
   internal class Building_CharcoalPit : Building {
 
-    // Burning Ticks left. Starts at 80 (8 hours, TickRare)
-    private int burnTicks = 80;
+    // Burning ticks to reach. Starts at 20000 (8 hours)
+    private int baseBurnTicks = 20000;
+
+    private float progressInt;
+    public float Progress {
+      get { return progressInt; }
+      set {
+        if (value == progressInt) {
+          return;
+        }
+        progressInt = value;
+      }
+    }
+
+    private float ProgressPerTick {
+      get {
+        return 1f / baseBurnTicks;
+      }
+    }
+
+    private int EstimatedTicksLeft {
+      get {
+        return Mathf.Max(Mathf.RoundToInt((1f - Progress) / ProgressPerTick), 0);
+      }
+    }
 
 
     public override void ExposeData() {
       base.ExposeData();
-      Scribe_Values.Look(ref burnTicks, "POW_burnTicks", 80);
+      Scribe_Values.Look(ref progressInt, "POW_CharcoalPit_progressInt", 0);
     }
+
+
+
 
 
     public override void TickRare() {
       base.TickRare();
 
-      // decrease burnTick counter
-      if (burnTicks > 0) {
-        burnTicks--;
-      }
+      // increase the progress
+      Progress += (250f * ProgressPerTick);
 
       // Spawn charcoal
-      if (burnTicks <= 0) {
+      if (Progress >= 1f) {
         PlaceProduct(Map);
+      }
+
+      // Occasionally throw smoke motes
+      if (Rand.Bool && Position.ShouldSpawnMotesAt(Map) && !Map.moteCounter.SaturatedLowPriority) {
+        MoteMaker.ThrowSmoke(Position.ToVector3Shifted(), Map, 1f);
       }
     }
 
@@ -43,7 +74,10 @@ namespace Powerless {
       StringBuilder stringBuilder = new StringBuilder();
 
       // Display the burning progress
-      stringBuilder.AppendLine(ThingDef.Named("POW_Charcoal").LabelCap + " " + "POW_Progress".Translate().ToLower() + ": (" + (100f - (burnTicks / 0.8f)).ToString("#0.00") + "%)");
+      stringBuilder.AppendLine("FermentationProgress".Translate(new object[]{
+        Progress.ToStringPercent(),
+        EstimatedTicksLeft.ToStringTicksToPeriod(true, false, true)
+      }));
 
       return stringBuilder.ToString().TrimEndNewlines();
     }
