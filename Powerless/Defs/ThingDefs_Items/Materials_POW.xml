@@ -52,6 +52,33 @@
 			<li>Exotic</li>
 		</tradeTags>
 	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>POW_VinegarJuice</defName>
+		<label>vinegar juice</label>
+		<description>Concentrated fruit juice. This substance needs to ferment in a fermenting barrel before it becomes usable vinegar.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Material/Juice_Vinegar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<stackLimit>25</stackLimit>
+		<statBases>
+			<MarketValue>2.5</MarketValue>
+			<DeteriorationRate>1</DeteriorationRate>
+			<Mass>0.8</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<tickerType>Rare</tickerType>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>5</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
 
 	<ThingDef ParentName="ResourceBase">
 		<defName>POW_Vinegar</defName>

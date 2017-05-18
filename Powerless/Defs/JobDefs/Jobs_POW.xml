@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>POW_FillVinegarBarrel</defName>
+		<driverClass>Powerless.JobDriver_FillVinegarBarrel</driverClass>
+		<reportString>filling TargetA.</reportString>
+	</JobDef>
+	
+	<JobDef>
+		<defName>POW_TakeVinegarOutOfVinegarBarrel</defName>
+		<driverClass>Powerless.JobDriver_TakeVinegarOutOfVinegarBarrel</driverClass>
+		<reportString>taking vinegar out of TargetA.</reportString>
+	</JobDef>
+
+</Defs>

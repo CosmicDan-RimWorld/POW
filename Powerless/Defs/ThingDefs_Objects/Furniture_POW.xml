@@ -16,7 +16,11 @@
 
 	<ThingDef Name="BedBase" Abstract="True">
 		<category>Building</category>
-		<thingClass>Building</thingClass>
+		<ThingClass>Building_Bed</ThingClass>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
 		<soundImpactDefault>BulletImpactGround</soundImpactDefault>
 		<selectable>true</selectable>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -26,25 +30,17 @@
 		<filthLeaving>BuildingRubble</filthLeaving>
 		<altitudeLayer>Building</altitudeLayer>
 		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>1.0</Flammability>
-			<Beauty>4</Beauty>
-			<WorkToBuild>800</WorkToBuild>
-			<BedRestEffectiveness>0.8</BedRestEffectiveness>
 			<Comfort>0.6</Comfort>
+			<BedRestEffectiveness>0.8</BedRestEffectiveness>
 			<ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
 		</statBases>
-		<Size>(1,2)</Size>
 		<stuffCategories>
 			<li>Leathery</li>
 		</stuffCategories>
-		<costStuffCount>20</costStuffCount>
-		<costList>
-			<WoodLog>15</WoodLog>
-		</costList>
 		<building>
-			<Bed_ShowSleeperBody>True</Bed_ShowSleeperBody>
-			<bed_healPerDay>7</bed_healPerDay>
+			<Bed_ShowSleeperBody>False</Bed_ShowSleeperBody>
+			<bed_healPerDay>2.75</bed_healPerDay>
 		</building>
 		<comps>
 			<li Class="CompProperties_AffectedByFacilities">
@@ -104,16 +100,48 @@
 		<defName>POW_HideBed</defName>
 		<Label>bed</Label>
 		<Description>A simple bed for sleeping in. Not very comfortable, however.</Description>
-		<ThingClass>Building_Bed</ThingClass>
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/Bed/HideBed</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(1,2)</drawSize>
+			<drawSize>(3,4)</drawSize>
+			<damageData>
+				<rect>(0,0.05,1,1.95)</rect>
+			</damageData>
 		</graphicData>
+		<Size>(1,2)</Size>
 		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>4</Beauty>
+			<WorkToBuild>800</WorkToBuild>
 			<Mass>20</Mass>
 		</statBases>
+		<costStuffCount>20</costStuffCount>
+		<costList>
+			<WoodLog>15</WoodLog>
+		</costList>
+	</ThingDef>
+
+	<ThingDef ParentName="BedBase">
+		<defName>POW_HideDoubleBed</defName>
+		<Label>double bed</Label>
+		<Description>A simple bed for two people to sleep in. Not very comfortable, however.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Furniture/Bed/HideDoubleBed</texPath>
+			<drawSize>(4,4)</drawSize>
+			<damageData>
+				<rect>(0,0.05,2,1.95)</rect>
+			</damageData>
+		</graphicData>
+		<Size>(2,2)</Size>
+		<statBases>
+			<MaxHitPoints>140</MaxHitPoints>
+			<Beauty>8</Beauty>
+			<WorkToBuild>1600</WorkToBuild>
+			<Mass>35</Mass>
+		</statBases>
+		<costStuffCount>40</costStuffCount>
+		<costList>
+			<WoodLog>30</WoodLog>
+		</costList>
 	</ThingDef>
 
 	<ThingDef ParentName="FurnitureBase">

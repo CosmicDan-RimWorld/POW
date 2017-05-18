@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-	
-  <!-- Vinegar Barrel -->
-  
-  <POW_Progress>Progress</POW_Progress>
-  
-  <!-- Charcoal Pit -->
-  
-  <POW_Char_L>Make charcoal</POW_Char_L>
-  <POW_Bamb_L>Make bamboo charcoal</POW_Bamb_L>
-  <POW_Rubb_L>Make rubberwood charcoal</POW_Rubb_L>
-  
-  <POW_Char_D>Char charcoal here</POW_Char_D> 
-  <POW_Bamb_D>Char charcoal from bamboo here</POW_Bamb_D>
-  <POW_Rubb_D>Char charcoal from rubber wood here</POW_Rubb_D>
-  
-  <POW_PitCancel>Cancel wood burning</POW_PitCancel>
+
+	<!-- Vinegar Barrel -->
+	<POW_ContainsIngredient>Contains {0} / {1} juice.</POW_ContainsIngredient>
+	<POW_ContainsAlcohol>Contains {0} / {1} vinegar.</POW_ContainsAlcohol>
+	<POW_NoIngredient>need juice</POW_NoIngredient>
+
+	<!-- Charcoal Pit -->
+	<POW_Char_L>Make charcoal</POW_Char_L>
+	<POW_Bamb_L>Make bamboo charcoal</POW_Bamb_L>
+	<POW_Rubb_L>Make rubberwood charcoal</POW_Rubb_L>
+
+	<POW_Char_D>Char charcoal here</POW_Char_D> 
+	<POW_Bamb_D>Char charcoal from bamboo here</POW_Bamb_D>
+	<POW_Rubb_D>Char charcoal from rubber wood here</POW_Rubb_D>
+
+	<POW_PitCancel>Cancel wood burning</POW_PitCancel>
 
 </LanguageData>
