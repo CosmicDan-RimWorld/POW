@@ -157,48 +157,6 @@
 		</researchPrerequisites>
 	</ThingDef>
 
-
-	<ThingDef ParentName="BuildingBase">
-		<DefName>POW_CharcoalPit</DefName>
-		<label>charcoal pit</label>
-		<ThingClass>Powerless.Building_CharcoalPit</ThingClass>
-		<Description>A mound of burning wood covered with dirt to block oxygen.</Description>
-		<graphicData>
-			<texPath>Cupro/Object/Utility/DirtMound</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(3,3)</drawSize>
-			<color>(133,97,67)</color>
-		</graphicData>
-		<blockLight>false</blockLight>
-		<altitudeLayer>Building</altitudeLayer>
-		<rotatable>false</rotatable>
-		<useHitPoints>false</useHitPoints>
-		<fillPercent>0</fillPercent>
-		<statBases>
-			<WorkToBuild>500</WorkToBuild>
-			<Flammability>0</Flammability>
-		</statBases>
-		<stuffCategories>
-			<li>Woody</li>
-		</stuffCategories>
-		<costStuffCount>25</costStuffCount>
-		<Size>(1,1)</Size>
-		<DesignationCategory>Production</DesignationCategory>
-		<Passability>PassThroughOnly</Passability>
-		<canOverlapZones>false</canOverlapZones>
-		<pathCost>60</pathCost>
-		<surfaceType>Item</surfaceType>
-		<tickerType>Rare</tickerType>
-		<building>
-			<soundAmbient>FireBurning</soundAmbient>
-			<isEdifice>false</isEdifice>
-		</building>
-		<terrainAffordanceNeeded>Diggable</terrainAffordanceNeeded>
-		<placeWorkers>
-			<li>PlaceWorker_NotUnderRoof</li>
-		</placeWorkers>
-	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<DefName>POW_Smoker</DefName>
 		<label>smoker</label>
@@ -216,6 +174,7 @@
 			<li>Stony</li>
 		</stuffCategories>
 		<costStuffCount>100</costStuffCount>
+		<minifiedDef>MinifiedFurniture</minifiedDef>
 		<altitudeLayer>Building</altitudeLayer>
 		<UseHitPoints>true</UseHitPoints>
 		<rotatable>true</rotatable>

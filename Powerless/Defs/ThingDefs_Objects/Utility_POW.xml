@@ -52,6 +52,10 @@
 		</placeWorkers>
 	</ThingDef>
 
+
+	<!-- ======================== Utility ======================= -->
+
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>POW_VinegarBarrel</defName>
 		<thingClass>Powerless.Building_VinegarBarrel</thingClass>
@@ -105,7 +109,7 @@
 		<defName>POW_ShelterHeater</defName>
 		<label>shelter heater</label>
 		<thingClass>Building</thingClass>
-		<description>Burning logs used to produce heat. Burns out after a day. As with all heat sources, it must be placed indoors so it has a closed space to heat. Refuelable.</description>    
+		<description>Burning logs used to produce heat. Burns out after two days. As with all heat sources, it must be placed indoors so it has a closed space to heat. Refuelable.</description>    
 		<category>Building</category>
 		<graphicData>
 			<texPath>Cupro/Object/Utility/ShelterHeater</texPath>
@@ -133,7 +137,8 @@
 		</statBases>
 		<selectable>true</selectable>
 		<costList>
-			<WoodLog>5</WoodLog> <!-- just the intial wood -->
+			<WoodLog>10</WoodLog>
+			<!-- just the intial wood -->
 		</costList>
 		<soundImpactDefault>BulletImpactGround</soundImpactDefault>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
@@ -145,7 +150,7 @@
 		<comps>
 			<li Class="CompProperties_Refuelable">
 				<fuelConsumptionRate>5.0</fuelConsumptionRate>
-				<fuelCapacity>5.0</fuelCapacity>
+				<fuelCapacity>10.0</fuelCapacity>
 				<fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
 				<fuelFilter>
 					<thingDefs>
@@ -164,8 +169,8 @@
 			</li>
 			<li Class="Powerless.CompProperties_Smoker">
 				<smokeStyle>Triple</smokeStyle>
-				<frequencyMin>60</frequencyMin>
-				<frequencyMax>120</frequencyMax>
+				<frequencyMin>120</frequencyMin>
+				<frequencyMax>360</frequencyMax>
 				<size>0.25</size>
 			</li>
 			<li>
@@ -173,6 +178,47 @@
 			</li>
 		</comps>
 		<designationCategory>Temperature</designationCategory>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<DefName>POW_CharcoalPit</DefName>
+		<label>charcoal pit</label>
+		<ThingClass>Powerless.Building_CharcoalPit</ThingClass>
+		<Description>A mound of burning wood covered with dirt to block oxygen.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Utility/DirtMound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<color>(133,97,67)</color>
+		</graphicData>
+		<blockLight>false</blockLight>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<useHitPoints>false</useHitPoints>
+		<fillPercent>0</fillPercent>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Production</DesignationCategory>
+		<Passability>PassThroughOnly</Passability>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>60</pathCost>
+		<surfaceType>Item</surfaceType>
+		<tickerType>Rare</tickerType>
+		<building>
+			<soundAmbient>FireBurning</soundAmbient>
+			<isEdifice>false</isEdifice>
+		</building>
+		<terrainAffordanceNeeded>Diggable</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
 	</ThingDef>
 
 </ThingDefs>

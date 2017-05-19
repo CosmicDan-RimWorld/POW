@@ -14,7 +14,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef Name="BedBase" Abstract="True">
+	<ThingDef Name="BedBase" ParentName="BuildingBase" Abstract="True">
 		<category>Building</category>
 		<ThingClass>Building_Bed</ThingClass>
 		<graphicData>
@@ -62,8 +62,6 @@
 		<placeWorkers>
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
-		<DesignationCategory>Furniture</DesignationCategory>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
 	</ThingDef>
 
 
