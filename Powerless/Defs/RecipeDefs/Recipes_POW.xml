@@ -5,6 +5,7 @@
 		<defName>POW_SmokePreserveMeatLarge</defName>
 		<label>smoke meat (6)</label>
 		<description>Preserve a large amount of meat by slowly smoking it. Very efficient.</description>
+		<targetCountAdjustment>6</targetCountAdjustment>
 		<ingredients>
 			<li>
 				<filter>
@@ -24,6 +25,7 @@
 		<defName>POW_SmokePreserveMeatSmall</defName>
 		<label>smoke meat (3)</label>
 		<description>Preserve meat by slowly smoking it. Not very efficient.</description>
+		<targetCountAdjustment>3</targetCountAdjustment>
 		<ingredients>
 			<li>
 				<filter>
@@ -109,6 +111,7 @@
 		<label>grill meat (2)</label>
 		<description>Prepares two grilled meals consisting of meat. Takes a while, but adds a good flavor.</description>
 		<workAmount>2250</workAmount>
+		<targetCountAdjustment>2</targetCountAdjustment>
 		<ingredients>
 			<li>
 				<filter>
@@ -169,6 +172,7 @@
 		<label>grill vegetarian (2)</label>
 		<description>Prepares two grilled meals consisting of vegetables. Takes a while, but adds a good flavor.</description>
 		<workAmount>2250</workAmount>
+		<targetCountAdjustment>2</targetCountAdjustment>
 		<ingredients>
 			<li>
 				<filter>
@@ -443,7 +447,7 @@
 		<soundWorking>Recipe_Brewing</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<workAmount>1000</workAmount>
-		<targetCountAdjustment>1</targetCountAdjustment>
+		<targetCountAdjustment>5</targetCountAdjustment>
 		<ingredients>
 			<li>
 				<filter>
