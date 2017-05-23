@@ -14,13 +14,14 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef Name="BedBase" ParentName="BuildingBase" Abstract="True">
+	<ThingDef Name="BedBase" ParentName="FurnitureBase" Abstract="True">
 		<category>Building</category>
 		<ThingClass>Building_Bed</ThingClass>
 		<graphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
+		<DesignationCategory>Furniture</DesignationCategory>
 		<soundImpactDefault>BulletImpactGround</soundImpactDefault>
 		<selectable>true</selectable>
 		<drawerType>MapMeshAndRealTime</drawerType>
