@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ThingDefs>
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>POW_Window</defName>
+		<thingClass>Powerless.Building_Window</thingClass>
+		<label>window</label>
+		<Description>A simple window for allowing natural light into a room. Can be built into a wall.</Description>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/Window/Window</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+		<AltitudeLayer>Pawn</AltitudeLayer>
+		<useHitPoints>False</useHitPoints>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<CostList>
+			<Steel>10</Steel>
+		</CostList>
+		<Size>(1,1)</Size>
+		<DesignationCategory>Structure</DesignationCategory>
+		<selectable>true</selectable>
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		<tickerType>Rare</tickerType>
+		<placeWorkers>
+			<li>Powerless.PlaceWorker_WindowInWall</li>
+		</placeWorkers>
+	</ThingDef>
+
+
+</ThingDefs>

@@ -16,5 +16,13 @@
 	<POW_Rubb_D>Char charcoal from rubber wood here</POW_Rubb_D>
 
 	<POW_PitCancel>Cancel wood burning</POW_PitCancel>
+	
+	<!-- Window -->
+	<POW_WindowImpassable>Window is blocked on one or more sides.</POW_WindowImpassable>
+	<POW_WindowNeedsWall>Window must be built onto a constructed wall.</POW_WindowNeedsWall>
+	<POW_WatchingToxicFallout>Watching the toxic dust clouds outside.</POW_WatchingToxicFallout>
+	<POW_WatchingVolcanicWinter>Watching the ash fall.</POW_WatchingVolcanicWinter>
+	<POW_WatchingRain>Watching the rain outside.</POW_WatchingRain>
+	<POW_WatchingSnow>Watching the snow fall.</POW_WatchingSnow>
 
 </LanguageData>
