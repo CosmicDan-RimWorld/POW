@@ -370,6 +370,16 @@
 		<workSpeedStat>CookSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Brewing</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_Vinegar</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
 		<recipeUsers>
 			<li>POW_TableCamp</li>
 			<li>FueledStove</li>
@@ -439,7 +449,7 @@
 	<RecipeDef>
 		<defName>POW_MakeVinegarJuice</defName>
 		<label>make juice for vinegar</label>
-		<description>Make concentrated berry juice for fermenting into vinegar.</description>
+		<description>Make concentrated juice for fermenting into vinegar.</description>
 		<jobString>Making vinegar juice.</jobString>
 		<workSpeedStat>BrewingSpeed</workSpeedStat>
 		<workSkill>Cooking</workSkill>
@@ -460,7 +470,7 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>RawHops</li>
+				<li>RawBerries</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>

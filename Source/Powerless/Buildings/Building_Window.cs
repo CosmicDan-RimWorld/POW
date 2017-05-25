@@ -229,7 +229,6 @@ namespace Powerless {
       }
 
       // Finalize the update
-      Map.mapDrawer.MapMeshDirty(glower.Position, MapMeshFlag.Buildings);
       Map.glowGrid.MarkGlowGridDirty(glower.Position);
     }
 

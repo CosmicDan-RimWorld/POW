@@ -91,19 +91,17 @@
 			<growOptimalGlow>0.8</growOptimalGlow>
 			<fertilityMin>0.85</fertilityMin>
 			<fertilitySensitivity>0.6</fertilitySensitivity>
-			<wildCommonalityMaxFraction>0.25</wildCommonalityMaxFraction>
+			<wildCommonalityMaxFraction>0.005</wildCommonalityMaxFraction>
 			<wildBiomes>
-				<TropicalRainforest>0.02</TropicalRainforest>
-				<TemperateForest>0.02</TemperateForest>
-				<AridShrubland>0.01</AridShrubland>
-				<BorealForest>0.03</BorealForest>
-				<Desert>0.01</Desert>
-				<ExtremeDesert>0.01</ExtremeDesert>
-				<Tundra>0.05</Tundra>
+				<TropicalRainforest>0.005</TropicalRainforest>
+				<TemperateForest>0.005</TemperateForest>
+				<AridShrubland>0.0025</AridShrubland>
+				<BorealForest>0.0075</BorealForest>
+				<Tundra>0.0125</Tundra>
 			</wildBiomes>
 			<wildClusterSizeRange>
-				<min>3</min>
-				<max>10</max>
+				<min>2</min>
+				<max>5</max>
 			</wildClusterSizeRange>
 			<wildClusterRadius>6</wildClusterRadius>
 			<visualSizeRange>
