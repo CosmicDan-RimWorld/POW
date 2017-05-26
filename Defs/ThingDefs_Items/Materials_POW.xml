@@ -38,9 +38,9 @@
 		<soundDrop>Metal_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
-			<MarketValue>100</MarketValue>
+			<MarketValue>75</MarketValue>
 			<Mass>0.8</Mass>
-			<SellPriceFactor>0.25</SellPriceFactor>
+			<SellPriceFactor>0.3334</SellPriceFactor>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>

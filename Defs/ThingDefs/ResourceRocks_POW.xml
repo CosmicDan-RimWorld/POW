@@ -46,6 +46,7 @@
 	<ThingDef ParentName="RockBase">
 		<defName>POW_MineableGlowstone</defName>
 		<label>glowstone deposit</label>
+		<description>The remains of an ancient meteorite containing bits of a strange glowing gem.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Structure/RockGlittering/RockGlittering_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -56,15 +57,14 @@
 			<Beauty>20</Beauty>
 			<MaxHitPoints>1200</MaxHitPoints>
 		</statBases>
-		<description>Rock containing bits of a strange glowing gem.</description>
 		<building>
 			<isResourceRock>true</isResourceRock>
 			<mineableThing>POW_Glowstone</mineableThing>
-			<mineableYield>2</mineableYield>
-			<mineableScatterCommonality>0.4</mineableScatterCommonality>
+			<mineableYield>1</mineableYield>
+			<mineableScatterCommonality>1.5</mineableScatterCommonality>
 			<mineableScatterLumpSizeRange>
-				<min>4</min>
-				<max>8</max>
+				<min>3</min>
+				<max>6</max>
 			</mineableScatterLumpSizeRange>
 		</building>
 		<Comps>
