@@ -14,7 +14,7 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef Name="BedBase" ParentName="FurnitureBase" Abstract="True">
+	<ThingDef Name="POW_BedBase" ParentName="FurnitureBase" Abstract="True">
 		<category>Building</category>
 		<ThingClass>Building_Bed</ThingClass>
 		<graphicData>
@@ -32,9 +32,9 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<statBases>
 			<Flammability>1.0</Flammability>
-			<Comfort>0.6</Comfort>
-			<BedRestEffectiveness>0.8</BedRestEffectiveness>
-			<ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
+			<BedRestEffectiveness>1</BedRestEffectiveness>
+			<Comfort>0.75</Comfort>
+			<ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
 		</statBases>
 		<stuffCategories>
 			<li>Leathery</li>
@@ -95,10 +95,10 @@
 	<!-- ========================== Inheritors ============================== -->
 
 
-	<ThingDef ParentName="BedBase">
+	<ThingDef ParentName="POW_BedBase">
 		<defName>POW_HideBed</defName>
 		<Label>bed</Label>
-		<Description>A simple bed for sleeping in. Not very comfortable, however.</Description>
+		<Description>A primitive bed for sleeping in.</Description>
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/Bed/HideBed</texPath>
 			<drawSize>(3,4)</drawSize>
@@ -119,10 +119,10 @@
 		</costList>
 	</ThingDef>
 
-	<ThingDef ParentName="BedBase">
+	<ThingDef ParentName="POW_BedBase">
 		<defName>POW_HideDoubleBed</defName>
 		<Label>double bed</Label>
-		<Description>A simple bed for two people to sleep in. Not very comfortable, however.</Description>
+		<Description>A primitive bed for two people to sleep in.</Description>
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/Bed/HideDoubleBed</texPath>
 			<drawSize>(4,4)</drawSize>
