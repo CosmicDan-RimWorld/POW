@@ -51,7 +51,7 @@
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>40.0</fuelConsumptionRate>
+				<fuelConsumptionRate>80.0</fuelConsumptionRate>
 				<fuelCapacity>25.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
@@ -125,7 +125,7 @@
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>20.0</fuelConsumptionRate>
+				<fuelConsumptionRate>64.0</fuelConsumptionRate>
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
@@ -205,7 +205,7 @@
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>60.0</fuelConsumptionRate>
+				<fuelConsumptionRate>120.0</fuelConsumptionRate>
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
