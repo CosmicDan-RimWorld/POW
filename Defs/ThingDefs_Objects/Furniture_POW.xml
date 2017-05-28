@@ -218,7 +218,8 @@
 		<label>pylon</label>
 		<description>A simple structure for lighting paths. For some reason, it never feels like enough have been built.</description>
 		<graphicData>
-			<texPath>Cupro/Object/Furniture/Pylon</texPath>
+			<texPath>Cupro/Object/Furniture/Lamp/Pylon</texPath>
+			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
 		<pathCost>10</pathCost>
@@ -226,15 +227,20 @@
 			<Beauty>8</Beauty>
 			<WorkToBuild>120</WorkToBuild>
 			<Flammability>0.1</Flammability>
-			<Mass>2.5</Mass>
+			<Mass>1.5</Mass>
 		</statBases>
+		<stuffCategories>
+			<li>Woody</li>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>10</costStuffCount>
 		<costList>
-			<Silver>50</Silver>
 			<POW_Glowstone>1</POW_Glowstone>
 		</costList>
 		<Comps>
 			<li Class="CompProperties_Glower">
-				<glowRadius>8</glowRadius>
+				<glowRadius>7</glowRadius>
 				<glowColor>(165,177,192,0)</glowColor>
 			</li>
 		</Comps>
@@ -256,9 +262,8 @@
 			<li>Metallic</li>
 			<li>Stony</li>
 		</stuffCategories>
-		<costStuffCount>15</costStuffCount>
+		<costStuffCount>25</costStuffCount>
 		<costList>
-			<Silver>75</Silver>
 			<POW_Glowstone>2</POW_Glowstone>
 		</costList>
 		<statBases>

@@ -29,7 +29,7 @@
 	<ThingDef ParentName="ResourceBase">
 		<defName>POW_Glowstone</defName>
 		<label>glowstone</label>
-		<description>While the safety of these glowing rocks is questionable, they do provide a good amount of light, especially when constructed with reflective silver.</description>
+		<description>While the safety of these glowing rocks is questionable, they do provide a good amount of light without needing power.</description>
 		<graphicData>
 			<texPath>Cupro/Item/Material/Glowstone</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -38,9 +38,9 @@
 		<soundDrop>Metal_Drop</soundDrop>
 		<useHitPoints>false</useHitPoints>
 		<statBases>
-			<MarketValue>75</MarketValue>
+			<Beauty>2</Beauty>
+			<MarketValue>150</MarketValue>
 			<Mass>0.8</Mass>
-			<SellPriceFactor>0.3334</SellPriceFactor>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>
@@ -48,7 +48,7 @@
 		<Comps>
 			<li Class="CompProperties_Glower">
 				<glowRadius>5</glowRadius>
-				<glowColor>(113,187,252,0)</glowColor>
+				<glowColor>(150,185,205,0)</glowColor>
 			</li>
 		</Comps>
 		<tradeability>Sellable</tradeability>
