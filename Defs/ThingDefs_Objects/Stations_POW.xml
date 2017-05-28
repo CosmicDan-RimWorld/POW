@@ -65,7 +65,7 @@
 				<frequencyMin>240</frequencyMin>
 				<frequencyMax>640</frequencyMax>
 				<produceSmokeOnlyWhenUsed>true</produceSmokeOnlyWhenUsed>
-				<size>0.25</size>
+				<size>0.45</size>
 			</li>
 		</comps>
 		<building>
