@@ -11,12 +11,14 @@
 			<li Class="PatchOperationReplace">
 				<xpath>/ThingDefs/ThingDef[@Name = "POW_BedBase"]/comps/li[@Class = "CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
 				<value>
-					<li>Anon2Dresser</li>
-					<li>Anon2EndTable</li>
-					<li>Anon2EndTableLight</li>
-					<li>Anon2RoyalEndTable</li>
-					<li>Anon2RoyalEndTableLight</li>
-					<li>VitalsMonitor</li>
+					<linkableFacilities>
+						<li>Anon2Dresser</li>
+						<li>Anon2EndTable</li>
+						<li>Anon2EndTableLight</li>
+						<li>Anon2RoyalEndTable</li>
+						<li>Anon2RoyalEndTableLight</li>
+						<li>VitalsMonitor</li>
+					</linkableFacilities>
 				</value>
 			</li>
 		</Operations>
