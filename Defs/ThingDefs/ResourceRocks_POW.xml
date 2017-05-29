@@ -51,6 +51,7 @@
 			<texPath>Cupro/Object/Structure/RockGlittering/RockGlittering_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
+			<color>(114,92,83)</color>
 			<colorTwo>(113,187,252)</colorTwo>
 		</graphicData>
 		<statBases>
