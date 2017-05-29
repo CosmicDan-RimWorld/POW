@@ -236,7 +236,7 @@
 		</stuffCategories>
 		<costStuffCount>10</costStuffCount>
 		<costList>
-			<POW_Glowstone>1</POW_Glowstone>
+			<POW_LargeGlowstone>1</POW_LargeGlowstone>
 		</costList>
 		<Comps>
 			<li Class="CompProperties_Glower">
@@ -264,7 +264,7 @@
 		</stuffCategories>
 		<costStuffCount>25</costStuffCount>
 		<costList>
-			<POW_Glowstone>2</POW_Glowstone>
+			<POW_SmallGlowstone>2</POW_SmallGlowstone>
 		</costList>
 		<statBases>
 			<Beauty>25</Beauty>
