@@ -218,7 +218,7 @@
 		<label>pylon</label>
 		<description>A simple structure for lighting paths. For some reason, it never feels like enough have been built.</description>
 		<graphicData>
-			<texPath>Cupro/Object/Furniture/Lamp/Pylon</texPath>
+			<texPath>Cupro/Object/Furniture/Pylon/Pylon</texPath>
 			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
