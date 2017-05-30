@@ -21,8 +21,11 @@
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<tradeTags>
+			<li>POW_Meals</li>
+		</tradeTags>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MealRottable">
 		<defName>POW_MealCabbageSalad</defName>
 		<label>cabbage salad</label>
@@ -43,6 +46,9 @@
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<tradeTags>
+			<li>POW_Meals</li>
+		</tradeTags>
 	</ThingDef>
 
 	<ThingDef ParentName="MealBase">
@@ -75,6 +81,9 @@
 				<rotDestroys>false</rotDestroys>
 			</li>
 		</comps>
+		<tradeTags>
+			<li>POW_Meals</li>
+		</tradeTags>
 	</ThingDef>
 
 
@@ -142,8 +151,11 @@
 			<nutrition>0.04</nutrition>
 			<specialThoughtDirect>POW_AteRawTurnip</specialThoughtDirect>
 		</ingestible>
+		<tradeTags>
+			<li>POW_RawFood</li>
+		</tradeTags>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="OrganicProductBase">
 		<defName>POW_Turnip_Green</defName>
 		<label>turnip greens</label>
@@ -171,7 +183,7 @@
 			<li Class="CompProperties_FoodPoisoningChance" />
 		</comps>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="OrganicProductBase">
 		<defName>POW_Cabbage</defName>
 		<label>cabbage</label>
@@ -192,12 +204,15 @@
 			<li>FoodRaw</li>
 		</thingCategories>
 		<comps>
-		<li Class="CompProperties_Rottable">
+			<li Class="CompProperties_Rottable">
 				<daysToRotStart>40</daysToRotStart>
 			</li>
-			</comps>
+		</comps>
+		<tradeTags>
+			<li>POW_RawFood</li>
+		</tradeTags>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>POW_PickledTurnip</defName>
 		<label>pickled turnips</label>
@@ -221,8 +236,11 @@
 			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>
 			<specialThoughtAsIngredient>POW_FoodMadeWithPickledIngredient</specialThoughtAsIngredient>
 		</ingestible>
+		<tradeTags>
+			<li>POW_RawFood</li>
+		</tradeTags>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>POW_PickledCabbage</defName>
 		<label>pickled cabbage</label>
@@ -246,6 +264,9 @@
 			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>
 			<specialThoughtAsIngredient>POW_FoodMadeWithPickledIngredient</specialThoughtAsIngredient>
 		</ingestible>
+		<tradeTags>
+			<li>POW_RawFood</li>
+		</tradeTags>
 	</ThingDef>
 
 </ThingDefs>

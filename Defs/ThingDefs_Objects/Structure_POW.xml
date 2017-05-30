@@ -148,7 +148,7 @@
 	</ThingDef>
 	
 	<ThingDef Name="GlowstoneFloorStipBase" ParentName="BuildingBase" Abstract="True">
-		<Description>Glowstone-plated panels used for lighting hallways or tight areas.</Description>
+		<Description>Glowstone-plated tiles used for lighting hallways or tight areas. Multiple strips can occupy the same area.</Description>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
@@ -159,7 +159,7 @@
 		<statBases>
 			<MaxHitPoints>75</MaxHitPoints>
 			<WorkToBuild>100</WorkToBuild>
-			<Beauty>1</Beauty>
+			<!-- Beauty was removed since strips can occupy the same cell and stack beauty unrealistically -->
 			<Flammability>0</Flammability>
 		</statBases>
 		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
@@ -220,16 +220,6 @@
 		</CostList>
 	</ThingDef>
 	<ThingDef ParentName="GlowstoneFloorStipBase">
-		<defName>POW_GlowstoneFloorCornerFull</defName>
-		<label>glowstone full corner</label>
-		<graphicData>
-			<texPath>Cupro/Object/Structure/GlowstoneFloor/FullCorner</texPath>
-		</graphicData>
-		<CostList>
-			<POW_GlowstoneTile>16</POW_GlowstoneTile>
-		</CostList>
-	</ThingDef>
-	<ThingDef ParentName="GlowstoneFloorStipBase">
 		<defName>POW_GlowstoneFloorCornerOuter</defName>
 		<label>glowstone outer corner</label>
 		<graphicData>
@@ -247,26 +237,6 @@
 		</graphicData>
 		<CostList>
 			<POW_GlowstoneTile>2</POW_GlowstoneTile>
-		</CostList>
-	</ThingDef>
-	<ThingDef ParentName="GlowstoneFloorStipBase">
-		<defName>POW_GlowstoneFloorWye</defName>
-		<label>glowstone wye corner</label>
-		<graphicData>
-			<texPath>Cupro/Object/Structure/GlowstoneFloor/WyeCorner</texPath>
-		</graphicData>
-		<CostList>
-			<POW_GlowstoneTile>3</POW_GlowstoneTile>
-		</CostList>
-	</ThingDef>
-	<ThingDef ParentName="GlowstoneFloorStipBase">
-		<defName>POW_GlowstoneFloorQuad</defName>
-		<label>glowstone quad corner</label>
-		<graphicData>
-			<texPath>Cupro/Object/Structure/GlowstoneFloor/QuadCorner</texPath>
-		</graphicData>
-		<CostList>
-			<POW_GlowstoneTile>4</POW_GlowstoneTile>
 		</CostList>
 	</ThingDef>
 

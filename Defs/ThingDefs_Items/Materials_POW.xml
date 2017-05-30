@@ -39,7 +39,7 @@
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>2</Beauty>
-			<MarketValue>150</MarketValue>
+			<MarketValue>100</MarketValue>
 			<Mass>0.8</Mass>
 		</statBases>
 		<thingCategories>
@@ -70,8 +70,8 @@
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>1</Beauty>
-			<MarketValue>75</MarketValue>
-			<Mass>0.4</Mass>
+			<MarketValue>25</MarketValue>
+			<Mass>0.2</Mass>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>
@@ -101,7 +101,7 @@
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>8</Beauty>
-			<MarketValue>750</MarketValue>
+			<MarketValue>400</MarketValue>
 			<Mass>4</Mass>
 		</statBases>
 		<thingCategories>
@@ -132,8 +132,8 @@
 		<useHitPoints>false</useHitPoints>
 		<statBases>
 			<Beauty>0</Beauty>
-			<MarketValue>18</MarketValue>
-			<Mass>0.1</Mass>
+			<MarketValue>6</MarketValue>
+			<Mass>0.03</Mass>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>

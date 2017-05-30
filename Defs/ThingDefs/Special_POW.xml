@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ThingDefinitions>
-
-	<ThingDef>
-		<defName>POW_Turnip_Spawner</defName>
-		<thingClass>Powerless.Turnip_Spawner</thingClass>
-		<label>whole turnip</label>
-		<description>A turnip with greens still attached.</description>
-		<category>Item</category>
-		<altitudeLayer>Item</altitudeLayer>
-		<tradeability>Never</tradeability>
-		<drawerType>RealtimeOnly</drawerType>
+	
+	<ThingDef Name="ItemSpawnerBase" ParentName="ResourceBase" Abstract="True">
+		<description>null</description>
 		<graphicData>
-			<texPath>Cupro/Item/Material/Turnip_Full</texPath>
+			<texPath>Cupro/Null</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
+		<resourceReadoutPriority>First</resourceReadoutPriority>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<MarketValue>0</MarketValue>
+		</statBases>
+	</ThingDef>	
+	
+	<ThingDef ParentName="ItemSpawnerBase">
+		<defName>POW_GlowstoneItemSpawner</defName>
+		<thingClass>Powerless.GlowstoneItemSpawner</thingClass>
+		<label>glowstone spawner</label>
+	</ThingDef>
+	
+	<ThingDef ParentName="ItemSpawnerBase">
+		<defName>POW_Turnip_Spawner</defName>
+		<thingClass>Powerless.Turnip_Spawner</thingClass>
+		<label>turnip spawner</label>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">

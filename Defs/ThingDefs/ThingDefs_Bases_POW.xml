@@ -274,6 +274,9 @@
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<tradeTags>
+			<li>POW_Meals</li>
+		</tradeTags>
 	</ThingDef>
 	
 	<RecipeDef Name="SmokedBase" Abstract="True">

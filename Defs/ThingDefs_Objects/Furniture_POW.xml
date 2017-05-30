@@ -216,7 +216,7 @@
 	<ThingDef ParentName="ModifiedLampBase" >
 		<defName>POW_GlowstonePylon</defName>
 		<label>pylon</label>
-		<description>A simple structure for lighting paths. For some reason, it never feels like enough have been built.</description>
+		<description>A simple structure for lighting areas. For some reason, it never feels like enough have been built.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/Pylon/Pylon</texPath>
 			<shaderType>CutoutComplex</shaderType>
@@ -225,7 +225,7 @@
 		<DesignationCategory>POW_Glowstone</DesignationCategory>
 		<pathCost>10</pathCost>
 		<statBases>
-			<Beauty>8</Beauty>
+			<Beauty>10</Beauty>
 			<WorkToBuild>120</WorkToBuild>
 			<Flammability>0.1</Flammability>
 			<Mass>1.5</Mass>
@@ -241,7 +241,7 @@
 		</costList>
 		<Comps>
 			<li Class="CompProperties_Glower">
-				<glowRadius>7</glowRadius>
+				<glowRadius>10</glowRadius>
 				<glowColor>(165,177,192,0)</glowColor>
 			</li>
 		</Comps>
@@ -250,7 +250,7 @@
 	<ThingDef ParentName="ModifiedLampBase" >
 		<defName>POW_GlowstoneLamp</defName>
 		<label>glowstone lamp</label>
-		<description>A lamp supporting two small glowstones.</description>
+		<description>A lamp supporting two small glowstones. Fits well in a bedroom or a workshop.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/Lamp/GlowstoneLamp</texPath>
 			<shaderType>CutoutComplex</shaderType>
@@ -269,17 +269,75 @@
 			<POW_SmallGlowstone>2</POW_SmallGlowstone>
 		</costList>
 		<statBases>
-			<Beauty>25</Beauty>
+			<Beauty>15</Beauty>
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.1</Flammability>
 			<Mass>3.5</Mass>
 		</statBases>
 		<Comps>
 			<li Class="CompProperties_Glower">
-				<glowRadius>10</glowRadius>
+				<glowRadius>7</glowRadius>
 				<glowColor>(165,177,192,0)</glowColor>
 			</li>
 		</Comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="FurnitureBase">
+		<defName>POW_GlowstoneChandelier</defName>
+		<thingClass>Powerless.Building_Chandelier</thingClass>
+		<label>glowstone chandelier</label>
+		<description>A simple chandelier housing four small glowstones. Can be hung from the ceiling over most objects.</description>
+		<graphicData>
+			<texPath>Cupro/Object/Furniture/Chandelier/Chandelier</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<fillPercent>0</fillPercent>
+		<passability>Standable</passability>
+		<selectable>true</selectable>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<altitudeLayer>FlyingItem</altitudeLayer>
+		<pathCost>0</pathCost>
+		<DesignationCategory>POW_Glowstone</DesignationCategory>
+		<size>(2,2)</size>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<Mass>12</Mass>
+			<Beauty>20</Beauty>
+			<Flammability>0</Flammability>
+		</statBases>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>45</costStuffCount>
+		<costList>
+			<POW_SmallGlowstone>4</POW_SmallGlowstone>
+		</costList>
+		<tickerType>Rare</tickerType>
+		<Comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>10</glowRadius>
+				<glowColor>(165,177,192,0)</glowColor>
+			</li>
+			<li Class="Powerless.CompProperties_Hanger">
+				<HangingType>Ceiling</HangingType>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>ArtName_Furniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Masterwork</minQualityForArtistic>
+			</li>
+		</Comps>
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		<placeWorkers>
+			<li>Powerless.PlaceWorker_Roofed</li>
+			<li>Powerless.PlaceWorker_Chandelier</li>
+		</placeWorkers>
 	</ThingDef>
 
 

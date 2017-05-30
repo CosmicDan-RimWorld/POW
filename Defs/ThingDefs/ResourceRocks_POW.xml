@@ -60,7 +60,7 @@
 		</statBases>
 		<building>
 			<isResourceRock>true</isResourceRock>
-			<mineableThing>POW_LargeGlowstone</mineableThing>
+			<mineableThing>POW_GlowstoneItemSpawner</mineableThing>
 			<mineableYield>1</mineableYield>
 			<mineableScatterCommonality>1.5</mineableScatterCommonality>
 			<mineableScatterLumpSizeRange>
