@@ -612,5 +612,162 @@
 			<li>ElectricSmelter</li>
 		</recipeUsers>
 	</RecipeDef>
+	
+	<RecipeDef Name="POW_MakeGlowstoneTilesBase" Abstract="True">
+		<description>Make steel tiles infused with glowstone for lighting paths.</description>
+		<jobString>Making glowstone tiles.</jobString>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="POW_MakeGlowstoneTilesBase">
+		<defName>POW_MakeEightGlowstoneTiles</defName>
+		<label>make 8 glowstone tiles</label>
+		<workAmount>130</workAmount>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<targetCountAdjustment>8</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_GlowstoneDust</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>POW_GlowstoneDust</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_GlowstoneTile>8</POW_GlowstoneTile>
+		</products>
+		<recipeUsers>
+			<li>POW_Forge</li>
+		</recipeUsers>
+	</RecipeDef>
+	<RecipeDef ParentName="POW_MakeGlowstoneTilesBase">
+		<defName>POW_MakeEightGlowstoneTilesElectric</defName>
+		<label>make 8 glowstone tiles</label>
+		<workAmount>100</workAmount>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<targetCountAdjustment>8</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_GlowstoneDust</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>POW_GlowstoneDust</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_GlowstoneTile>8</POW_GlowstoneTile>
+		</products>
+		<recipeUsers>
+			<li>ElectricSmelter</li>
+		</recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="POW_MakeGlowstoneTilesBase">
+		<defName>POW_MakeFortyGlowstoneTiles</defName>
+		<label>make 40 glowstone tiles</label>
+		<workAmount>650</workAmount>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<targetCountAdjustment>40</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_GlowstoneDust</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>POW_GlowstoneDust</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_GlowstoneTile>40</POW_GlowstoneTile>
+		</products>
+		<recipeUsers>
+			<li>POW_Forge</li>
+		</recipeUsers>
+	</RecipeDef>
+	<RecipeDef ParentName="POW_MakeGlowstoneTilesBase">
+		<defName>POW_MakeFortyGlowstoneTilesElectric</defName>
+		<label>make 40 glowstone tiles</label>
+		<workAmount>500</workAmount>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<targetCountAdjustment>40</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_GlowstoneDust</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+				<li>POW_GlowstoneDust</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_GlowstoneTile>40</POW_GlowstoneTile>
+		</products>
+		<recipeUsers>
+			<li>ElectricSmelter</li>
+		</recipeUsers>
+	</RecipeDef>
 
 </RecipeDefs>

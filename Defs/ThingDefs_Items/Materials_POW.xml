@@ -151,6 +151,37 @@
 	</ThingDef>
 	
 	<ThingDef ParentName="ResourceBase">
+		<defName>POW_GlowstoneTile</defName>
+		<label>glowstone tile</label>
+		<description>A steel tile plated with glowstone. Can be used to build floor strips, which provide light.</description>
+		<graphicData>
+			<texPath>Cupro/Item/Material/Glowstone/Tile</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<Beauty>0</Beauty>
+			<MarketValue>6</MarketValue>
+			<Mass>0.1</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<Comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>1</glowRadius>
+				<glowColor>(75,92,102,0)</glowColor>
+			</li>
+		</Comps>
+		<tradeability>Sellable</tradeability>
+		<tradeTags>
+			<li>Exotic</li>
+		</tradeTags>
+	</ThingDef>
+	
+	<ThingDef ParentName="ResourceBase">
 		<defName>POW_VinegarJuice</defName>
 		<label>vinegar juice</label>
 		<description>Concentrated fruit juice. This substance needs to ferment in a fermenting barrel before it becomes usable vinegar.</description>

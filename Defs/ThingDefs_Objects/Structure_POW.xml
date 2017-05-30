@@ -146,5 +146,128 @@
 			<li>Powerless.PlaceWorker_WindowInWall</li>
 		</placeWorkers>
 	</ThingDef>
+	
+	<ThingDef Name="GlowstoneFloorStipBase" ParentName="BuildingBase" Abstract="True">
+		<Description>Glowstone-plated panels used for lighting hallways or tight areas.</Description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>Floor</altitudeLayer>
+		<coversFloor>false</coversFloor>
+		<passability>Standable</passability>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<WorkToBuild>100</WorkToBuild>
+			<Beauty>1</Beauty>
+			<Flammability>0</Flammability>
+		</statBases>
+		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+		<constructEffect>ConstructMetal</constructEffect>
+		<Size>(1,1)</Size>
+		<rotatable>true</rotatable>
+		<DesignationCategory>POW_Glowstone</DesignationCategory>
+		<selectable>true</selectable>
+		<building>
+			<isEdifice>false</isEdifice>
+			<isInert>true</isInert>
+		</building>
+		<Comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>3</glowRadius>
+				<glowColor>(150,185,205,0)</glowColor>
+			</li>
+		</Comps>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorSingle</defName>
+		<label>glowstone strip</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/Single</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>8</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorDouble</defName>
+		<label>glowstone double strip</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/Double</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>16</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorDeadend</defName>
+		<label>glowstone deadend strip</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/Deadend</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>22</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorCornerInner</defName>
+		<label>glowstone inner corner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/InnerCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>15</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorCornerFull</defName>
+		<label>glowstone full corner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/FullCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>16</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorCornerOuter</defName>
+		<label>glowstone outer corner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/OuterCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>1</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorCornerDouble</defName>
+		<label>glowstone double inner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/DoubleCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>2</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorWye</defName>
+		<label>glowstone wye corner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/WyeCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>3</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
+	<ThingDef ParentName="GlowstoneFloorStipBase">
+		<defName>POW_GlowstoneFloorQuad</defName>
+		<label>glowstone quad corner</label>
+		<graphicData>
+			<texPath>Cupro/Object/Structure/GlowstoneFloor/QuadCorner</texPath>
+		</graphicData>
+		<CostList>
+			<POW_GlowstoneTile>4</POW_GlowstoneTile>
+		</CostList>
+	</ThingDef>
 
 </ThingDefs>

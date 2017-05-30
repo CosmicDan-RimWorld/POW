@@ -222,6 +222,7 @@
 			<shaderType>CutoutComplex</shaderType>
 		</graphicData>
 		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<DesignationCategory>POW_Glowstone</DesignationCategory>
 		<pathCost>10</pathCost>
 		<statBases>
 			<Beauty>8</Beauty>
@@ -256,6 +257,7 @@
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
+		<DesignationCategory>POW_Glowstone</DesignationCategory>
 		<pathCost>60</pathCost>
 		<stuffCategories>
 			<li>Woody</li>
