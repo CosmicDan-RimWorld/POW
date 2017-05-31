@@ -117,38 +117,8 @@
 		</damageMultipliers>
 	</ThingDef>
 	
-	<ThingDef ParentName="BuildingBase">
-		<defName>POW_Window</defName>
-		<thingClass>Powerless.Building_Window</thingClass>
-		<label>window</label>
-		<Description>A simple window for allowing natural light into a room. Can be built into a wall.</Description>
-		<graphicData>
-			<texPath>Cupro/Object/Structure/Window/Window</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-		</graphicData>
-		<AltitudeLayer>Pawn</AltitudeLayer>
-		<useHitPoints>False</useHitPoints>
-		<statBases>
-			<WorkToBuild>500</WorkToBuild>
-			<Flammability>0</Flammability>
-		</statBases>
-		<CostList>
-			<Steel>10</Steel>
-		</CostList>
-		<Size>(1,1)</Size>
-		<DesignationCategory>Structure</DesignationCategory>
-		<selectable>true</selectable>
-		<building>
-			<isEdifice>false</isEdifice>
-		</building>
-		<tickerType>Rare</tickerType>
-		<placeWorkers>
-			<li>Powerless.PlaceWorker_WindowInWall</li>
-		</placeWorkers>
-	</ThingDef>
-	
 	<ThingDef Name="GlowstoneFloorStipBase" ParentName="BuildingBase" Abstract="True">
-		<Description>Glowstone-plated tiles used for lighting hallways or tight areas. Multiple strips can occupy the same area.</Description>
+		<Description>Glowstone-plated tiles used for lighting hallways or tight areas. Multiple strips can occupy the same area, allowing for more intricate designs.</Description>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
@@ -185,6 +155,7 @@
 		<graphicData>
 			<texPath>Cupro/Object/Structure/GlowstoneFloor/Single</texPath>
 		</graphicData>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<CostList>
 			<POW_GlowstoneTile>8</POW_GlowstoneTile>
 		</CostList>
@@ -195,6 +166,7 @@
 		<graphicData>
 			<texPath>Cupro/Object/Structure/GlowstoneFloor/Double</texPath>
 		</graphicData>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<CostList>
 			<POW_GlowstoneTile>16</POW_GlowstoneTile>
 		</CostList>

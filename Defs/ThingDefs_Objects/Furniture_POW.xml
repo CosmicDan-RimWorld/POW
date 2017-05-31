@@ -284,11 +284,10 @@
 	
 	<ThingDef ParentName="FurnitureBase">
 		<defName>POW_GlowstoneChandelier</defName>
-		<thingClass>Powerless.Building_Chandelier</thingClass>
 		<label>glowstone chandelier</label>
 		<description>A simple chandelier housing four small glowstones. Can be hung from the ceiling over most objects.</description>
 		<graphicData>
-			<texPath>Cupro/Object/Furniture/Chandelier/Chandelier</texPath>
+			<texPath>Cupro/Object/Furniture/GlowstoneChandelier</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2,2)</drawSize>
@@ -318,12 +317,12 @@
 		</costList>
 		<tickerType>Rare</tickerType>
 		<Comps>
+			<li>
+				<compClass>Powerless.CompChandelier</compClass>
+			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>10</glowRadius>
 				<glowColor>(165,177,192,0)</glowColor>
-			</li>
-			<li Class="Powerless.CompProperties_Hanger">
-				<HangingType>Ceiling</HangingType>
 			</li>
 			<li Class="CompProperties_Art">
 				<nameMaker>ArtName_Furniture</nameMaker>

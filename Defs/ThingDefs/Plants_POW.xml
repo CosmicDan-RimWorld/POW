@@ -48,7 +48,7 @@
 		<plant>
 			<dieIfLeafless>false</dieIfLeafless>
 			<harvestTag>Standard</harvestTag>
-			<harvestedThingDef>POW_Turnip_Spawner</harvestedThingDef>
+			<harvestedThingDef>POW_TurnipItemSpawner</harvestedThingDef>
 			<harvestYield>2</harvestYield>
 			<sowTags>
 				<li>Ground</li>

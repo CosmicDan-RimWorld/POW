@@ -529,6 +529,41 @@
 		</recipeUsers>
 	</RecipeDef>
 	
+	<RecipeDef>
+		<defName>POW_CutGlowstoneCluster</defName>
+		<label>cut glowstone cluster</label>
+		<description>Cut and polish a glowstone cluster into 4 large glowstones.</description>
+		<workAmount>1600</workAmount>
+		<jobString>Cutting glowstone cluster.</jobString>
+		<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+		<workSkill>Construction</workSkill>
+		<workSkillLearnFactor>0.3</workSkillLearnFactor>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<targetCountAdjustment>4</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_GlowstoneCluster</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>POW_GlowstoneCluster</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_LargeGlowstone>4</POW_LargeGlowstone>
+		</products>
+		<recipeUsers>
+			<li>TableStonecutter</li>
+		</recipeUsers>
+	</RecipeDef>
+	
 	<RecipeDef Name="WeldLargeBase" Abstract="True">
 		<label>weld large glowstone</label>
 		<description>Heat small glowstones to their melting point and fuse together into a large glowstone.</description>
@@ -571,6 +606,41 @@
 		</recipeUsers>
 	</RecipeDef>
 	
+	<RecipeDef>
+		<defName>POW_CutLargeGlowstone</defName>
+		<label>cut large glowstone</label>
+		<description>Cut and polish a large glowstone into 4 small glowstones.</description>
+		<workAmount>800</workAmount>
+		<jobString>Cutting large glowstone.</jobString>
+		<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+		<workSkill>Construction</workSkill>
+		<workSkillLearnFactor>0.3</workSkillLearnFactor>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<targetCountAdjustment>4</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_LargeGlowstone</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>POW_LargeGlowstone</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_SmallGlowstone>4</POW_SmallGlowstone>
+		</products>
+		<recipeUsers>
+			<li>TableStonecutter</li>
+		</recipeUsers>
+	</RecipeDef>
+	
 	<RecipeDef Name="WeldSmallBase" Abstract="True">
 		<label>weld small glowstone</label>
 		<description>Heat glowstone dust to its melting point and shape into a small glowstone.</description>
@@ -610,6 +680,41 @@
 		<soundWorking>Recipe_Smelt</soundWorking>
 		<recipeUsers>
 			<li>ElectricSmelter</li>
+		</recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>POW_CrushSmallGlowstone</defName>
+		<label>crush small glowstone</label>
+		<description>Crush a small glowstone into 4 glowstone dust.</description>
+		<workAmount>400</workAmount>
+		<jobString>Crushing small glowstone.</jobString>
+		<workSpeedStat>StonecuttingSpeed</workSpeedStat>
+		<workSkill>Construction</workSkill>
+		<workSkillLearnFactor>0.3</workSkillLearnFactor>
+		<effectWorking>CutStone</effectWorking>
+		<soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+		<targetCountAdjustment>4</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>POW_SmallGlowstone</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>POW_SmallGlowstone</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<POW_GlowstoneDust>4</POW_GlowstoneDust>
+		</products>
+		<recipeUsers>
+			<li>TableStonecutter</li>
 		</recipeUsers>
 	</RecipeDef>
 	

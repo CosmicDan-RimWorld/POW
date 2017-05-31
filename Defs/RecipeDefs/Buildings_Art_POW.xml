@@ -9,7 +9,7 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<useHitPoints>true</useHitPoints>
 		<graphicData>
-			<color>(45,120,255,130)</color>
+			<color>(113,187,252,130)</color>
 		</graphicData>
 		<statBases>
 			<Flammability>1.0</Flammability>

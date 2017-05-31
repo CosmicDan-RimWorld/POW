@@ -5,24 +5,9 @@
 	<POW_ContainsIngredient>Contains {0} / {1} juice.</POW_ContainsIngredient>
 	<POW_ContainsAlcohol>Contains {0} / {1} vinegar.</POW_ContainsAlcohol>
 	<POW_NoIngredient>need juice</POW_NoIngredient>
-
-	<!-- Charcoal Pit -->
-	<POW_Char_L>Make charcoal</POW_Char_L>
-	<POW_Bamb_L>Make bamboo charcoal</POW_Bamb_L>
-	<POW_Rubb_L>Make rubberwood charcoal</POW_Rubb_L>
-
-	<POW_Char_D>Char charcoal here</POW_Char_D> 
-	<POW_Bamb_D>Char charcoal from bamboo here</POW_Bamb_D>
-	<POW_Rubb_D>Char charcoal from rubber wood here</POW_Rubb_D>
-
-	<POW_PitCancel>Cancel wood burning</POW_PitCancel>
 	
-	<!-- Window -->
-	<POW_WindowImpassable>Window is blocked on one or more sides.</POW_WindowImpassable>
-	<POW_WindowNeedsWall>Window must be built onto a constructed wall.</POW_WindowNeedsWall>
-	<POW_WatchingToxicFallout>Watching the toxic dust clouds outside.</POW_WatchingToxicFallout>
-	<POW_WatchingVolcanicWinter>Watching the ash fall.</POW_WatchingVolcanicWinter>
-	<POW_WatchingRain>Watching the rain outside.</POW_WatchingRain>
-	<POW_WatchingSnow>Watching the snow fall.</POW_WatchingSnow>
+	<!-- Chandelier -->
+	<POW_ObjectTooTall>{0} is too tall to place a {1} here</POW_ObjectTooTall>
+	<POW_NeedsRoof>{0} needs to be placed under a roof</POW_NeedsRoof>
 
 </LanguageData>

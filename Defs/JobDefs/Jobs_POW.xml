@@ -12,14 +12,5 @@
 		<driverClass>Powerless.JobDriver_TakeVinegarOutOfVinegarBarrel</driverClass>
 		<reportString>taking vinegar out of TargetA.</reportString>
 	</JobDef>
-	
-	<JobDef>
-		<defName>POW_Job_LookOutWindow</defName>
-		<driverClass>Powerless.JobDriver_LookOutWindow</driverClass>
-		<reportString>Looking out window.</reportString>
-		<joyDuration>3000</joyDuration>
-		<joyGainRate>0.3</joyGainRate>
-		<joyKind>Meditative</joyKind>
-	</JobDef>
 
 </Defs>
