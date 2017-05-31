@@ -18,6 +18,7 @@
 		<ingestible>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.75</nutrition>
+			<optimalityOffset>1</optimalityOffset>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
@@ -43,6 +44,7 @@
 		<ingestible>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.7</nutrition>
+			<optimalityOffset>1</optimalityOffset>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
@@ -67,8 +69,7 @@
 		<ingestible>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.80</nutrition>
-			<joy>0.05</joy>
-			<joyKind>Gluttonous</joyKind>
+			<optimalityOffset>-1</optimalityOffset>
 			<specialThoughtDirect>POW_AteSmokedMeal</specialThoughtDirect>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
@@ -124,7 +125,6 @@
 		<ingestible>
 			<preferability>MealFine</preferability>
 			<nutrition>0.85</nutrition>
-			<joy>0.1</joy>
 		</ingestible>
 	</ThingDef>
 
@@ -231,6 +231,7 @@
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.5</nutrition>
+			<optimalityOffset>-5</optimalityOffset>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>
@@ -259,6 +260,7 @@
 			<foodType>VegetableOrFruit</foodType>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.5</nutrition>
+			<optimalityOffset>-5</optimalityOffset>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 			<specialThoughtDirect>POW_AtePickledVeggies</specialThoughtDirect>

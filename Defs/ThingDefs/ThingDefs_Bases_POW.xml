@@ -268,8 +268,6 @@
 		<ingestible>
 			<preferability>MealSimple</preferability>
 			<nutrition>0.80</nutrition>
-			<joy>0.05</joy>
-			<joyKind>Gluttonous</joyKind>
 			<specialThoughtDirect>POW_AteGrilledMeal</specialThoughtDirect>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>

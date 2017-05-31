@@ -203,7 +203,7 @@
 	</ThingDef>
 	<ThingDef ParentName="GlowstoneFloorStipBase">
 		<defName>POW_GlowstoneFloorCornerDouble</defName>
-		<label>glowstone double inner</label>
+		<label>glowstone double corner</label>
 		<graphicData>
 			<texPath>Cupro/Object/Structure/GlowstoneFloor/DoubleCorner</texPath>
 		</graphicData>
