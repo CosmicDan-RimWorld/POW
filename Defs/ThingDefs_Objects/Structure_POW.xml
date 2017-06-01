@@ -57,6 +57,7 @@
 		<category>Building</category>
 		<description>A simple shelter wall made from wood. Capable of holding up a roof, but is easily destroyed. Needs to be manually deconstructed when building in its place.</description>
 		<graphicData>
+			<!-- Special thanks to Shinzy for the wall texture! -->
 			<texPath>Cupro/Object/Structure/WallShelter_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>CornerFiller</linkType>
