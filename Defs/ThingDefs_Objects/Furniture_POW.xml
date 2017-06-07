@@ -282,15 +282,11 @@
 		</Comps>
 	</ThingDef>
 	
-	<ThingDef ParentName="FurnitureBase">
-		<defName>POW_GlowstoneChandelier</defName>
-		<label>glowstone chandelier</label>
-		<description>A simple chandelier housing four small glowstones. Can be hung from the ceiling over most objects.</description>
+	<ThingDef Name="GlowstoneChandelierBase" ParentName="FurnitureBase" Abstract="True">
 		<graphicData>
 			<texPath>Cupro/Object/Furniture/GlowstoneChandelier</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<rotatable>false</rotatable>
 		<fillPercent>0</fillPercent>
@@ -301,35 +297,18 @@
 		<altitudeLayer>FlyingItem</altitudeLayer>
 		<pathCost>0</pathCost>
 		<DesignationCategory>POW_Glowstone</DesignationCategory>
-		<size>(2,2)</size>
 		<statBases>
-			<WorkToBuild>500</WorkToBuild>
-			<Mass>12</Mass>
-			<Beauty>20</Beauty>
 			<Flammability>0</Flammability>
 		</statBases>
 		<stuffCategories>
 			<li>Metallic</li>
 		</stuffCategories>
-		<costStuffCount>45</costStuffCount>
-		<costList>
-			<POW_SmallGlowstone>4</POW_SmallGlowstone>
-		</costList>
 		<tickerType>Rare</tickerType>
-		<Comps>
+		<comps>
 			<li>
 				<compClass>Powerless.CompChandelier</compClass>
 			</li>
-			<li Class="CompProperties_Glower">
-				<glowRadius>10</glowRadius>
-				<glowColor>(165,177,192,0)</glowColor>
-			</li>
-			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Furniture</nameMaker>
-				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
-				<minQualityForArtistic>Masterwork</minQualityForArtistic>
-			</li>
-		</Comps>
+		</comps>
 		<building>
 			<isEdifice>false</isEdifice>
 		</building>
@@ -337,6 +316,96 @@
 			<li>Powerless.PlaceWorker_Roofed</li>
 			<li>Powerless.PlaceWorker_Chandelier</li>
 		</placeWorkers>
+	</ThingDef>
+	
+	<ThingDef ParentName="GlowstoneChandelierBase">
+		<defName>POW_SmallGlowstoneChandelier</defName>
+		<label>small glowstone chandelier</label>
+		<description>A simple chandelier housing two small glowstones. Can be hung from the ceiling over most objects.</description>
+		<graphicData>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<size>(1,1)</size>
+		<statBases>
+			<WorkToBuild>350</WorkToBuild>
+			<Mass>3</Mass>
+			<Beauty>10</Beauty>
+		</statBases>
+		<costStuffCount>15</costStuffCount>
+		<costList>
+			<POW_SmallGlowstone>2</POW_SmallGlowstone>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(165,177,192,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>ArtName_Furniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Masterwork</minQualityForArtistic>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="GlowstoneChandelierBase">
+		<defName>POW_GlowstoneChandelier</defName>
+		<label>medium glowstone chandelier</label>
+		<description>A simple chandelier housing four small glowstones. Can be hung from the ceiling over most objects.</description>
+		<graphicData>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<size>(2,2)</size>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<Mass>12</Mass>
+			<Beauty>20</Beauty>
+		</statBases>
+		<costStuffCount>45</costStuffCount>
+		<costList>
+			<POW_SmallGlowstone>4</POW_SmallGlowstone>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>10</glowRadius>
+				<glowColor>(165,177,192,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>ArtName_Furniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="GlowstoneChandelierBase">
+		<defName>POW_LargeGlowstoneChandelier</defName>
+		<label>large glowstone chandelier</label>
+		<description>A simple chandelier housing four large glowstones. Can be hung from the ceiling over most objects.</description>
+		<graphicData>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<size>(3,3)</size>
+		<statBases>
+			<WorkToBuild>750</WorkToBuild>
+			<Mass>27</Mass>
+			<Beauty>30</Beauty>
+		</statBases>
+		<costStuffCount>100</costStuffCount>
+		<costList>
+			<POW_LargeGlowstone>4</POW_LargeGlowstone>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>13</glowRadius>
+				<glowColor>(165,177,192,0)</glowColor>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>ArtName_Furniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Superior</minQualityForArtistic>
+			</li>
+		</comps>
 	</ThingDef>
 
 

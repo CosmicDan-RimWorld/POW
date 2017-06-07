@@ -22,10 +22,13 @@ namespace Powerless {
       // Minify this if the ceiling is missing
       int occCells = 0;
       int roofCells = 0;
-      foreach (IntVec3 current in parent.OccupiedRect()) {
+      foreach (IntVec3 c in parent.OccupiedRect()) {
         occCells++;
-        if (!parentMap.roofGrid.Roofed(current)) {
+        if (!parentMap.roofGrid.Roofed(c)) {
           roofCells++;
+        }
+        if (c.GetEdifice(parent.Map).def.blockWind == true || c.GetEdifice(parent.Map).def.holdsRoof == true) {
+          Minify();
         }
       }
       if (((float)(occCells - roofCells) / occCells) < 0.5f) {
