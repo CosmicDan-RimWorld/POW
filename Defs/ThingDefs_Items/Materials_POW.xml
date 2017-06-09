@@ -10,7 +10,6 @@
 			<graphicClass>Graphic_Single</graphicClass>
 			<onGroundRandomRotateAngle>45</onGroundRandomRotateAngle>
 		</graphicData>
-		<resourceReadoutPriority>First</resourceReadoutPriority>
 		<useHitPoints>true</useHitPoints>
 		<statBases>
 			<MaxHitPoints>50</MaxHitPoints>

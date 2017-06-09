@@ -32,7 +32,7 @@
 
 
 
-	<ThingDef ParentName="PlantBase">
+	<ThingDef Name="POW_PlantDefInsertion" ParentName="PlantBase">
 		<defName>POW_PlantTurnip</defName>
 		<label>turnip plant</label>
 		<description>A root vegetable with edible leaves. Grows quickly and is able to survive a cold snap.</description>

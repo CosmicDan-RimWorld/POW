@@ -278,7 +278,7 @@
 	</ThingDef>
 	
 	<RecipeDef Name="SmokedBase" Abstract="True">
-		<jobString>Smoking.</jobString>
+		<jobString>Smoking meat.</jobString>
 		<workAmount>3500</workAmount>
 		<workSpeedStat>CookSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
