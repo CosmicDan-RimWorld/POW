@@ -58,6 +58,8 @@
 			<Beauty>20</Beauty>
 			<MaxHitPoints>5000</MaxHitPoints>
 		</statBases>
+		<blueprintDef>POW_SmallGlowstone</blueprintDef>
+		<hideAtSnowDepth>8</hideAtSnowDepth>
 		<building>
 			<isResourceRock>true</isResourceRock>
 			<mineableThing>POW_GlowstoneItemSpawner</mineableThing>
