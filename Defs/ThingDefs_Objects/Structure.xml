@@ -16,7 +16,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>25</MaxHitPoints>
-			<WorkToMake>75</WorkToMake>
+			<WorkToBuild>75</WorkToBuild>
 			<DoorOpenSpeed>2</DoorOpenSpeed>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -48,6 +48,9 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable"/>
 		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_DoorLearnOpeningSpeed</li>
+		</placeWorkers>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
