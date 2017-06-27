@@ -13,6 +13,9 @@
 		</graphicData>
 		<altitudeLayer>Item</altitudeLayer>
 		<selectable>true</selectable>
+		<ingestible>
+			<nutrition>0.04</nutrition>
+		</ingestible>
 		<plant>
 			<dieIfLeafless>false</dieIfLeafless>
 			<harvestTag>Standard</harvestTag>
@@ -32,29 +35,22 @@
 		</plant>
 	</ThingDef>
 
-	<ThingDef ParentName="PlantBase">
+	<ThingDef ParentName="POW_PlantDefInsertion">
 		<defName>POW_PlantCabbage</defName>
 		<label>cabbage plant</label>
 		<description>A plant with a large leafy bulb. Requires good soil, but is able to survive winter.</description>
-		<statBases>
-			<MaxHitPoints>85</MaxHitPoints>
-		</statBases>
 		<graphicData>
 			<texPath>Cupro/Object/Plant/PlantCabbage</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<altitudeLayer>Item</altitudeLayer>
-		<selectable>true</selectable>
+		<ingestible>
+			<nutrition>0.02</nutrition>
+		</ingestible>
 		<plant>
-			<dieIfLeafless>false</dieIfLeafless>
-			<harvestTag>Standard</harvestTag>
 			<harvestedThingDef>POW_Cabbage</harvestedThingDef>
 			<harvestYield>12</harvestYield>
-			<sowTags>
-				<li>Ground</li>
-			</sowTags>
+			<topWindExposure>0.1</topWindExposure>
 			<growDays>5</growDays>
-			<lifespanFraction>20</lifespanFraction>
 			<growMinGlow>0.4</growMinGlow>
 			<growOptimalGlow>0.8</growOptimalGlow>
 			<fertilityMin>0.85</fertilityMin>
@@ -72,10 +68,6 @@
 				<max>5</max>
 			</wildClusterSizeRange>
 			<wildClusterRadius>6</wildClusterRadius>
-			<visualSizeRange>
-				<min>0.3</min>
-				<max>1</max>
-			</visualSizeRange>
 		</plant>
 	</ThingDef>
 
