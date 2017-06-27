@@ -173,9 +173,6 @@
 				<frequencyMax>360</frequencyMax>
 				<size>0.25</size>
 			</li>
-			<li>
-				<compClass>CompGatherSpot</compClass>
-			</li>
 		</comps>
 		<designationCategory>Temperature</designationCategory>
 	</ThingDef>
