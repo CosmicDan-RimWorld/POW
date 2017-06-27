@@ -132,7 +132,7 @@
 	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>POW_Turnip</defName>
 		<label>turnip</label>
-		<description>A root vegetable that lasts a long time even without refrigeration.</description>
+		<description>A root vegetable that lasts a long time even without refrigeration. Not nice to eat raw.</description>
 		<graphicData>
 			<texPath>Cupro/Item/Usable/Turnip</texPath>
 		</graphicData>
@@ -147,7 +147,6 @@
 		</comps>
 		<ingestible>
 			<foodType>VegetableOrFruit</foodType>
-			<preferability>RawTasty</preferability>
 			<nutrition>0.04</nutrition>
 			<specialThoughtDirect>POW_AteRawTurnip</specialThoughtDirect>
 		</ingestible>
@@ -156,10 +155,10 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef ParentName="OrganicProductBase">
+	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>POW_Turnip_Green</defName>
 		<label>turnip greens</label>
-		<description>Edible leaves from the turnip plant. Can be eaten raw.</description>
+		<description>Edible leaves from the turnip plant. Can be eaten raw but isn't very nutritious.</description>
 		<graphicData>
 			<texPath>Cupro/Item/Usable/Turnip_Green</texPath>
 		</graphicData>
@@ -184,10 +183,10 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="OrganicProductBase">
+	<ThingDef ParentName="PlantFoodRawBase">
 		<defName>POW_Cabbage</defName>
 		<label>cabbage</label>
-		<description>Raw cabbage.</description>
+		<description>Raw cabbage. Can be eaten raw but isn't very nutritious.</description>
 		<graphicData>
 			<texPath>Cupro/Item/Usable/Cabbage</texPath>
 		</graphicData>
@@ -200,6 +199,7 @@
 			<preferability>RawTasty</preferability>
 			<nutrition>0.02</nutrition>
 		</ingestible>
+		
 		<thingCategories>
 			<li>FoodRaw</li>
 		</thingCategories>
