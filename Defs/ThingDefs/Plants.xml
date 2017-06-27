@@ -38,7 +38,7 @@
 	<ThingDef ParentName="POW_PlantDefInsertion">
 		<defName>POW_PlantCabbage</defName>
 		<label>cabbage plant</label>
-		<description>A plant with a large leafy bulb. Requires good soil, but is able to survive winter.</description>
+		<description>A plant with a large leafy bulb. Requires good soil, but is able to survive winter. Can be eaten raw but isn't very nutritious.</description>
 		<graphicData>
 			<texPath>Cupro/Object/Plant/PlantCabbage</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
