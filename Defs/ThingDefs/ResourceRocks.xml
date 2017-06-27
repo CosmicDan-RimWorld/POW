@@ -1,48 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Resources>
-
-	<ThingDef Name="BuildingNaturalBase" Abstract="True">
-		<category>Building</category>
-		<selectable>true</selectable>
-		<drawerType>MapMeshOnly</drawerType>
-		<filthLeaving>RockRubble</filthLeaving>
-	</ThingDef>
-
-	<ThingDef Name="RockBase" ParentName="BuildingNaturalBase" Abstract="True" >
-		<thingClass>Mineable</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
-			<linkFlags>
-				<li>Rock</li>
-				<li>MapEdge</li>
-			</linkFlags>
-		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<coversFloor>true</coversFloor>
-		<neverMultiSelect>true</neverMultiSelect>
-		<rotatable>false</rotatable>
-		<saveCompressible>true</saveCompressible>
-		<holdsRoof>true</holdsRoof>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<blockLight>true</blockLight>
-		<mineable>true</mineable>
-		<statBases>
-			<Flammability>0</Flammability>
-		</statBases>
-		<building>
-			<isInert>true</isInert>
-			<isNaturalRock>true</isNaturalRock>
-			<canBuildNonEdificesUnder>false</canBuildNonEdificesUnder>
-		</building>
-	</ThingDef>
-
-
-
 	<ThingDef ParentName="RockBase">
 		<defName>POW_MineableGlowstone</defName>
 		<label>glowstone deposit</label>

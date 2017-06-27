@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ThingDefs>
-
-	<ThingDef Name="FurnitureBase" ParentName="BuildingBase" Abstract="True">
-		<comps>
-			<li>
-				<compClass>CompQuality</compClass>
-			</li>
-		</comps>
-		<DesignationCategory>Furniture</DesignationCategory>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
-		<tradeTags>
-			<li>Furniture</li>
-		</tradeTags>
-	</ThingDef>
-
 	<ThingDef Name="POW_BedBase" ParentName="FurnitureBase" Abstract="True">
 		<category>Building</category>
 		<ThingClass>Building_Bed</ThingClass>
