@@ -33,7 +33,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<pathCost>60</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<recipes>
 			<li>POW_GrillMealMeat</li>
@@ -112,7 +112,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<pathCost>60</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<tickerType>Normal</tickerType>
 		<comps>
@@ -129,6 +129,7 @@
 				<fuelCapacity>40.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
+						<li>WoodLog</li>
 						<li>POW_Charcoal</li>
 					</thingDefs>
 				</fuelFilter>
@@ -192,7 +193,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<pathCost>80</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<recipes>
 			<li>POW_SmokePreserveMeatLarge</li>
@@ -261,7 +262,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<pathCost>60</pathCost>
 		<hasInteractionCell>True</hasInteractionCell>
-		<interactionCellOffset>(0,0,1)</interactionCellOffset>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
