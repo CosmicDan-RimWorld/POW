@@ -105,27 +105,5 @@
 			</li>
 		</Operations>
 	</Operation>
-
-	
-	<Operation Class="PatchOperationSequence">
-		<success>Always</success>
-		<operations>
-			<li Class="PatchOperationTest">
-				<!-- Only add if this is a recipe for the FueledSmithy -->
-				<xpath>*/ThingDef/recipeMaker/recipeUsers/li[text() = "FueledSmithy"]</xpath>
-			</li>
-			<li Class="PatchOperationTest">
-				<!-- Skip if already patched -->
-				<xpath>*/ThingDef/recipeMaker/recipeUsers/li[text() = "POW_Forge"]</xpath>
-				<success>Invert</success>
-			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>*/ThingDef/recipeMaker/recipeUsers</xpath>
-				<value>
-					<li>POW_Forge</li>
-				</value>
-			</li>
-		</operations>
-	</Operation>
 	
 </Patch>

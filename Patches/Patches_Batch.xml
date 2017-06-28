@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- For every ThingDef that has FueledSmithy set as a recipeUsers, add the POW_Forge as a recipeUsers entry too -->
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<!-- Skip if already patched -->
+				<xpath>*/ThingDef/recipeMaker/recipeUsers/li[text() = "FueledSmithy" and text() = "POW_Forge"]</xpath>
+				<success>Invert</success>
+			</li>
+			<li Class="PatchOperationInsert">
+				<xpath>*/ThingDef/recipeMaker/recipeUsers/li[text() = "FueledSmithy"]</xpath>
+				<value>
+					<li>POW_Forge</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+	
+</Patch>
